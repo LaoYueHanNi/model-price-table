@@ -1,251 +1,263 @@
 {
-  "version": 4,
+  "version": 5,
   "updatedAt": 1746748800,
   "currency": "RMB",
   "models": [
     {
       "modelId": "MiniMax-M2.7",
-      "displayName": "MiniMax-M2.7",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 8.4,
       "cacheReadCostPerMillion": 0.42,
       "cacheCreationCostPerMillion": 2.625,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
-      "modelId": "claude-3-5-haiku-20241022",
-      "displayName": "Claude 3.5 Haiku",
+      "modelId": "Claude-3.5-Haiku",
       "inputCostPerMillion": 5.6,
       "outputCostPerMillion": 28.0,
       "cacheReadCostPerMillion": 0.56,
       "cacheCreationCostPerMillion": 7.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-3-5-haiku-20241022"
+      ]
     },
     {
-      "modelId": "claude-3-5-sonnet-20241022",
-      "displayName": "Claude 3.5 Sonnet",
+      "modelId": "Claude-3.5-Sonnet",
       "inputCostPerMillion": 21.0,
       "outputCostPerMillion": 105.0,
       "cacheReadCostPerMillion": 2.1,
       "cacheCreationCostPerMillion": 26.25,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-3-5-sonnet-20241022"
+      ]
     },
     {
-      "modelId": "claude-haiku-4-5-20251001",
-      "displayName": "Claude Haiku 4.5",
+      "modelId": "Claude-Haiku-4.5",
       "inputCostPerMillion": 7.0,
       "outputCostPerMillion": 35.0,
       "cacheReadCostPerMillion": 0.7,
       "cacheCreationCostPerMillion": 8.75,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-haiku-4-5-20251001"
+      ]
     },
     {
-      "modelId": "claude-opus-4-1-20250805",
-      "displayName": "Claude Opus 4.1",
+      "modelId": "Claude-Opus-4.1",
       "inputCostPerMillion": 105.0,
       "outputCostPerMillion": 525.0,
       "cacheReadCostPerMillion": 10.5,
       "cacheCreationCostPerMillion": 131.25,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-opus-4-1-20250805"
+      ]
     },
     {
-      "modelId": "claude-opus-4-20250514",
-      "displayName": "Claude Opus 4",
+      "modelId": "Claude-Opus-4",
       "inputCostPerMillion": 105.0,
       "outputCostPerMillion": 525.0,
       "cacheReadCostPerMillion": 10.5,
       "cacheCreationCostPerMillion": 131.25,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-opus-4-20250514"
+      ]
     },
     {
-      "modelId": "claude-opus-4-5-20251101",
-      "displayName": "Claude Opus 4.5",
+      "modelId": "Claude-Opus-4.5",
       "inputCostPerMillion": 35.0,
       "outputCostPerMillion": 175.0,
       "cacheReadCostPerMillion": 3.5,
       "cacheCreationCostPerMillion": 43.75,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-opus-4-5-20251101"
+      ]
     },
     {
-      "modelId": "claude-opus-4-6-20260206",
-      "displayName": "Claude Opus 4.6",
+      "modelId": "Claude-Opus-4.6",
       "inputCostPerMillion": 35.0,
       "outputCostPerMillion": 175.0,
       "cacheReadCostPerMillion": 3.5,
       "cacheCreationCostPerMillion": 43.75,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-opus-4-6-20260206"
+      ]
     },
     {
-      "modelId": "claude-opus-4-7",
-      "displayName": "Claude Opus 4.7",
+      "modelId": "Claude-Opus-4.7",
       "inputCostPerMillion": 35.0,
       "outputCostPerMillion": 175.0,
       "cacheReadCostPerMillion": 3.5,
       "cacheCreationCostPerMillion": 43.75,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-opus-4-7"
+      ]
     },
     {
-      "modelId": "claude-sonnet-4-20250514",
-      "displayName": "Claude Sonnet 4",
+      "modelId": "Claude-Sonnet-4",
       "inputCostPerMillion": 21.0,
       "outputCostPerMillion": 105.0,
       "cacheReadCostPerMillion": 2.1,
       "cacheCreationCostPerMillion": 26.25,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-sonnet-4-20250514"
+      ]
     },
     {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "displayName": "Claude Sonnet 4.5",
+      "modelId": "Claude-Sonnet-4.5",
       "inputCostPerMillion": 21.0,
       "outputCostPerMillion": 105.0,
       "cacheReadCostPerMillion": 2.1,
       "cacheCreationCostPerMillion": 26.25,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-sonnet-4-5-20250929"
+      ]
     },
     {
-      "modelId": "claude-sonnet-4-6",
-      "displayName": "claude-sonnet-4-6",
+      "modelId": "Claude-Sonnet-4.6",
       "inputCostPerMillion": 21.0,
       "outputCostPerMillion": 105.0,
       "cacheReadCostPerMillion": 2.1,
       "cacheCreationCostPerMillion": 26.25,
       "contextTiers": [],
-      "timeRules": []
-    },
-    {
-      "modelId": "claude-sonnet-4-6-20260217",
-      "displayName": "Claude Sonnet 4.6",
-      "inputCostPerMillion": 21.0,
-      "outputCostPerMillion": 105.0,
-      "cacheReadCostPerMillion": 2.1,
-      "cacheCreationCostPerMillion": 26.25,
-      "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": [
+        "claude-sonnet-4-6",
+        "claude-sonnet-4-6-20260217"
+      ]
     },
     {
       "modelId": "codestral-2508",
-      "displayName": "Codestral",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 6.3,
       "cacheReadCostPerMillion": 0.21,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "codex-mini",
-      "displayName": "Codex Mini",
       "inputCostPerMillion": 5.25,
       "outputCostPerMillion": 21.0,
       "cacheReadCostPerMillion": 0.175,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "command-a",
-      "displayName": "Cohere Command A",
       "inputCostPerMillion": 17.5,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "command-r",
-      "displayName": "Cohere Command R",
       "inputCostPerMillion": 1.05,
       "outputCostPerMillion": 4.2,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "command-r-plus",
-      "displayName": "Cohere Command R+",
       "inputCostPerMillion": 17.5,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "deepseek-chat",
-      "displayName": "DeepSeek Chat",
       "inputCostPerMillion": 1.89,
       "outputCostPerMillion": 7.7,
       "cacheReadCostPerMillion": 0.49,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "deepseek-reasoner",
-      "displayName": "DeepSeek Reasoner",
       "inputCostPerMillion": 3.85,
       "outputCostPerMillion": 15.33,
       "cacheReadCostPerMillion": 0.98,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "deepseek-v3",
-      "displayName": "DeepSeek V3",
       "inputCostPerMillion": 1.96,
       "outputCostPerMillion": 7.77,
       "cacheReadCostPerMillion": 0.196,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "deepseek-v3.1",
-      "displayName": "DeepSeek V3.1",
       "inputCostPerMillion": 3.85,
       "outputCostPerMillion": 11.69,
       "cacheReadCostPerMillion": 0.385,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "deepseek-v3.2",
-      "displayName": "DeepSeek V3.2",
       "inputCostPerMillion": 1.96,
       "outputCostPerMillion": 2.94,
       "cacheReadCostPerMillion": 0.196,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "deepseek-v4-flash",
-      "displayName": "deepseek-v4-flash",
       "inputCostPerMillion": 1.0,
       "outputCostPerMillion": 2.0,
       "cacheReadCostPerMillion": 0.02,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "deepseek-v4-pro",
-      "displayName": "deepseek-v4-pro",
       "inputCostPerMillion": 12.0,
       "outputCostPerMillion": 24.0,
       "cacheReadCostPerMillion": 0.1,
@@ -262,171 +274,171 @@
           "cacheCreationCostPerMillion": 0.0,
           "contextTiers": []
         }
-      ]
+      ],
+      "aliases": []
     },
     {
       "modelId": "devstral-2-2512",
-      "displayName": "Devstral 2",
       "inputCostPerMillion": 2.8,
       "outputCostPerMillion": 6.3,
       "cacheReadCostPerMillion": 0.28,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "devstral-medium",
-      "displayName": "Devstral Medium",
       "inputCostPerMillion": 2.8,
       "outputCostPerMillion": 14.0,
       "cacheReadCostPerMillion": 0.28,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "devstral-small-1.1",
-      "displayName": "Devstral Small 1.1",
       "inputCostPerMillion": 0.49,
       "outputCostPerMillion": 1.96,
       "cacheReadCostPerMillion": 0.07,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "doubao-seed-2-0-code",
-      "displayName": "Doubao Seed 2.0 Code",
       "inputCostPerMillion": 3.29,
       "outputCostPerMillion": 16.59,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "doubao-seed-2-0-lite",
-      "displayName": "Doubao Seed 2.0 Lite",
       "inputCostPerMillion": 1.75,
       "outputCostPerMillion": 14.0,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "doubao-seed-2-0-mini",
-      "displayName": "Doubao Seed 2.0 Mini",
       "inputCostPerMillion": 0.21,
       "outputCostPerMillion": 2.17,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "doubao-seed-2-0-pro",
-      "displayName": "Doubao Seed 2.0 Pro",
       "inputCostPerMillion": 3.29,
       "outputCostPerMillion": 16.59,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "doubao-seed-code",
-      "displayName": "Doubao Seed Code",
       "inputCostPerMillion": 1.19,
       "outputCostPerMillion": 7.77,
       "cacheReadCostPerMillion": 0.14,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gemini-2.0-flash",
-      "displayName": "Gemini 2.0 Flash",
       "inputCostPerMillion": 0.7,
       "outputCostPerMillion": 2.8,
       "cacheReadCostPerMillion": 0.175,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gemini-2.5-flash",
-      "displayName": "Gemini 2.5 Flash",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 17.5,
       "cacheReadCostPerMillion": 0.21,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gemini-2.5-flash-lite",
-      "displayName": "Gemini 2.5 Flash Lite",
       "inputCostPerMillion": 0.7,
       "outputCostPerMillion": 2.8,
       "cacheReadCostPerMillion": 0.07,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gemini-2.5-pro",
-      "displayName": "Gemini 2.5 Pro",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gemini-3-flash-preview",
-      "displayName": "Gemini 3 Flash Preview",
       "inputCostPerMillion": 3.5,
       "outputCostPerMillion": 21.0,
       "cacheReadCostPerMillion": 0.35,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gemini-3-pro-preview",
-      "displayName": "Gemini 3 Pro Preview",
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 84.0,
       "cacheReadCostPerMillion": 1.4,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gemini-3.1-flash-lite-preview",
-      "displayName": "Gemini 3.1 Flash Lite Preview",
       "inputCostPerMillion": 1.75,
       "outputCostPerMillion": 10.5,
       "cacheReadCostPerMillion": 0.175,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gemini-3.1-pro-preview",
-      "displayName": "Gemini 3.1 Pro Preview",
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 84.0,
       "cacheReadCostPerMillion": 1.4,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "glm-4.5-air",
-      "displayName": "glm-4.5-air",
       "inputCostPerMillion": 0.8,
       "outputCostPerMillion": 2.0,
       "cacheReadCostPerMillion": 0.16,
@@ -440,21 +452,21 @@
           "cacheCreationCostPerMillion": 0.0
         }
       ],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "glm-4.6",
-      "displayName": "GLM-4.6",
       "inputCostPerMillion": 1.96,
       "outputCostPerMillion": 7.77,
       "cacheReadCostPerMillion": 0.21,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "glm-4.7",
-      "displayName": "GLM-4.7",
       "inputCostPerMillion": 2.0,
       "outputCostPerMillion": 8.0,
       "cacheReadCostPerMillion": 0.4,
@@ -468,11 +480,11 @@
           "cacheCreationCostPerMillion": 0.0
         }
       ],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "glm-5",
-      "displayName": "GLM-5",
       "inputCostPerMillion": 4.0,
       "outputCostPerMillion": 18.0,
       "cacheReadCostPerMillion": 1.0,
@@ -486,11 +498,11 @@
           "cacheCreationCostPerMillion": 0.0
         }
       ],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "glm-5-turbo",
-      "displayName": "glm-5-turbo",
       "inputCostPerMillion": 5.0,
       "outputCostPerMillion": 22.0,
       "cacheReadCostPerMillion": 1.2,
@@ -504,11 +516,11 @@
           "cacheCreationCostPerMillion": 0.0
         }
       ],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "glm-5.1",
-      "displayName": "GLM-5.1",
       "inputCostPerMillion": 6.0,
       "outputCostPerMillion": 24.0,
       "cacheReadCostPerMillion": 1.3,
@@ -522,621 +534,621 @@
           "cacheCreationCostPerMillion": 0.0
         }
       ],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-4.1",
-      "displayName": "GPT-4.1",
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 56.0,
       "cacheReadCostPerMillion": 3.5,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-4.1-mini",
-      "displayName": "GPT-4.1 Mini",
       "inputCostPerMillion": 2.8,
       "outputCostPerMillion": 11.2,
       "cacheReadCostPerMillion": 0.7,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-4.1-nano",
-      "displayName": "GPT-4.1 Nano",
       "inputCostPerMillion": 0.7,
       "outputCostPerMillion": 2.8,
       "cacheReadCostPerMillion": 0.175,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5",
-      "displayName": "GPT-5",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-codex",
-      "displayName": "GPT-5 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-codex-high",
-      "displayName": "GPT-5 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-codex-low",
-      "displayName": "GPT-5 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-codex-medium",
-      "displayName": "GPT-5 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-codex-mini",
-      "displayName": "GPT-5 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-codex-mini-high",
-      "displayName": "GPT-5 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-codex-mini-medium",
-      "displayName": "GPT-5 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-high",
-      "displayName": "GPT-5",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-low",
-      "displayName": "GPT-5",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-medium",
-      "displayName": "GPT-5",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-mini",
-      "displayName": "GPT-5 Mini",
       "inputCostPerMillion": 1.75,
       "outputCostPerMillion": 14.0,
       "cacheReadCostPerMillion": 0.175,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-minimal",
-      "displayName": "GPT-5",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5-nano",
-      "displayName": "GPT-5 Nano",
       "inputCostPerMillion": 0.35,
       "outputCostPerMillion": 2.8,
       "cacheReadCostPerMillion": 0.035,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.1",
-      "displayName": "GPT-5.1",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.1-codex",
-      "displayName": "GPT-5.1 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.1-codex-max",
-      "displayName": "GPT-5.1 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.1-codex-max-high",
-      "displayName": "GPT-5.1 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.1-codex-max-xhigh",
-      "displayName": "GPT-5.1 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.1-codex-mini",
-      "displayName": "GPT-5.1 Codex",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.1-high",
-      "displayName": "GPT-5.1",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.1-low",
-      "displayName": "GPT-5.1",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.1-medium",
-      "displayName": "GPT-5.1",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.1-minimal",
-      "displayName": "GPT-5.1",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.2",
-      "displayName": "GPT-5.2",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.2-codex",
-      "displayName": "GPT-5.2 Codex",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.2-codex-high",
-      "displayName": "GPT-5.2 Codex",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.2-codex-low",
-      "displayName": "GPT-5.2 Codex",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.2-codex-medium",
-      "displayName": "GPT-5.2 Codex",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.2-codex-xhigh",
-      "displayName": "GPT-5.2 Codex",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.2-high",
-      "displayName": "GPT-5.2",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.2-low",
-      "displayName": "GPT-5.2",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.2-medium",
-      "displayName": "GPT-5.2",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.2-xhigh",
-      "displayName": "GPT-5.2",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.3-codex",
-      "displayName": "GPT-5.3 Codex",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.3-codex-high",
-      "displayName": "GPT-5.3 Codex",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.3-codex-low",
-      "displayName": "GPT-5.3 Codex",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.3-codex-medium",
-      "displayName": "GPT-5.3 Codex",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.3-codex-xhigh",
-      "displayName": "GPT-5.3 Codex",
       "inputCostPerMillion": 12.25,
       "outputCostPerMillion": 98.0,
       "cacheReadCostPerMillion": 1.225,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.4",
-      "displayName": "GPT-5.4",
       "inputCostPerMillion": 17.5,
       "outputCostPerMillion": 105.0,
       "cacheReadCostPerMillion": 1.75,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.4-mini",
-      "displayName": "GPT-5.4 Mini",
       "inputCostPerMillion": 5.25,
       "outputCostPerMillion": 31.5,
       "cacheReadCostPerMillion": 0.525,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "gpt-5.4-nano",
-      "displayName": "GPT-5.4 Nano",
       "inputCostPerMillion": 1.4,
       "outputCostPerMillion": 8.75,
       "cacheReadCostPerMillion": 0.14,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "grok-3",
-      "displayName": "Grok 3",
       "inputCostPerMillion": 21.0,
       "outputCostPerMillion": 105.0,
       "cacheReadCostPerMillion": 5.25,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "grok-3-mini",
-      "displayName": "Grok 3 Mini",
       "inputCostPerMillion": 1.75,
       "outputCostPerMillion": 3.5,
       "cacheReadCostPerMillion": 0.525,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "grok-4",
-      "displayName": "Grok 4",
       "inputCostPerMillion": 21.0,
       "outputCostPerMillion": 105.0,
       "cacheReadCostPerMillion": 5.25,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "grok-4-1-fast-non-reasoning",
-      "displayName": "Grok 4.1 Fast",
       "inputCostPerMillion": 1.4,
       "outputCostPerMillion": 3.5,
       "cacheReadCostPerMillion": 0.35,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "grok-4-1-fast-reasoning",
-      "displayName": "Grok 4.1 Fast Reasoning",
       "inputCostPerMillion": 1.4,
       "outputCostPerMillion": 3.5,
       "cacheReadCostPerMillion": 0.35,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "grok-4.20-0309-non-reasoning",
-      "displayName": "Grok 4.20",
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 42.0,
       "cacheReadCostPerMillion": 1.4,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "grok-4.20-0309-reasoning",
-      "displayName": "Grok 4.20 Reasoning",
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 42.0,
       "cacheReadCostPerMillion": 1.4,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "grok-code-fast-1",
-      "displayName": "Grok Code Fast",
       "inputCostPerMillion": 1.4,
       "outputCostPerMillion": 10.5,
       "cacheReadCostPerMillion": 0.14,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "kimi-k2-0905",
-      "displayName": "Kimi K2",
       "inputCostPerMillion": 3.85,
       "outputCostPerMillion": 15.4,
       "cacheReadCostPerMillion": 0.7,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "kimi-k2-thinking",
-      "displayName": "Kimi K2 Thinking",
       "inputCostPerMillion": 3.85,
       "outputCostPerMillion": 15.4,
       "cacheReadCostPerMillion": 0.7,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "kimi-k2-turbo",
-      "displayName": "Kimi K2 Turbo",
       "inputCostPerMillion": 7.77,
       "outputCostPerMillion": 56.42,
       "cacheReadCostPerMillion": 0.98,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "kimi-k2.5",
-      "displayName": "Kimi K2.5",
       "inputCostPerMillion": 4.2,
       "outputCostPerMillion": 21.0,
       "cacheReadCostPerMillion": 0.7,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "kimi-k2.6",
-      "displayName": "Kimi K2.6",
       "inputCostPerMillion": 6.65,
       "outputCostPerMillion": 28.0,
       "cacheReadCostPerMillion": 1.12,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "magistral-medium",
-      "displayName": "Magistral Medium",
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 35.0,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "mimo-v2-flash",
-      "displayName": "MiMo V2 Flash",
       "inputCostPerMillion": 0.63,
       "outputCostPerMillion": 2.03,
       "cacheReadCostPerMillion": 0.063,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "mimo-v2-pro",
-      "displayName": "MiMo V2 Pro",
       "inputCostPerMillion": 7.0,
       "outputCostPerMillion": 21.0,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "mimo-v2.5",
-      "displayName": "mimo-v2.5",
       "inputCostPerMillion": 2.8,
       "outputCostPerMillion": 14.0,
       "cacheReadCostPerMillion": 0.56,
@@ -1150,11 +1162,11 @@
           "cacheCreationCostPerMillion": 0.0
         }
       ],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "mimo-v2.5-pro",
-      "displayName": "mimo-v2.5-pro",
       "inputCostPerMillion": 7.0,
       "outputCostPerMillion": 21.0,
       "cacheReadCostPerMillion": 1.4,
@@ -1168,277 +1180,278 @@
           "cacheCreationCostPerMillion": 0.0
         }
       ],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "MiniMax-M2",
-      "displayName": "MiniMax-M2",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 8.4,
       "cacheReadCostPerMillion": 0.21,
       "cacheCreationCostPerMillion": 2.625,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "MiniMax-M2.1",
-      "displayName": "MiniMax-M2.1",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 8.4,
       "cacheReadCostPerMillion": 0.21,
       "cacheCreationCostPerMillion": 2.625,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "MiniMax-M2.1-highspeed",
-      "displayName": "MiniMax-M2.1-highspeed",
       "inputCostPerMillion": 4.2,
       "outputCostPerMillion": 16.8,
       "cacheReadCostPerMillion": 0.21,
       "cacheCreationCostPerMillion": 2.625,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "MiniMax-M2.5",
-      "displayName": "MiniMax-M2.5",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 8.4,
       "cacheReadCostPerMillion": 0.21,
       "cacheCreationCostPerMillion": 2.625,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "MiniMax-M2.5-highspeed",
-      "displayName": "MiniMax-M2.5-highspeed",
       "inputCostPerMillion": 4.2,
       "outputCostPerMillion": 16.8,
       "cacheReadCostPerMillion": 0.21,
       "cacheCreationCostPerMillion": 2.625,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "M2-her",
-      "displayName": "M2-her",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 8.4,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "MiniMax-M2.7-highspeed",
-      "displayName": "MiniMax-M2.7-highspeed",
       "inputCostPerMillion": 4.2,
       "outputCostPerMillion": 16.8,
       "cacheReadCostPerMillion": 0.42,
       "cacheCreationCostPerMillion": 2.625,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "mistral-large-3-2512",
-      "displayName": "Mistral Large 3",
       "inputCostPerMillion": 3.5,
       "outputCostPerMillion": 10.5,
       "cacheReadCostPerMillion": 0.35,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "mistral-medium-3.1",
-      "displayName": "Mistral Medium 3.1",
       "inputCostPerMillion": 2.8,
       "outputCostPerMillion": 14.0,
       "cacheReadCostPerMillion": 0.28,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "mistral-small-3.2-24b",
-      "displayName": "Mistral Small 3.2",
       "inputCostPerMillion": 0.525,
       "outputCostPerMillion": 1.4,
       "cacheReadCostPerMillion": 0.07,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "o1",
-      "displayName": "OpenAI o1",
       "inputCostPerMillion": 105.0,
       "outputCostPerMillion": 420.0,
       "cacheReadCostPerMillion": 52.5,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "o1-mini",
-      "displayName": "OpenAI o1-mini",
       "inputCostPerMillion": 3.85,
       "outputCostPerMillion": 15.4,
       "cacheReadCostPerMillion": 3.85,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "o3",
-      "displayName": "OpenAI o3",
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 56.0,
       "cacheReadCostPerMillion": 3.5,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "o3-mini",
-      "displayName": "OpenAI o3-mini",
       "inputCostPerMillion": 3.85,
       "outputCostPerMillion": 15.4,
       "cacheReadCostPerMillion": 3.85,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "o3-pro",
-      "displayName": "OpenAI o3-pro",
       "inputCostPerMillion": 140.0,
       "outputCostPerMillion": 560.0,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "o4-mini",
-      "displayName": "OpenAI o4-mini",
       "inputCostPerMillion": 7.7,
       "outputCostPerMillion": 30.8,
       "cacheReadCostPerMillion": 1.925,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwen3-235b-a22b",
-      "displayName": "Qwen3 235B-A22B",
       "inputCostPerMillion": 4.9,
       "outputCostPerMillion": 58.8,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwen3-32b",
-      "displayName": "Qwen3 32B",
       "inputCostPerMillion": 1.12,
       "outputCostPerMillion": 4.48,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwen3-coder-flash",
-      "displayName": "Qwen3 Coder Flash",
       "inputCostPerMillion": 1.365,
       "outputCostPerMillion": 6.825,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwen3-coder-next",
-      "displayName": "Qwen3 Coder Next",
       "inputCostPerMillion": 0.84,
       "outputCostPerMillion": 5.25,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwen3-coder-plus",
-      "displayName": "Qwen3 Coder Plus",
       "inputCostPerMillion": 4.55,
       "outputCostPerMillion": 22.75,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwen3-max",
-      "displayName": "Qwen3 Max",
       "inputCostPerMillion": 5.46,
       "outputCostPerMillion": 27.3,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwen3.5-plus",
-      "displayName": "Qwen3.5 Plus",
       "inputCostPerMillion": 1.82,
       "outputCostPerMillion": 10.92,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwen3.6-plus",
-      "displayName": "Qwen3.6 Plus",
       "inputCostPerMillion": 2.275,
       "outputCostPerMillion": 13.65,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwq-32b",
-      "displayName": "QwQ 32B",
       "inputCostPerMillion": 1.4,
       "outputCostPerMillion": 4.2,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwq-plus",
-      "displayName": "QwQ Plus",
       "inputCostPerMillion": 5.6,
       "outputCostPerMillion": 16.8,
       "cacheReadCostPerMillion": 0.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "step-3.5-flash",
-      "displayName": "Step 3.5 Flash",
       "inputCostPerMillion": 0.7,
       "outputCostPerMillion": 2.1,
       "cacheReadCostPerMillion": 0.14,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": []
+      "timeRules": [],
+      "aliases": []
     }
   ]
 }
