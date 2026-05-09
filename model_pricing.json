@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "updatedAt": 1778164684,
+  "version": 3,
+  "updatedAt": 1746748800,
   "currency": "RMB",
   "models": [
     {
@@ -1202,6 +1202,16 @@
     },
     {
       "modelId": "minimax-m2.5",
+      "displayName": "MiniMax M2.5",
+      "inputCostPerMillion": 0.84,
+      "outputCostPerMillion": 6.65,
+      "cacheReadCostPerMillion": 0.21,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": []
+    },
+    {
+      "modelId": "MiniMax-M2.5",
       "displayName": "MiniMax M2.5",
       "inputCostPerMillion": 0.84,
       "outputCostPerMillion": 6.65,
