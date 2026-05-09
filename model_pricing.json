@@ -1171,78 +1171,68 @@
       "timeRules": []
     },
     {
-      "modelId": "minimax-m2",
-      "displayName": "MiniMax M2",
-      "inputCostPerMillion": 1.89,
-      "outputCostPerMillion": 6.65,
-      "cacheReadCostPerMillion": 0.21,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": []
-    },
-    {
-      "modelId": "minimax-m2.1",
-      "displayName": "MiniMax M2.1",
-      "inputCostPerMillion": 1.89,
-      "outputCostPerMillion": 6.65,
-      "cacheReadCostPerMillion": 0.21,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": []
-    },
-    {
-      "modelId": "minimax-m2.1-lightning",
-      "displayName": "MiniMax M2.1 Lightning",
-      "inputCostPerMillion": 1.89,
-      "outputCostPerMillion": 16.31,
-      "cacheReadCostPerMillion": 0.21,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": []
-    },
-    {
-      "modelId": "minimax-m2.5",
-      "displayName": "MiniMax M2.5",
-      "inputCostPerMillion": 0.84,
-      "outputCostPerMillion": 6.65,
-      "cacheReadCostPerMillion": 0.21,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": []
-    },
-    {
-      "modelId": "MiniMax-M2.5",
-      "displayName": "MiniMax M2.5",
-      "inputCostPerMillion": 0.84,
-      "outputCostPerMillion": 6.65,
-      "cacheReadCostPerMillion": 0.21,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": []
-    },
-    {
-      "modelId": "minimax-m2.5-lightning",
-      "displayName": "MiniMax M2.5 Lightning",
-      "inputCostPerMillion": 2.1,
-      "outputCostPerMillion": 16.8,
-      "cacheReadCostPerMillion": 0.21,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": []
-    },
-    {
-      "modelId": "minimax-m2.7",
-      "displayName": "MiniMax M2.7",
+      "modelId": "MiniMax-M2",
+      "displayName": "MiniMax-M2",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 8.4,
-      "cacheReadCostPerMillion": 0.42,
+      "cacheReadCostPerMillion": 0.21,
       "cacheCreationCostPerMillion": 2.625,
       "contextTiers": [],
       "timeRules": []
     },
     {
-      "modelId": "minimax-m2.7-highspeed",
-      "displayName": "MiniMax M2.7 Highspeed",
+      "modelId": "MiniMax-M2.1",
+      "displayName": "MiniMax-M2.1",
+      "inputCostPerMillion": 2.1,
+      "outputCostPerMillion": 8.4,
+      "cacheReadCostPerMillion": 0.21,
+      "cacheCreationCostPerMillion": 2.625,
+      "contextTiers": [],
+      "timeRules": []
+    },
+    {
+      "modelId": "MiniMax-M2.1-highspeed",
+      "displayName": "MiniMax-M2.1-highspeed",
+      "inputCostPerMillion": 4.2,
+      "outputCostPerMillion": 16.8,
+      "cacheReadCostPerMillion": 0.21,
+      "cacheCreationCostPerMillion": 2.625,
+      "contextTiers": [],
+      "timeRules": []
+    },
+    {
+      "modelId": "MiniMax-M2.5",
+      "displayName": "MiniMax-M2.5",
+      "inputCostPerMillion": 2.1,
+      "outputCostPerMillion": 8.4,
+      "cacheReadCostPerMillion": 0.21,
+      "cacheCreationCostPerMillion": 2.625,
+      "contextTiers": [],
+      "timeRules": []
+    },
+    {
+      "modelId": "MiniMax-M2.5-highspeed",
+      "displayName": "MiniMax-M2.5-highspeed",
+      "inputCostPerMillion": 4.2,
+      "outputCostPerMillion": 16.8,
+      "cacheReadCostPerMillion": 0.21,
+      "cacheCreationCostPerMillion": 2.625,
+      "contextTiers": [],
+      "timeRules": []
+    },
+    {
+      "modelId": "M2-her",
+      "displayName": "M2-her",
+      "inputCostPerMillion": 2.1,
+      "outputCostPerMillion": 8.4,
+      "cacheReadCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": []
+    },
+    {
+      "modelId": "MiniMax-M2.7-highspeed",
+      "displayName": "MiniMax-M2.7-highspeed",
       "inputCostPerMillion": 4.2,
       "outputCostPerMillion": 16.8,
       "cacheReadCostPerMillion": 0.42,
