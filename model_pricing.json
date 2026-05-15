@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "updatedAt": 1746748800,
   "currency": "RMB",
   "models": [
@@ -254,7 +254,9 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "deepseek-v4-flash-free"
+      ]
     },
     {
       "modelId": "deepseek-v4-pro",
@@ -1184,6 +1186,19 @@
       "aliases": []
     },
     {
+      "modelId": "nemotron-3-super",
+      "inputCostPerMillion": 2.16,
+      "outputCostPerMillion": 5.76,
+      "cacheReadCostPerMillion": 0.216,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "nemotron-3-super-120b-a12b:free",
+        "nemotron-3-super-free"
+      ]
+    },
+    {
       "modelId": "MiniMax-M2",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 8.4,
@@ -1415,13 +1430,23 @@
     },
     {
       "modelId": "qwen3.6-plus",
-      "inputCostPerMillion": 2.275,
-      "outputCostPerMillion": 13.65,
-      "cacheReadCostPerMillion": 0.0,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
+      "inputCostPerMillion": 2.0,
+      "outputCostPerMillion": 12.0,
+      "cacheReadCostPerMillion": 0.2,
+      "cacheCreationCostPerMillion": 2.5,
+      "contextTiers": [
+        {
+          "threshold": 256000,
+          "inputCostPerMillion": 8.0,
+          "outputCostPerMillion": 48.0,
+          "cacheReadCostPerMillion": 0.8,
+          "cacheCreationCostPerMillion": 10.0
+        }
+      ],
       "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "qwen3.6-plus-free"
+      ]
     },
     {
       "modelId": "qwq-32b",
