@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "updatedAt": 1747353600,
   "currency": "RMB",
   "models": [
@@ -1017,6 +1017,7 @@
     },
     {
       "modelId": "gpt-5.5-pro",
+      "noCacheSupport": true,
       "inputCostPerMillion": 210.0,
       "outputCostPerMillion": 1260.0,
       "cacheReadCostPerMillion": 0.0,
