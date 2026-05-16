@@ -1,6 +1,6 @@
 {
-  "version": 6,
-  "updatedAt": 1746748800,
+  "version": 7,
+  "updatedAt": 1747353600,
   "currency": "RMB",
   "models": [
     {
@@ -965,7 +965,15 @@
       "outputCostPerMillion": 105.0,
       "cacheReadCostPerMillion": 1.75,
       "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 35.0,
+          "outputCostPerMillion": 157.5,
+          "cacheReadCostPerMillion": 3.5,
+          "cacheCreationCostPerMillion": 0.0
+        }
+      ],
       "timeRules": [],
       "aliases": []
     },
@@ -986,6 +994,60 @@
       "cacheReadCostPerMillion": 0.14,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "gpt-5.5",
+      "inputCostPerMillion": 35.0,
+      "outputCostPerMillion": 210.0,
+      "cacheReadCostPerMillion": 3.5,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 70.0,
+          "outputCostPerMillion": 315.0,
+          "cacheReadCostPerMillion": 7.0,
+          "cacheCreationCostPerMillion": 0.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "gpt-5.5-pro",
+      "inputCostPerMillion": 210.0,
+      "outputCostPerMillion": 1260.0,
+      "cacheReadCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 420.0,
+          "outputCostPerMillion": 1890.0,
+          "cacheReadCostPerMillion": 0.0,
+          "cacheCreationCostPerMillion": 0.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "gpt-5.4-pro",
+      "inputCostPerMillion": 210.0,
+      "outputCostPerMillion": 1260.0,
+      "cacheReadCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 420.0,
+          "outputCostPerMillion": 1890.0,
+          "cacheReadCostPerMillion": 0.0,
+          "cacheCreationCostPerMillion": 0.0
+        }
+      ],
       "timeRules": [],
       "aliases": []
     },
