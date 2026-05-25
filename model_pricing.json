@@ -1,6 +1,6 @@
 {
-  "version": 9,
-  "updatedAt": 1747353600,
+  "version": 10,
+  "updatedAt": 1779696000,
   "currency": "RMB",
   "models": [
     {
@@ -269,7 +269,7 @@
         {
           "label": "感恩梁圣",
           "startTime": 1777046400,
-          "endTime": 1780243199,
+          "endTime": 2095315200,
           "inputCostPerMillion": 3.0,
           "outputCostPerMillion": 6.0,
           "cacheReadCostPerMillion": 0.025,
@@ -436,6 +436,16 @@
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 84.0,
       "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "gemini-3.5-flash",
+      "inputCostPerMillion": 10.5,
+      "outputCostPerMillion": 63.0,
+      "cacheReadCostPerMillion": 1.05,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
@@ -1106,22 +1116,44 @@
     },
     {
       "modelId": "grok-4.20-0309-non-reasoning",
-      "inputCostPerMillion": 14.0,
-      "outputCostPerMillion": 42.0,
+      "inputCostPerMillion": 8.75,
+      "outputCostPerMillion": 17.5,
       "cacheReadCostPerMillion": 1.4,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "原价",
+          "startTime": 0,
+          "endTime": 1779696000,
+          "inputCostPerMillion": 14.0,
+          "outputCostPerMillion": 42.0,
+          "cacheReadCostPerMillion": 1.4,
+          "cacheCreationCostPerMillion": 0.0,
+          "contextTiers": []
+        }
+      ],
       "aliases": []
     },
     {
       "modelId": "grok-4.20-0309-reasoning",
-      "inputCostPerMillion": 14.0,
-      "outputCostPerMillion": 42.0,
+      "inputCostPerMillion": 8.75,
+      "outputCostPerMillion": 17.5,
       "cacheReadCostPerMillion": 1.4,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "原价",
+          "startTime": 0,
+          "endTime": 1779696000,
+          "inputCostPerMillion": 14.0,
+          "outputCostPerMillion": 42.0,
+          "cacheReadCostPerMillion": 1.4,
+          "cacheCreationCostPerMillion": 0.0,
+          "contextTiers": []
+        }
+      ],
       "aliases": []
     },
     {
@@ -1129,6 +1161,36 @@
       "inputCostPerMillion": 1.4,
       "outputCostPerMillion": 10.5,
       "cacheReadCostPerMillion": 0.14,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "grok-build-0.1",
+      "inputCostPerMillion": 7.0,
+      "outputCostPerMillion": 14.0,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "grok-4.3",
+      "inputCostPerMillion": 8.75,
+      "outputCostPerMillion": 17.5,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "grok-4.20-multi-agent-0309",
+      "inputCostPerMillion": 8.75,
+      "outputCostPerMillion": 17.5,
+      "cacheReadCostPerMillion": 1.4,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
