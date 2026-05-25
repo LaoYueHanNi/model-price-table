@@ -347,7 +347,9 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "doubao-seed-2-0-pro-260215"
+      ]
     },
     {
       "modelId": "doubao-seed-code",
