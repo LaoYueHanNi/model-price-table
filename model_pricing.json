@@ -1,6 +1,6 @@
 {
-  "version": 10,
-  "updatedAt": 1779696000,
+  "version": 11,
+  "updatedAt": 1779845423,
   "currency": "RMB",
   "models": [
     {
@@ -260,19 +260,19 @@
     },
     {
       "modelId": "deepseek-v4-pro",
-      "inputCostPerMillion": 12.0,
-      "outputCostPerMillion": 24.0,
-      "cacheReadCostPerMillion": 0.1,
+      "inputCostPerMillion": 3.0,
+      "outputCostPerMillion": 6.0,
+      "cacheReadCostPerMillion": 0.025,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [
         {
-          "label": "感恩梁圣",
-          "startTime": 1777046400,
-          "endTime": 2095315200,
-          "inputCostPerMillion": 3.0,
-          "outputCostPerMillion": 6.0,
-          "cacheReadCostPerMillion": 0.025,
+          "label": "原价",
+          "startTime": 0,
+          "endTime": 1777046400,
+          "inputCostPerMillion": 12.0,
+          "outputCostPerMillion": 24.0,
+          "cacheReadCostPerMillion": 0.1,
           "cacheCreationCostPerMillion": 0.0,
           "contextTiers": []
         }
@@ -1278,38 +1278,60 @@
     },
     {
       "modelId": "mimo-v2.5",
-      "inputCostPerMillion": 2.8,
-      "outputCostPerMillion": 14.0,
-      "cacheReadCostPerMillion": 0.56,
+      "inputCostPerMillion": 1.0,
+      "outputCostPerMillion": 2.0,
+      "cacheReadCostPerMillion": 0.02,
       "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [
+      "contextTiers": [],
+      "timeRules": [
         {
-          "threshold": 256000,
-          "inputCostPerMillion": 5.6,
-          "outputCostPerMillion": 28.0,
-          "cacheReadCostPerMillion": 1.12,
-          "cacheCreationCostPerMillion": 0.0
+          "label": "原价",
+          "startTime": 0,
+          "endTime": 1779811200,
+          "inputCostPerMillion": 2.8,
+          "outputCostPerMillion": 14.0,
+          "cacheReadCostPerMillion": 0.56,
+          "cacheCreationCostPerMillion": 0.0,
+          "contextTiers": [
+            {
+              "threshold": 256000,
+              "inputCostPerMillion": 5.6,
+              "outputCostPerMillion": 28.0,
+              "cacheReadCostPerMillion": 1.12,
+              "cacheCreationCostPerMillion": 0.0
+            }
+          ]
         }
       ],
-      "timeRules": [],
       "aliases": []
     },
     {
       "modelId": "mimo-v2.5-pro",
-      "inputCostPerMillion": 7.0,
-      "outputCostPerMillion": 21.0,
-      "cacheReadCostPerMillion": 1.4,
+      "inputCostPerMillion": 3.0,
+      "outputCostPerMillion": 6.0,
+      "cacheReadCostPerMillion": 0.025,
       "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [
+      "contextTiers": [],
+      "timeRules": [
         {
-          "threshold": 256000,
-          "inputCostPerMillion": 14.0,
-          "outputCostPerMillion": 42.0,
-          "cacheReadCostPerMillion": 2.8,
-          "cacheCreationCostPerMillion": 0.0
+          "label": "原价",
+          "startTime": 0,
+          "endTime": 1779811200,
+          "inputCostPerMillion": 7.0,
+          "outputCostPerMillion": 21.0,
+          "cacheReadCostPerMillion": 1.4,
+          "cacheCreationCostPerMillion": 0.0,
+          "contextTiers": [
+            {
+              "threshold": 256000,
+              "inputCostPerMillion": 14.0,
+              "outputCostPerMillion": 42.0,
+              "cacheReadCostPerMillion": 2.8,
+              "cacheCreationCostPerMillion": 0.0
+            }
+          ]
         }
       ],
-      "timeRules": [],
       "aliases": []
     },
     {
