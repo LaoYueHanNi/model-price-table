@@ -1,6 +1,6 @@
 {
-  "version": 12,
-  "updatedAt": 1780277180,
+  "version": 13,
+  "updatedAt": 1780306992,
   "currency": "RMB",
   "models": [
     {
@@ -31,8 +31,8 @@
       "timeRules": [
         {
           "label": "限时优惠",
-          "startTime": 1777574400,
-          "endTime": 1778179199,
+          "startTime": 1780272000,
+          "endTime": 1780876799,
           "inputCostPerMillion": 2.1,
           "outputCostPerMillion": 8.4,
           "cacheReadCostPerMillion": 0.42,
