@@ -1,6 +1,6 @@
 {
-  "version": 13,
-  "updatedAt": 1780306992,
+  "version": 14,
+  "updatedAt": 1780307854,
   "currency": "RMB",
   "models": [
     {
@@ -48,7 +48,9 @@
           ]
         }
       ],
-      "aliases": []
+      "aliases": [
+        "minimax-m3-free"
+      ]
     },
     {
       "modelId": "Claude-3.5-Haiku",
