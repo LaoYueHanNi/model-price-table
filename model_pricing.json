@@ -1,6 +1,6 @@
 {
-  "version": 14,
-  "updatedAt": 1780307854,
+  "version": 15,
+  "updatedAt": 1780377003,
   "currency": "RMB",
   "models": [
     {
@@ -1617,6 +1617,24 @@
       "aliases": []
     },
     {
+      "modelId": "qwen3.6-flash",
+      "inputCostPerMillion": 1.2,
+      "outputCostPerMillion": 7.2,
+      "cacheReadCostPerMillion": 0.12,
+      "cacheCreationCostPerMillion": 1.5,
+      "contextTiers": [
+        {
+          "threshold": 256000,
+          "inputCostPerMillion": 4.8,
+          "outputCostPerMillion": 28.8,
+          "cacheReadCostPerMillion": 0.48,
+          "cacheCreationCostPerMillion": 6.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
       "modelId": "qwen3.6-plus",
       "inputCostPerMillion": 2.0,
       "outputCostPerMillion": 12.0,
@@ -1635,6 +1653,34 @@
       "aliases": [
         "qwen3.6-plus-free"
       ]
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "inputCostPerMillion": 12.0,
+      "outputCostPerMillion": 36.0,
+      "cacheReadCostPerMillion": 2.4,
+      "cacheCreationCostPerMillion": 15.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "qwen3.7-plus",
+      "inputCostPerMillion": 2.0,
+      "outputCostPerMillion": 8.0,
+      "cacheReadCostPerMillion": 0.4,
+      "cacheCreationCostPerMillion": 2.5,
+      "contextTiers": [
+        {
+          "threshold": 256000,
+          "inputCostPerMillion": 6.0,
+          "outputCostPerMillion": 24.0,
+          "cacheReadCostPerMillion": 1.2,
+          "cacheCreationCostPerMillion": 7.5
+        }
+      ],
+      "timeRules": [],
+      "aliases": []
     },
     {
       "modelId": "qwq-32b",
@@ -1661,6 +1707,26 @@
       "inputCostPerMillion": 0.7,
       "outputCostPerMillion": 2.1,
       "cacheReadCostPerMillion": 0.14,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "step-3.7-flash",
+      "inputCostPerMillion": 1.35,
+      "outputCostPerMillion": 8.1,
+      "cacheReadCostPerMillion": 0.27,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "step-1o-turbo-vision",
+      "inputCostPerMillion": 2.5,
+      "outputCostPerMillion": 8.0,
+      "cacheReadCostPerMillion": 0.5,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
