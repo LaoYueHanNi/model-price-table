@@ -1,6 +1,6 @@
 {
-  "version": 16,
-  "updatedAt": 1780972469,
+  "version": 17,
+  "updatedAt": 1781008537,
   "currency": "RMB",
   "models": [
     {
@@ -66,7 +66,8 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [
-        "claude-haiku-4-5-20251001"
+        "claude-haiku-4-5-20251001",
+        "claude-haiku-4-5"
       ]
     },
     {
@@ -127,6 +128,18 @@
       "timeRules": [],
       "aliases": [
         "claude-opus-4-7"
+      ]
+    },
+    {
+      "modelId": "Claude-Opus-4.8",
+      "inputCostPerMillion": 35.0,
+      "outputCostPerMillion": 175.0,
+      "cacheReadCostPerMillion": 3.5,
+      "cacheCreationCostPerMillion": 43.75,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "claude-opus-4-8"
       ]
     },
     {
