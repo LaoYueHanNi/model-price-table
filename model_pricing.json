@@ -1,6 +1,6 @@
 {
-  "version": 15,
-  "updatedAt": 1780377003,
+  "version": 16,
+  "updatedAt": 1780972469,
   "currency": "RMB",
   "models": [
     {
@@ -15,39 +15,20 @@
     },
     {
       "modelId": "MiniMax-M3",
-      "inputCostPerMillion": 4.2,
-      "outputCostPerMillion": 16.8,
-      "cacheReadCostPerMillion": 0.84,
+      "inputCostPerMillion": 2.1,
+      "outputCostPerMillion": 8.4,
+      "cacheReadCostPerMillion": 0.42,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [
         {
           "threshold": 512000,
-          "inputCostPerMillion": 8.4,
-          "outputCostPerMillion": 33.6,
-          "cacheReadCostPerMillion": 1.68,
+          "inputCostPerMillion": 4.2,
+          "outputCostPerMillion": 16.8,
+          "cacheReadCostPerMillion": 0.84,
           "cacheCreationCostPerMillion": 0.0
         }
       ],
-      "timeRules": [
-        {
-          "label": "限时优惠",
-          "startTime": 1780272000,
-          "endTime": 1780876799,
-          "inputCostPerMillion": 2.1,
-          "outputCostPerMillion": 8.4,
-          "cacheReadCostPerMillion": 0.42,
-          "cacheCreationCostPerMillion": 0.0,
-          "contextTiers": [
-            {
-              "threshold": 512000,
-              "inputCostPerMillion": 8.4,
-              "outputCostPerMillion": 33.6,
-              "cacheReadCostPerMillion": 1.68,
-              "cacheCreationCostPerMillion": 0.0
-            }
-          ]
-        }
-      ],
+      "timeRules": [],
       "aliases": [
         "minimax-m3-free"
       ]
