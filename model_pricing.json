@@ -1,6 +1,6 @@
 {
-  "version": 17,
-  "updatedAt": 1781008537,
+  "version": 18,
+  "updatedAt": 1781399889,
   "currency": "RMB",
   "models": [
     {
@@ -568,6 +568,24 @@
     },
     {
       "modelId": "glm-5.1",
+      "inputCostPerMillion": 6.0,
+      "outputCostPerMillion": 24.0,
+      "cacheReadCostPerMillion": 1.3,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [
+        {
+          "threshold": 32000,
+          "inputCostPerMillion": 8.0,
+          "outputCostPerMillion": 28.0,
+          "cacheReadCostPerMillion": 2.0,
+          "cacheCreationCostPerMillion": 0.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "glm-5.2",
       "inputCostPerMillion": 6.0,
       "outputCostPerMillion": 24.0,
       "cacheReadCostPerMillion": 1.3,
