@@ -1,6 +1,6 @@
 {
-  "version": 18,
-  "updatedAt": 1781399889,
+  "version": 19,
+  "updatedAt": 1781507384,
   "currency": "RMB",
   "models": [
     {
@@ -317,6 +317,16 @@
       "inputCostPerMillion": 2.8,
       "outputCostPerMillion": 6.3,
       "cacheReadCostPerMillion": 0.28,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "Kimi-K2.7-Code",
+      "inputCostPerMillion": 6.5,
+      "outputCostPerMillion": 27.0,
+      "cacheReadCostPerMillion": 1.3,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
