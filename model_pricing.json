@@ -1,6 +1,6 @@
 {
-  "version": 22,
-  "updatedAt": 1783425600,
+  "version": 24,
+  "updatedAt": 1783436400,
   "currency": "RMB",
   "models": [
     {
@@ -209,7 +209,12 @@
         }
       ],
       "aliases": [
-        "claude-sonnet-5"
+        "claude-sonnet-5",
+        "claude-sonnet-5-thinking-high",
+        "claude-sonnet-5-thinking-low",
+        "claude-sonnet-5-thinking-medium",
+        "claude-sonnet-5-thinking-extra-high",
+        "claude-sonnet-5-thinking-max"
       ]
     },
     {
@@ -279,6 +284,16 @@
       "inputCostPerMillion": 3.5,
       "outputCostPerMillion": 17.5,
       "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "composer-2.5-fast",
+      "inputCostPerMillion": 21.0,
+      "outputCostPerMillion": 105.0,
+      "cacheReadCostPerMillion": 3.5,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
