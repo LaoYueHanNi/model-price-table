@@ -1,8 +1,18 @@
 {
-  "version": 21,
-  "updatedAt": 1782790056,
+  "version": 22,
+  "updatedAt": 1783425600,
   "currency": "RMB",
   "models": [
+    {
+      "modelId": "auto",
+      "inputCostPerMillion": 8.75,
+      "outputCostPerMillion": 42.0,
+      "cacheReadCostPerMillion": 1.75,
+      "cacheCreationCostPerMillion": 8.75,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
     {
       "modelId": "MiniMax-M2.7",
       "inputCostPerMillion": 2.1,
@@ -180,6 +190,41 @@
       ]
     },
     {
+      "modelId": "Claude-Sonnet-5",
+      "inputCostPerMillion": 21.0,
+      "outputCostPerMillion": 105.0,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 17.5,
+      "contextTiers": [],
+      "timeRules": [
+        {
+          "label": "首发优惠",
+          "startTime": 1783382400,
+          "endTime": 1788134400,
+          "inputCostPerMillion": 14.0,
+          "outputCostPerMillion": 70.0,
+          "cacheReadCostPerMillion": 1.4,
+          "cacheCreationCostPerMillion": 17.5,
+          "contextTiers": []
+        }
+      ],
+      "aliases": [
+        "claude-sonnet-5"
+      ]
+    },
+    {
+      "modelId": "Claude-Fable-5",
+      "inputCostPerMillion": 70.0,
+      "outputCostPerMillion": 350.0,
+      "cacheReadCostPerMillion": 7.0,
+      "cacheCreationCostPerMillion": 87.5,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "claude-fable-5"
+      ]
+    },
+    {
       "modelId": "codestral-2508",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 6.3,
@@ -224,6 +269,16 @@
       "inputCostPerMillion": 17.5,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "composer-2.5",
+      "inputCostPerMillion": 3.5,
+      "outputCostPerMillion": 17.5,
+      "cacheReadCostPerMillion": 1.4,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
