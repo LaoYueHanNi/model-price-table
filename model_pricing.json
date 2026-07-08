@@ -1,6 +1,6 @@
 {
-  "version": 25,
-  "updatedAt": 1783440000,
+  "version": 27,
+  "updatedAt": 1783447200,
   "currency": "RMB",
   "models": [
     {
@@ -745,7 +745,12 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "gpt-5-high",
+        "gpt-5-low",
+        "gpt-5-medium",
+        "gpt-5-minimal"
+      ]
     },
     {
       "modelId": "gpt-5-codex",
@@ -755,37 +760,11 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5-codex-high",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5-codex-low",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5-codex-medium",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "gpt-5-codex-high",
+        "gpt-5-codex-low",
+        "gpt-5-codex-medium"
+      ]
     },
     {
       "modelId": "gpt-5-codex-mini",
@@ -795,73 +774,16 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5-codex-mini-high",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5-codex-mini-medium",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5-high",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5-low",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5-medium",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "gpt-5-codex-mini-high",
+        "gpt-5-codex-mini-medium"
+      ]
     },
     {
       "modelId": "gpt-5-mini",
       "inputCostPerMillion": 1.75,
       "outputCostPerMillion": 14.0,
       "cacheReadCostPerMillion": 0.175,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5-minimal",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
@@ -885,7 +807,12 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "gpt-5.1-high",
+        "gpt-5.1-low",
+        "gpt-5.1-medium",
+        "gpt-5.1-minimal"
+      ]
     },
     {
       "modelId": "gpt-5.1-codex",
@@ -905,70 +832,13 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.1-codex-max-high",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.1-codex-max-xhigh",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "gpt-5.1-codex-max-high",
+        "gpt-5.1-codex-max-xhigh"
+      ]
     },
     {
       "modelId": "gpt-5.1-codex-mini",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.1-high",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.1-low",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.1-medium",
-      "inputCostPerMillion": 8.75,
-      "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 0.875,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.1-minimal",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 0.875,
@@ -985,7 +855,12 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "gpt-5.2-high",
+        "gpt-5.2-low",
+        "gpt-5.2-medium",
+        "gpt-5.2-xhigh"
+      ]
     },
     {
       "modelId": "gpt-5.2-codex",
@@ -995,87 +870,12 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.2-codex-high",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.2-codex-low",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.2-codex-medium",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.2-codex-xhigh",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.2-high",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.2-low",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.2-medium",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.2-xhigh",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "gpt-5.2-codex-high",
+        "gpt-5.2-codex-low",
+        "gpt-5.2-codex-medium",
+        "gpt-5.2-codex-xhigh"
+      ]
     },
     {
       "modelId": "gpt-5.3-codex",
@@ -1085,47 +885,12 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.3-codex-high",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.3-codex-low",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.3-codex-medium",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
-    },
-    {
-      "modelId": "gpt-5.3-codex-xhigh",
-      "inputCostPerMillion": 12.25,
-      "outputCostPerMillion": 98.0,
-      "cacheReadCostPerMillion": 1.225,
-      "cacheCreationCostPerMillion": 0.0,
-      "contextTiers": [],
-      "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "gpt-5.3-codex-high",
+        "gpt-5.3-codex-low",
+        "gpt-5.3-codex-medium",
+        "gpt-5.3-codex-xhigh"
+      ]
     },
     {
       "modelId": "gpt-5.4",
