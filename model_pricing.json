@@ -1,6 +1,6 @@
 {
-  "version": 24,
-  "updatedAt": 1783436400,
+  "version": 25,
+  "updatedAt": 1783440000,
   "currency": "RMB",
   "models": [
     {
@@ -12,6 +12,18 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": []
+    },
+    {
+      "modelId": "agent_review",
+      "inputCostPerMillion": 3.5,
+      "outputCostPerMillion": 17.5,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "no-price-use-composer"
+      ]
     },
     {
       "modelId": "MiniMax-M2.7",
