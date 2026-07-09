@@ -1,6 +1,6 @@
 {
-  "version": 29,
-  "updatedAt": 1783602000,
+  "version": 30,
+  "updatedAt": 1783605600,
   "currency": "RMB",
   "models": [
     {
@@ -705,7 +705,10 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": []
+      "aliases": [
+        "glm-5.2-max",
+        "glm-5.2-high"
+      ]
     },
     {
       "modelId": "gpt-4.1",
