@@ -1,6 +1,6 @@
 {
-  "version": 31,
-  "updatedAt": 1783677600,
+  "version": 32,
+  "updatedAt": 1783683000,
   "currency": "RMB",
   "models": [
     {
@@ -967,6 +967,74 @@
           "cacheCreationCostPerMillion": 0.0
         }
       ],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "inputCostPerMillion": 35.0,
+      "outputCostPerMillion": 210.0,
+      "cacheReadCostPerMillion": 3.5,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 70.0,
+          "outputCostPerMillion": 315.0,
+          "cacheReadCostPerMillion": 7.0,
+          "cacheCreationCostPerMillion": 0.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "gpt-5.6-sol-fast",
+      "inputCostPerMillion": 70.0,
+      "outputCostPerMillion": 420.0,
+      "cacheReadCostPerMillion": 7.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "inputCostPerMillion": 17.5,
+      "outputCostPerMillion": 105.0,
+      "cacheReadCostPerMillion": 1.75,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "gpt-5.6-terra-fast",
+      "inputCostPerMillion": 35.0,
+      "outputCostPerMillion": 210.0,
+      "cacheReadCostPerMillion": 3.5,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "inputCostPerMillion": 7.0,
+      "outputCostPerMillion": 42.0,
+      "cacheReadCostPerMillion": 0.7,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": []
+    },
+    {
+      "modelId": "gpt-5.6-luna-fast",
+      "inputCostPerMillion": 14.0,
+      "outputCostPerMillion": 84.0,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
       "timeRules": [],
       "aliases": []
     },
