@@ -1,6 +1,6 @@
 {
-  "version": 30,
-  "updatedAt": 1783605600,
+  "version": 31,
+  "updatedAt": 1783677600,
   "currency": "RMB",
   "models": [
     {
@@ -1147,6 +1147,18 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": []
+    },
+    {
+      "modelId": "hy3",
+      "inputCostPerMillion": 1.0,
+      "outputCostPerMillion": 4.0,
+      "cacheReadCostPerMillion": 0.25,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "hy3-free"
+      ]
     },
     {
       "modelId": "kimi-k2-0905",
