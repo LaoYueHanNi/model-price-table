@@ -1,6 +1,6 @@
 {
-  "version": 35,
-  "updatedAt": 1783683000,
+  "version": 36,
+  "updatedAt": 1783686600,
   "currency": "RMB",
   "models": [
     {
@@ -173,7 +173,12 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [
-        "claude-opus-4-8"
+        "claude-opus-4-8",
+        "claude-opus-4-8-thinking-high",
+        "claude-opus-4-8-thinking-low",
+        "claude-opus-4-8-thinking-medium",
+        "claude-opus-4-8-thinking-extra-high",
+        "claude-opus-4-8-thinking-max"
       ],
       "family": "claude"
     },
