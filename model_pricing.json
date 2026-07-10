@@ -1,5 +1,5 @@
 {
-  "version": 34,
+  "version": 35,
   "updatedAt": 1783683000,
   "currency": "RMB",
   "models": [
@@ -279,7 +279,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "cursor"
+      "family": "gpt"
     },
     {
       "modelId": "command-a",
@@ -830,7 +830,7 @@
         "gpt-5-codex-low",
         "gpt-5-codex-medium"
       ],
-      "family": "cursor"
+      "family": "gpt"
     },
     {
       "modelId": "gpt-5-codex-mini",
@@ -844,7 +844,7 @@
         "gpt-5-codex-mini-high",
         "gpt-5-codex-mini-medium"
       ],
-      "family": "cursor"
+      "family": "gpt"
     },
     {
       "modelId": "gpt-5-mini",
@@ -893,7 +893,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "cursor"
+      "family": "gpt"
     },
     {
       "modelId": "gpt-5.1-codex-max",
@@ -907,7 +907,7 @@
         "gpt-5.1-codex-max-high",
         "gpt-5.1-codex-max-xhigh"
       ],
-      "family": "cursor"
+      "family": "gpt"
     },
     {
       "modelId": "gpt-5.1-codex-mini",
@@ -918,7 +918,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "cursor"
+      "family": "gpt"
     },
     {
       "modelId": "gpt-5.2",
@@ -950,7 +950,7 @@
         "gpt-5.2-codex-medium",
         "gpt-5.2-codex-xhigh"
       ],
-      "family": "cursor"
+      "family": "gpt"
     },
     {
       "modelId": "gpt-5.3-codex",
@@ -966,7 +966,7 @@
         "gpt-5.3-codex-medium",
         "gpt-5.3-codex-xhigh"
       ],
-      "family": "cursor"
+      "family": "gpt"
     },
     {
       "modelId": "gpt-5.4",
@@ -1876,10 +1876,6 @@
     {
       "id": "gpt",
       "label": "GPT"
-    },
-    {
-      "id": "cursor",
-      "label": "Cursor"
     },
     {
       "id": "glm",
