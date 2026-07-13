@@ -1,6 +1,6 @@
 {
-  "version": 37,
-  "updatedAt": 1783690200,
+  "version": 38,
+  "updatedAt": 1783693800,
   "currency": "RMB",
   "models": [
     {
@@ -1069,7 +1069,11 @@
         }
       ],
       "timeRules": [],
-      "aliases": [],
+      "aliases": [
+        "gpt-5.6-sol-high",
+        "gpt-5.6-sol-medium",
+        "gpt-5.6-sol-low"
+      ],
       "family": "gpt"
     },
     {
@@ -1080,7 +1084,11 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": [],
+      "aliases": [
+        "gpt-5.6-sol-fast-high",
+        "gpt-5.6-sol-fast-medium",
+        "gpt-5.6-sol-fast-low"
+      ],
       "family": "gpt"
     },
     {
@@ -1091,7 +1099,11 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": [],
+      "aliases": [
+        "gpt-5.6-terra-high",
+        "gpt-5.6-terra-medium",
+        "gpt-5.6-terra-low"
+      ],
       "family": "gpt"
     },
     {
@@ -1102,7 +1114,11 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": [],
+      "aliases": [
+        "gpt-5.6-terra-fast-high",
+        "gpt-5.6-terra-fast-medium",
+        "gpt-5.6-terra-fast-low"
+      ],
       "family": "gpt"
     },
     {
@@ -1113,7 +1129,11 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": [],
+      "aliases": [
+        "gpt-5.6-luna-high",
+        "gpt-5.6-luna-medium",
+        "gpt-5.6-luna-low"
+      ],
       "family": "gpt"
     },
     {
@@ -1124,7 +1144,11 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": [],
+      "aliases": [
+        "gpt-5.6-luna-fast-high",
+        "gpt-5.6-luna-fast-medium",
+        "gpt-5.6-luna-fast-low"
+      ],
       "family": "gpt"
     },
     {
