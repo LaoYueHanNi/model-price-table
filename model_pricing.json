@@ -1,6 +1,6 @@
 {
-  "version": 38,
-  "updatedAt": 1783693800,
+  "version": 39,
+  "updatedAt": 1783697400,
   "currency": "RMB",
   "models": [
     {
@@ -1314,6 +1314,7 @@
         "grok-4.5-high",
         "grok-4.5-medium",
         "grok-4.5-low",
+        "grok-4.5-xhigh",
         "cursor-grok-4.5-high",
         "cursor-grok-4.5-medium",
         "cursor-grok-4.5-low"
@@ -1331,7 +1332,8 @@
       "aliases": [
         "grok-4.5-fast-high",
         "grok-4.5-fast-medium",
-        "grok-4.5-fast-low"
+        "grok-4.5-fast-low",
+        "grok-4.5-fast-xhigh"
       ],
       "family": "spacex-ai"
     },
