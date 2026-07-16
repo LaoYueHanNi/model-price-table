@@ -1,6 +1,6 @@
 {
-  "version": 39,
-  "updatedAt": 1783697400,
+  "version": 40,
+  "updatedAt": 1783701000,
   "currency": "RMB",
   "models": [
     {
@@ -1317,7 +1317,8 @@
         "grok-4.5-xhigh",
         "cursor-grok-4.5-high",
         "cursor-grok-4.5-medium",
-        "cursor-grok-4.5-low"
+        "cursor-grok-4.5-low",
+        "cursor-grok-4.5-xhigh"
       ],
       "family": "spacex-ai"
     },
@@ -1333,7 +1334,11 @@
         "grok-4.5-fast-high",
         "grok-4.5-fast-medium",
         "grok-4.5-fast-low",
-        "grok-4.5-fast-xhigh"
+        "grok-4.5-fast-xhigh",
+        "cursor-grok-4.5-fast-high",
+        "cursor-grok-4.5-fast-medium",
+        "cursor-grok-4.5-fast-low",
+        "cursor-grok-4.5-fast-xhigh"
       ],
       "family": "spacex-ai"
     },
