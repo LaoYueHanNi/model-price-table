@@ -1,6 +1,6 @@
 {
-  "version": 41,
-  "updatedAt": 1783704600,
+  "version": 42,
+  "updatedAt": 1783708200,
   "currency": "RMB",
   "models": [
     {
@@ -1415,6 +1415,17 @@
       "inputCostPerMillion": 6.65,
       "outputCostPerMillion": 28.0,
       "cacheReadCostPerMillion": 1.12,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "kimi"
+    },
+    {
+      "modelId": "kimi-k3",
+      "inputCostPerMillion": 20.0,
+      "outputCostPerMillion": 100.0,
+      "cacheReadCostPerMillion": 2.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
