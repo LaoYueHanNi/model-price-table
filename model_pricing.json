@@ -1,6 +1,6 @@
 {
-  "version": 43,
-  "updatedAt": 1783708800,
+  "version": 44,
+  "updatedAt": 1783709400,
   "currency": "RMB",
   "models": [
     {
@@ -179,6 +179,24 @@
         "claude-opus-4-8-thinking-medium",
         "claude-opus-4-8-thinking-extra-high",
         "claude-opus-4-8-thinking-max"
+      ],
+      "family": "claude"
+    },
+    {
+      "modelId": "Claude-Opus-5",
+      "inputCostPerMillion": 35.0,
+      "outputCostPerMillion": 175.0,
+      "cacheReadCostPerMillion": 3.5,
+      "cacheCreationCostPerMillion": 43.75,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "claude-opus-5",
+        "claude-opus-5-thinking-high",
+        "claude-opus-5-thinking-low",
+        "claude-opus-5-thinking-medium",
+        "claude-opus-5-thinking-extra-high",
+        "claude-opus-5-thinking-max"
       ],
       "family": "claude"
     },
