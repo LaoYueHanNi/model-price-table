@@ -1,6 +1,6 @@
 {
-  "version": 44,
-  "updatedAt": 1783709400,
+  "version": 45,
+  "updatedAt": 1783710000,
   "currency": "RMB",
   "models": [
     {
@@ -1333,6 +1333,25 @@
     },
     {
       "modelId": "grok-4.5",
+      "inputCostPerMillion": 14.0,
+      "outputCostPerMillion": 42.0,
+      "cacheReadCostPerMillion": 2.1,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [
+        {
+          "threshold": 200000,
+          "inputCostPerMillion": 28.0,
+          "outputCostPerMillion": 84.0,
+          "cacheReadCostPerMillion": 4.2,
+          "cacheCreationCostPerMillion": 0.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": [],
+      "family": "spacex-ai"
+    },
+    {
+      "modelId": "cursor-grok-4.5",
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 42.0,
       "cacheReadCostPerMillion": 3.5,
