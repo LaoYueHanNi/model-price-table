@@ -1,6 +1,6 @@
 {
-  "version": 42,
-  "updatedAt": 1783708200,
+  "version": 43,
+  "updatedAt": 1783708800,
   "currency": "RMB",
   "models": [
     {
@@ -646,6 +646,17 @@
       "modelId": "gemini-3.5-flash",
       "inputCostPerMillion": 10.5,
       "outputCostPerMillion": 63.0,
+      "cacheReadCostPerMillion": 1.05,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "gemini"
+    },
+    {
+      "modelId": "gemini-3.6-flash",
+      "inputCostPerMillion": 10.5,
+      "outputCostPerMillion": 52.5,
       "cacheReadCostPerMillion": 1.05,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
