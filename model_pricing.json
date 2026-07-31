@@ -1,6 +1,6 @@
 {
-  "version": 46,
-  "updatedAt": 1783710600,
+  "version": 48,
+  "updatedAt": 1785460200,
   "currency": "RMB",
   "models": [
     {
@@ -1087,14 +1087,14 @@
       "inputCostPerMillion": 35.0,
       "outputCostPerMillion": 210.0,
       "cacheReadCostPerMillion": 3.5,
-      "cacheCreationCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 43.75,
       "contextTiers": [
         {
           "threshold": 272000,
           "inputCostPerMillion": 70.0,
           "outputCostPerMillion": 315.0,
           "cacheReadCostPerMillion": 7.0,
-          "cacheCreationCostPerMillion": 0.0
+          "cacheCreationCostPerMillion": 87.5
         }
       ],
       "timeRules": [],
@@ -1122,12 +1122,23 @@
     },
     {
       "modelId": "gpt-5.6-terra",
-      "inputCostPerMillion": 17.5,
-      "outputCostPerMillion": 105.0,
-      "cacheReadCostPerMillion": 1.75,
-      "cacheCreationCostPerMillion": 0.0,
+      "inputCostPerMillion": 14.0,
+      "outputCostPerMillion": 84.0,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 17.5,
       "contextTiers": [],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "原价",
+          "startTime": 0,
+          "endTime": 1785427200,
+          "inputCostPerMillion": 17.5,
+          "outputCostPerMillion": 105.0,
+          "cacheReadCostPerMillion": 1.75,
+          "cacheCreationCostPerMillion": 21.875,
+          "contextTiers": []
+        }
+      ],
       "aliases": [
         "gpt-5.6-terra-high",
         "gpt-5.6-terra-medium",
@@ -1137,12 +1148,23 @@
     },
     {
       "modelId": "gpt-5.6-terra-fast",
-      "inputCostPerMillion": 35.0,
-      "outputCostPerMillion": 210.0,
-      "cacheReadCostPerMillion": 3.5,
-      "cacheCreationCostPerMillion": 0.0,
+      "inputCostPerMillion": 28.0,
+      "outputCostPerMillion": 168.0,
+      "cacheReadCostPerMillion": 2.8,
+      "cacheCreationCostPerMillion": 35.0,
       "contextTiers": [],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "原价",
+          "startTime": 0,
+          "endTime": 1785427200,
+          "inputCostPerMillion": 35.0,
+          "outputCostPerMillion": 210.0,
+          "cacheReadCostPerMillion": 3.5,
+          "cacheCreationCostPerMillion": 43.75,
+          "contextTiers": []
+        }
+      ],
       "aliases": [
         "gpt-5.6-terra-fast-high",
         "gpt-5.6-terra-fast-medium",
@@ -1152,12 +1174,23 @@
     },
     {
       "modelId": "gpt-5.6-luna",
-      "inputCostPerMillion": 7.0,
-      "outputCostPerMillion": 42.0,
-      "cacheReadCostPerMillion": 0.7,
-      "cacheCreationCostPerMillion": 0.0,
+      "inputCostPerMillion": 1.4,
+      "outputCostPerMillion": 8.4,
+      "cacheReadCostPerMillion": 0.14,
+      "cacheCreationCostPerMillion": 1.75,
       "contextTiers": [],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "原价",
+          "startTime": 0,
+          "endTime": 1785427200,
+          "inputCostPerMillion": 7.0,
+          "outputCostPerMillion": 42.0,
+          "cacheReadCostPerMillion": 0.7,
+          "cacheCreationCostPerMillion": 8.75,
+          "contextTiers": []
+        }
+      ],
       "aliases": [
         "gpt-5.6-luna-high",
         "gpt-5.6-luna-medium",
@@ -1167,12 +1200,23 @@
     },
     {
       "modelId": "gpt-5.6-luna-fast",
-      "inputCostPerMillion": 14.0,
-      "outputCostPerMillion": 84.0,
-      "cacheReadCostPerMillion": 1.4,
-      "cacheCreationCostPerMillion": 0.0,
+      "inputCostPerMillion": 2.8,
+      "outputCostPerMillion": 16.8,
+      "cacheReadCostPerMillion": 0.28,
+      "cacheCreationCostPerMillion": 3.5,
       "contextTiers": [],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "原价",
+          "startTime": 0,
+          "endTime": 1785427200,
+          "inputCostPerMillion": 14.0,
+          "outputCostPerMillion": 84.0,
+          "cacheReadCostPerMillion": 1.4,
+          "cacheCreationCostPerMillion": 17.5,
+          "contextTiers": []
+        }
+      ],
       "aliases": [
         "gpt-5.6-luna-fast-high",
         "gpt-5.6-luna-fast-medium",
@@ -1373,7 +1417,7 @@
       "family": "spacex-ai"
     },
     {
-      "modelId": "grok-4.5-fast",
+      "modelId": "cursor-grok-4.5-fast",
       "inputCostPerMillion": 28.0,
       "outputCostPerMillion": 126.0,
       "cacheReadCostPerMillion": 7.0,
@@ -1381,6 +1425,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [
+        "grok-4.5-fast",
         "grok-4.5-fast-high",
         "grok-4.5-fast-medium",
         "grok-4.5-fast-low",
