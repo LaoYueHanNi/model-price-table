@@ -1,6 +1,6 @@
 {
-  "version": 50,
-  "updatedAt": 1785465464,
+  "version": 51,
+  "updatedAt": 1785466160,
   "currency": "RMB",
   "models": [
     {
@@ -523,20 +523,22 @@
     },
     {
       "modelId": "LongCat-2.0",
-      "inputCostPerMillion": 5.0,
-      "outputCostPerMillion": 20.0,
-      "cacheReadCostPerMillion": 0.1,
+      "inputCostPerMillion": 2.0,
+      "outputCostPerMillion": 8.0,
+      "cacheReadCostPerMillion": 0.04,
       "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
       "contextTiers": [],
       "timeRules": [
         {
-          "label": "限时优惠",
-          "startTime": 1782662400,
-          "endTime": 4102415999,
-          "inputCostPerMillion": 2.0,
-          "outputCostPerMillion": 8.0,
-          "cacheReadCostPerMillion": 0.04,
+          "label": "原价",
+          "startTime": 0,
+          "endTime": 1782662399,
+          "inputCostPerMillion": 5.0,
+          "outputCostPerMillion": 20.0,
+          "cacheReadCostPerMillion": 0.1,
           "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [],
           "contextTiers": []
         }
       ],
