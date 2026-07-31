@@ -1,6 +1,6 @@
 {
-  "version": 48,
-  "updatedAt": 1785460200,
+  "version": 49,
+  "updatedAt": 1785464855,
   "currency": "RMB",
   "models": [
     {
@@ -420,8 +420,33 @@
       "outputCostPerMillion": 2.0,
       "cacheReadCostPerMillion": 0.02,
       "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
       "contextTiers": [],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "峰谷定价",
+          "startTime": 1786032000,
+          "endTime": 4102415999,
+          "inputCostPerMillion": 1.0,
+          "outputCostPerMillion": 2.0,
+          "cacheReadCostPerMillion": 0.02,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [
+            {
+              "label": "高峰时段",
+              "windows": [
+                { "startMinute": 540, "endMinute": 720 },
+                { "startMinute": 840, "endMinute": 1080 }
+              ],
+              "inputCostPerMillion": 2.0,
+              "outputCostPerMillion": 4.0,
+              "cacheReadCostPerMillion": 0.04,
+              "cacheCreationCostPerMillion": 0.0
+            }
+          ],
+          "contextTiers": []
+        }
+      ],
       "aliases": [
         "deepseek-v4-flash-free"
       ],
@@ -433,6 +458,7 @@
       "outputCostPerMillion": 6.0,
       "cacheReadCostPerMillion": 0.025,
       "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
       "contextTiers": [],
       "timeRules": [
         {
@@ -443,6 +469,30 @@
           "outputCostPerMillion": 24.0,
           "cacheReadCostPerMillion": 0.1,
           "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [],
+          "contextTiers": []
+        },
+        {
+          "label": "峰谷定价",
+          "startTime": 1786032000,
+          "endTime": 4102415999,
+          "inputCostPerMillion": 3.0,
+          "outputCostPerMillion": 6.0,
+          "cacheReadCostPerMillion": 0.025,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [
+            {
+              "label": "高峰时段",
+              "windows": [
+                { "startMinute": 540, "endMinute": 720 },
+                { "startMinute": 840, "endMinute": 1080 }
+              ],
+              "inputCostPerMillion": 6.0,
+              "outputCostPerMillion": 12.0,
+              "cacheReadCostPerMillion": 0.05,
+              "cacheCreationCostPerMillion": 0.0
+            }
+          ],
           "contextTiers": []
         }
       ],
