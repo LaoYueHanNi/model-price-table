@@ -1,17 +1,20 @@
 {
-  "version": 51,
-  "updatedAt": 1785466160,
+  "version": 52,
+  "updatedAt": 1785493740,
   "currency": "RMB",
   "models": [
     {
-      "modelId": "auto",
+      "modelId": "cursor-auto",
       "inputCostPerMillion": 8.75,
       "outputCostPerMillion": 42.0,
       "cacheReadCostPerMillion": 1.75,
       "cacheCreationCostPerMillion": 8.75,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": [],
+      "aliases": [
+        "auto",
+        "default"
+      ],
       "family": "spacex-ai"
     },
     {
