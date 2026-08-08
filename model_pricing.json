@@ -1,6 +1,6 @@
 {
-  "version": 52,
-  "updatedAt": 1785493740,
+  "version": 53,
+  "updatedAt": 1786156894,
   "currency": "RMB",
   "models": [
     {
@@ -451,7 +451,8 @@
         }
       ],
       "aliases": [
-        "deepseek-v4-flash-free"
+        "deepseek-v4-flash-free",
+        "deepseek-v4-flash-ga-260731"
       ],
       "family": "deepseek"
     },
