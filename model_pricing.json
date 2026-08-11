@@ -1,6 +1,6 @@
 {
-  "version": 53,
-  "updatedAt": 1786156894,
+  "version": 54,
+  "updatedAt": 1786414010,
   "currency": "RMB",
   "models": [
     {
@@ -245,23 +245,12 @@
     },
     {
       "modelId": "Claude-Sonnet-5",
-      "inputCostPerMillion": 21.0,
-      "outputCostPerMillion": 105.0,
+      "inputCostPerMillion": 14.0,
+      "outputCostPerMillion": 70.0,
       "cacheReadCostPerMillion": 1.4,
       "cacheCreationCostPerMillion": 17.5,
       "contextTiers": [],
-      "timeRules": [
-        {
-          "label": "首发优惠",
-          "startTime": 1783382400,
-          "endTime": 1788134400,
-          "inputCostPerMillion": 14.0,
-          "outputCostPerMillion": 70.0,
-          "cacheReadCostPerMillion": 1.4,
-          "cacheCreationCostPerMillion": 17.5,
-          "contextTiers": []
-        }
-      ],
+      "timeRules": [],
       "aliases": [
         "claude-sonnet-5",
         "claude-sonnet-5-thinking-high",
