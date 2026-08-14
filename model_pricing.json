@@ -1,6 +1,6 @@
 {
-  "version": 55,
-  "updatedAt": 1786590210,
+  "version": 56,
+  "updatedAt": 1786620000,
   "currency": "RMB",
   "models": [
     {
@@ -408,9 +408,9 @@
     },
     {
       "modelId": "deepseek-v4-flash",
-      "inputCostPerMillion": 1.0,
-      "outputCostPerMillion": 2.0,
-      "cacheReadCostPerMillion": 0.02,
+      "inputCostPerMillion": 1.5,
+      "outputCostPerMillion": 4.5,
+      "cacheReadCostPerMillion": 0.05,
       "cacheCreationCostPerMillion": 0.0,
       "dailySlots": [
         {
@@ -419,18 +419,18 @@
             { "startMinute": 540, "endMinute": 720 },
             { "startMinute": 840, "endMinute": 1080 }
           ],
-          "inputCostPerMillion": 2.0,
-          "outputCostPerMillion": 4.0,
-          "cacheReadCostPerMillion": 0.04,
+          "inputCostPerMillion": 3.0,
+          "outputCostPerMillion": 9.0,
+          "cacheReadCostPerMillion": 0.10,
           "cacheCreationCostPerMillion": 0.0
         }
       ],
       "contextTiers": [],
       "timeRules": [
         {
-          "label": "统一计价",
+          "label": "原价",
           "startTime": 0,
-          "endTime": 1786636799,
+          "endTime": 1786895999,
           "inputCostPerMillion": 1.0,
           "outputCostPerMillion": 2.0,
           "cacheReadCostPerMillion": 0.02,
@@ -447,9 +447,9 @@
     },
     {
       "modelId": "deepseek-v4-pro",
-      "inputCostPerMillion": 3.0,
-      "outputCostPerMillion": 6.0,
-      "cacheReadCostPerMillion": 0.025,
+      "inputCostPerMillion": 4.5,
+      "outputCostPerMillion": 13.5,
+      "cacheReadCostPerMillion": 0.15,
       "cacheCreationCostPerMillion": 0.0,
       "dailySlots": [
         {
@@ -458,9 +458,9 @@
             { "startMinute": 540, "endMinute": 720 },
             { "startMinute": 840, "endMinute": 1080 }
           ],
-          "inputCostPerMillion": 6.0,
-          "outputCostPerMillion": 12.0,
-          "cacheReadCostPerMillion": 0.05,
+          "inputCostPerMillion": 9.0,
+          "outputCostPerMillion": 27.0,
+          "cacheReadCostPerMillion": 0.30,
           "cacheCreationCostPerMillion": 0.0
         }
       ],
@@ -478,9 +478,9 @@
           "contextTiers": []
         },
         {
-          "label": "无峰谷价格",
+          "label": "第一次长期降价",
           "startTime": 1777046401,
-          "endTime": 1786636799,
+          "endTime": 1786895999,
           "inputCostPerMillion": 3.0,
           "outputCostPerMillion": 6.0,
           "cacheReadCostPerMillion": 0.025,
