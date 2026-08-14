@@ -1,6 +1,6 @@
 {
-  "version": 56,
-  "updatedAt": 1786620000,
+  "version": 57,
+  "updatedAt": 1786688903,
   "currency": "RMB",
   "models": [
     {
@@ -845,6 +845,18 @@
         "glm-5.2-max",
         "glm-5.2-high"
       ],
+      "family": "glm"
+    },
+    {
+      "modelId": "glm-5.3",
+      "inputCostPerMillion": 8.0,
+      "outputCostPerMillion": 28.0,
+      "cacheReadCostPerMillion": 2.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
       "family": "glm"
     },
     {
