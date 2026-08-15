@@ -1,6 +1,6 @@
 {
-  "version": 57,
-  "updatedAt": 1786688903,
+  "version": 59,
+  "updatedAt": 1786774759,
   "currency": "RMB",
   "models": [
     {
@@ -724,6 +724,29 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
+      "aliases": [],
+      "family": "gemini"
+    },
+    {
+      "modelId": "gemini-3.7-flash",
+      "inputCostPerMillion": 10.5,
+      "outputCostPerMillion": 52.5,
+      "cacheReadCostPerMillion": 1.05,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [
+        {
+          "label": "限时优惠价",
+          "startTime": 0,
+          "endTime": 1798790399,
+          "inputCostPerMillion": 5.25,
+          "outputCostPerMillion": 26.25,
+          "cacheReadCostPerMillion": 0.525,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [],
+          "contextTiers": []
+        }
+      ],
       "aliases": [],
       "family": "gemini"
     },
@@ -1692,6 +1715,17 @@
       "family": "other"
     },
     {
+      "modelId": "muse-spark-1.2",
+      "inputCostPerMillion": 8.75,
+      "outputCostPerMillion": 29.75,
+      "cacheReadCostPerMillion": 1.05,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "meta"
+    },
+    {
       "modelId": "MiniMax-M2",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 8.4,
@@ -1996,6 +2030,17 @@
       "family": "qwen"
     },
     {
+      "modelId": "qwen3.8-max",
+      "inputCostPerMillion": 12.0,
+      "outputCostPerMillion": 36.0,
+      "cacheReadCostPerMillion": 1.5,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "qwen"
+    },
+    {
       "modelId": "qwen3.7-plus",
       "inputCostPerMillion": 2.0,
       "outputCostPerMillion": 8.0,
@@ -2122,6 +2167,10 @@
     {
       "id": "step",
       "label": "Step"
+    },
+    {
+      "id": "meta",
+      "label": "Meta"
     },
     {
       "id": "other",
