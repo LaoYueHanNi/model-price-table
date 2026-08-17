@@ -1,6 +1,6 @@
 {
-  "version": 59,
-  "updatedAt": 1786774759,
+  "version": 60,
+  "updatedAt": 1786953757,
   "currency": "RMB",
   "models": [
     {
@@ -1514,6 +1514,48 @@
         "cursor-grok-4.5-medium-fast",
         "cursor-grok-4.5-low-fast",
         "cursor-grok-4.5-xhigh-fast"
+      ],
+      "family": "spacex-ai"
+    },
+    {
+      "modelId": "grok-4.6",
+      "inputCostPerMillion": 14.0,
+      "outputCostPerMillion": 42.0,
+      "cacheReadCostPerMillion": 3.5,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "grok-4.6-high",
+        "grok-4.6-medium",
+        "grok-4.6-low",
+        "grok-4.6-xhigh",
+        "cursor-grok-4.6",
+        "cursor-grok-4.6-high",
+        "cursor-grok-4.6-medium",
+        "cursor-grok-4.6-low",
+        "cursor-grok-4.6-xhigh"
+      ],
+      "family": "spacex-ai"
+    },
+    {
+      "modelId": "grok-4.6-fast",
+      "inputCostPerMillion": 28.0,
+      "outputCostPerMillion": 126.0,
+      "cacheReadCostPerMillion": 7.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "grok-4.6-fast-high",
+        "grok-4.6-fast-medium",
+        "grok-4.6-fast-low",
+        "grok-4.6-fast-xhigh",
+        "cursor-grok-4.6-fast",
+        "cursor-grok-4.6-high-fast",
+        "cursor-grok-4.6-medium-fast",
+        "cursor-grok-4.6-low-fast",
+        "cursor-grok-4.6-xhigh-fast"
       ],
       "family": "spacex-ai"
     },
