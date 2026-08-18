@@ -1,6 +1,6 @@
 {
-  "version": 60,
-  "updatedAt": 1786953757,
+  "version": 61,
+  "updatedAt": 1787020750,
   "currency": "RMB",
   "models": [
     {
@@ -747,7 +747,11 @@
           "contextTiers": []
         }
       ],
-      "aliases": [],
+      "aliases": [
+        "gemini-3.7-flash-high",
+        "gemini-3.7-flash-low",
+        "gemini-3.7-flash-medium"
+      ],
       "family": "gemini"
     },
     {
