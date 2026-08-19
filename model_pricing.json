@@ -1,7 +1,8 @@
 {
-  "version": 61,
-  "updatedAt": 1787020750,
+  "version": 62,
+  "updatedAt": 1787102902,
   "currency": "RMB",
+  "usdExchangeRate": 7,
   "models": [
     {
       "modelId": "cursor-auto",

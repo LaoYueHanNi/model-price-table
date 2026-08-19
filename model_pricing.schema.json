@@ -1,0 +1,192 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$comment": "Structural schema for model_pricing.json. Constraints that JSON Schema CANNOT express here and must be enforced by the consumer: (1) startMinute < endMinute in every window; (2) windows within one pricing node must not overlap and must not cross midnight; (3) a dailySlots node must not nest contextTiers; (4) date ranges of multiple timeRules in the same model must not overlap; (5) a matched tier uses only its own dailySlots (never the root peak price); (6) contextTier selection = largest threshold <= contextSize with contextSize = input + cacheRead.",
+  "title": "model_pricing.json schema",
+  "description": "LLM model pricing table. Currency RMB; unit price per million tokens. See README.md for the full specification.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "updatedAt", "currency", "models"],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version number; bump on every change. Consumers use it to detect changes."
+    },
+    "updatedAt": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Unix time in seconds of the last change."
+    },
+    "currency": {
+      "const": "RMB",
+      "description": "Always RMB."
+    },
+    "usdExchangeRate": {
+      "type": "number",
+      "minimum": 0,
+      "default": 7,
+      "description": "USD exchange rate (RMB per 1 USD), used for USD-denominated pricing, e.g. usd_price = rmb_price / usdExchangeRate. Default 7; update as needed."
+    },
+    "families": {
+      "type": "array",
+      "description": "Optional model-family filter list.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "label": { "type": "string" }
+        }
+      }
+    },
+    "models": {
+      "type": "array",
+      "description": "Array of model pricing entries.",
+      "items": { "$ref": "#/definitions/model" }
+    }
+  },
+  "definitions": {
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "modelId",
+        "inputCostPerMillion",
+        "outputCostPerMillion",
+        "cacheReadCostPerMillion",
+        "cacheCreationCostPerMillion"
+      ],
+      "properties": {
+        "modelId": { "type": "string", "minLength": 1 },
+        "inputCostPerMillion": { "type": "number", "minimum": 0 },
+        "outputCostPerMillion": { "type": "number", "minimum": 0 },
+        "cacheReadCostPerMillion": { "type": "number", "minimum": 0 },
+        "cacheCreationCostPerMillion": { "type": "number", "minimum": 0 },
+        "contextTiers": {
+          "type": "array",
+          "description": "Context tiers; pick the largest threshold <= contextSize.",
+          "items": { "$ref": "#/definitions/contextTier" }
+        },
+        "timeRules": {
+          "type": "array",
+          "description": "Time ranges (absolute Unix dates). Ranges within one model must not overlap.",
+          "items": { "$ref": "#/definitions/timeRule" }
+        },
+        "dailySlots": {
+          "type": "array",
+          "description": "Peak/off-peak override for the model root. Empty array = all-day off-peak.", 
+          "items": { "$ref": "#/definitions/dailySlot" }
+        },
+        "aliases": {
+          "type": "array",
+          "description": "Alternative model/API names sharing the same pricing.",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "family": { "type": "string", "minLength": 1 }
+      }
+    },
+    "contextTier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "threshold",
+        "inputCostPerMillion",
+        "outputCostPerMillion",
+        "cacheReadCostPerMillion",
+        "cacheCreationCostPerMillion"
+      ],
+      "properties": {
+        "threshold": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Context boundary in tokens; contextSize = input + cacheRead."
+        },
+        "inputCostPerMillion": { "type": "number", "minimum": 0 },
+        "outputCostPerMillion": { "type": "number", "minimum": 0 },
+        "cacheReadCostPerMillion": { "type": "number", "minimum": 0 },
+        "cacheCreationCostPerMillion": { "type": "number", "minimum": 0 },
+        "dailySlots": {
+          "type": "array",
+          "description": "This tier's peak/off-peak override.",
+          "items": { "$ref": "#/definitions/dailySlot" }
+        }
+      }
+    },
+    "timeRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "startTime",
+        "endTime",
+        "inputCostPerMillion",
+        "outputCostPerMillion",
+        "cacheReadCostPerMillion",
+        "cacheCreationCostPerMillion"
+      ],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "startTime": { "type": "integer", "minimum": 0, "description": "Unix seconds, closed interval." },
+        "endTime": { "type": "integer", "minimum": 0, "description": "Unix seconds, closed interval." },
+        "inputCostPerMillion": { "type": "number", "minimum": 0 },
+        "outputCostPerMillion": { "type": "number", "minimum": 0 },
+        "cacheReadCostPerMillion": { "type": "number", "minimum": 0 },
+        "cacheCreationCostPerMillion": { "type": "number", "minimum": 0 },
+        "dailySlots": {
+          "type": "array",
+          "description": "Rule-root peak/off-peak override.",
+          "items": { "$ref": "#/definitions/dailySlot" }
+        },
+        "contextTiers": {
+          "type": "array",
+          "description": "Context tiers scoped to this rule; each tier may also carry dailySlots.",
+          "items": { "$ref": "#/definitions/contextTier" }
+        }
+      }
+    },
+    "dailySlot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "windows",
+        "inputCostPerMillion",
+        "outputCostPerMillion",
+        "cacheReadCostPerMillion",
+        "cacheCreationCostPerMillion"
+      ],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "windows": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/window" }
+        },
+        "inputCostPerMillion": { "type": "number", "minimum": 0 },
+        "outputCostPerMillion": { "type": "number", "minimum": 0 },
+        "cacheReadCostPerMillion": { "type": "number", "minimum": 0 },
+        "cacheCreationCostPerMillion": { "type": "number", "minimum": 0 }
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["startMinute", "endMinute"],
+      "properties": {
+        "startMinute": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1440,
+          "description": "Minute of day, half-open interval [start, end); start must be < end (checked by consumer)."
+        },
+        "endMinute": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1440,
+          "description": "Minute of day, half-open interval [start, end); a window may not cross midnight (checked by consumer)."
+        }
+      }
+    }
+  }
+}

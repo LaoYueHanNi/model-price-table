@@ -1,36 +1,50 @@
-# model_pricing.json 编写说明
+English | [简体中文](README_zh.md)
 
-本仓库维护 CC-Switch Analyzer 使用的云端定价表 [`model_pricing.json`](./model_pricing.json)。
+# model_pricing.json Specification
 
-货币单位：**RMB**；单价单位：**每百万 token**。
+LLM model pricing table [`model_pricing.json`](./model_pricing.json).
 
-## 顶层结构
+Currency: **RMB**; unit price: **per million tokens**.
+
+## Top-Level Structure
 
 ```json
 {
   "version": 48,
   "updatedAt": 1785460200,
   "currency": "RMB",
+  "usdExchangeRate": 7,
   "families": [{ "id": "gpt", "label": "GPT" }],
   "models": [ /* ... */ ]
 }
 ```
 
-| 字段 | 说明 |
+| Field | Description |
 |------|------|
-| `version` | 版本号，变更后分析器会刷新本地缓存 |
-| `updatedAt` | Unix 秒 |
-| `currency` | 固定 `RMB` |
-| `families` | 可选，模型家族筛选列表 |
-| `models` | 模型定价数组 |
+| `version` | Version number; bump it after every rule change and update `updatedAt` accordingly |
+| `updatedAt` | Unix seconds |
+| `currency` | Always `RMB` |
+| `usdExchangeRate` | USD exchange rate (RMB per 1 USD); used to derive USD-denominated prices. Default `7` |
+| `families` | Optional; model-family filter list |
+| `models` | Array of model pricing entries |
 
-## 模型节点
+### USD-Denominated Pricing
 
-必填：`modelId` + 四维单价。
+All unit prices are in RMB per million tokens. `usdExchangeRate` is the USD exchange rate (RMB per 1 USD) used to express the same prices in US dollars:
 
-建议始终写出（无则空数组 / 空字符串）：
+```
+usd_price = rmb_price / usdExchangeRate
+```
 
-- `contextTiers`、`timeRules`、`dailySlots`、`aliases`、`family`
+It defaults to `7`; update the value yourself whenever the rate changes. The conversion applies identically to all four cost dimensions (input, output, cache read, cache creation).
+
+## Model Node
+
+Required: `modelId` + the four-dimension unit price.
+
+Recommended to always include (empty array / empty string when absent):
+
+- `contextTiers`, `timeRules`, `dailySlots`, `aliases`, `family`
 
 ```json
 {
@@ -47,49 +61,49 @@
 }
 ```
 
-**缺省兼容**：分析器对未写的 `dailySlots` / `contextTiers` / `timeRules` 按 `[]` 处理，旧表不写 `dailySlots` 也能拉取。
+**Defaults**: omitted `dailySlots` / `contextTiers` / `timeRules` are treated as `[]`.
 
-## 三层定价（互斥命中，唯一单价）
+## Three-Layer Pricing (Mutually Exclusive Hit, Single Price)
 
 ```
-1. 容器：命中 timeRules（绝对日期）→ 否则模型根
-2. 节点：在容器内 resolveTier(contextTiers) → 否则容器根价
-3. 峰谷：在已选节点上匹配 dailySlots → 否则该节点谷价
+1. Container: match timeRules (absolute dates) → otherwise the model root
+2. Node: within the container, resolveTier(contextTiers) → otherwise the container root price
+3. Peak/off-peak: on the chosen node, match dailySlots → otherwise the node's off-peak price
 ```
 
-- 节点自身四维单价 = **谷价 / 其他时间**
-- `dailySlots` = 该节点的峰时覆盖，**禁止**再嵌套 `contextTiers`
-- 命中档位后只用该档的 `dailySlots`，不借用根峰价
+- A node's own four-dimension unit price is its **off-peak / other-time** price
+- `dailySlots` is the node's peak-time override and **must not** nest `contextTiers`
+- Once a tier matches, only that tier's `dailySlots` apply; the root's peak price is not borrowed
 
-## 时间区间 `timeRules[]`
+## Time Ranges `timeRules[]`
 
-| 字段 | 说明 |
+| Field | Description |
 |------|------|
-| `label` | 展示名 |
-| `startTime` / `endTime` | Unix 秒，闭区间 |
-| 四维单价 | 该规则根谷价 |
-| `dailySlots` | 可选，规则根峰谷 |
-| `contextTiers` | 可选，规则内上下文档位（每档也可挂 `dailySlots`） |
+| `label` | Display name |
+| `startTime` / `endTime` | Unix seconds, closed interval |
+| Four-dimension unit price | Root off-peak price of this rule |
+| `dailySlots` | Optional; rule-root peak/off-peak |
+| `contextTiers` | Optional; context tiers inside the rule (each tier may also carry `dailySlots`) |
 
-同模型内多条 `timeRules` 的日期区间**不得重叠**。
+Date ranges of multiple `timeRules` within the same model **must not overlap**.
 
-## 上下文区间 `contextTiers[]`
+## Context Tiers `contextTiers[]`
 
-| 字段 | 说明 |
+| Field | Description |
 |------|------|
-| `threshold` | 上下文边界（tokens），`contextSize = input + cacheRead` |
-| 四维单价 | 该档谷价 |
-| `dailySlots` | 可选，该档峰谷 |
+| `threshold` | Context boundary (tokens); `contextSize = input + cacheRead` |
+| Four-dimension unit price | Off-peak price of this tier |
+| `dailySlots` | Optional; this tier's peak/off-peak |
 
-选档规则：`threshold <= contextSize` 的最大档。
+Selection rule: the largest tier with `threshold <= contextSize`.
 
-## 峰谷 `dailySlots[]`
+## Peak/Off-Peak Slots `dailySlots[]`
 
-挂在：**模型根** / **任一 contextTier** / **任一 timeRule 根**。
+Attached to: **model root** / **any contextTier** / **any timeRule root**.
 
 ```json
 {
-  "label": "峰时",
+  "label": "Peak",
   "windows": [
     { "startMinute": 480, "endMinute": 720 },
     { "startMinute": 840, "endMinute": 1080 }
@@ -101,22 +115,22 @@
 }
 ```
 
-| 字段 | 说明 |
+| Field | Description |
 |------|------|
-| `windows[].startMinute` / `endMinute` | 当天分钟 `0..1440`，半开区间 `[start, end)` |
-| 四维单价 | 峰时价 |
+| `windows[].startMinute` / `endMinute` | Minute of day `0..1440`, half-open interval `[start, end)` |
+| Four-dimension unit price | Peak-time price |
 
-约束：
+Constraints:
 
-- 同一价格节点内 windows **不得重叠**
-- 不支持单窗口跨午夜（拆成两段，如 `22:00-24:00` + `00:00-02:00`）
-- 空数组 = 该节点全天谷价
+- `windows` within the same pricing node **must not overlap**
+- A single window may not cross midnight (split it in two, e.g. `22:00-24:00` + `00:00-02:00`)
+- Empty array = all-day off-peak for that node
 
-分钟换算：`08:00 → 480`，`12:00 → 720`，`14:00 → 840`，`18:00 → 1080`。
+Minute conversion: `08:00 → 480`, `12:00 → 720`, `14:00 → 840`, `18:00 → 1080`.
 
-## 最全示例（时间 + 上下文 + 峰谷）
+## Full Example (Time + Context + Peak/Off-Peak)
 
-见分析器方案或下方精简结构：
+A condensed example:
 
 ```json
 {
@@ -157,9 +171,9 @@
 }
 ```
 
-## 编写建议
+## Authoring Suggestions
 
-1. 新模型写全字段（含空 `dailySlots: []`），便于 diff 与审阅
-2. 存量模型可不补 `dailySlots`，分析器按缺省空数组处理
-3. 需要长期峰谷时，用长区间 `timeRules`（如 `startTime: 0`）承载，不必只靠模型根
-4. 修改后递增 `version` 与 `updatedAt`
+1. Write all fields for new models (including an empty `dailySlots: []`) for easier diffing and review
+2. Existing models may omit `dailySlots`; it defaults to an empty array
+3. For long-term peak/off-peak pricing, use a long-range `timeRules` (e.g. `startTime: 0`) instead of relying only on the model root
+4. Bump `version` and update `updatedAt` after changes
