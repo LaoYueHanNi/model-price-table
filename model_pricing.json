@@ -1,6 +1,6 @@
 {
-  "version": 62,
-  "updatedAt": 1787102902,
+  "version": 63,
+  "updatedAt": 1787403195,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1947,6 +1947,18 @@
       "timeRules": [],
       "aliases": [],
       "family": "gpt"
+    },
+    {
+      "modelId": "ox-alpha-free",
+      "inputCostPerMillion": 0.0,
+      "outputCostPerMillion": 0.0,
+      "cacheReadCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "other"
     },
     {
       "modelId": "qwen3-235b-a22b",
