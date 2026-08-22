@@ -1,6 +1,6 @@
 {
-  "version": 63,
-  "updatedAt": 1787403195,
+  "version": 64,
+  "updatedAt": 1787400009,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1949,7 +1949,7 @@
       "family": "gpt"
     },
     {
-      "modelId": "ox-alpha-free",
+      "modelId": "ox-alpha",
       "inputCostPerMillion": 0.0,
       "outputCostPerMillion": 0.0,
       "cacheReadCostPerMillion": 0.0,
@@ -1957,7 +1957,7 @@
       "dailySlots": [],
       "contextTiers": [],
       "timeRules": [],
-      "aliases": [],
+      "aliases": ["ox-alpha-free"],
       "family": "other"
     },
     {
