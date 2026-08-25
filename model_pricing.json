@@ -1,6 +1,6 @@
 {
-  "version": 64,
-  "updatedAt": 1787400009,
+  "version": 68,
+  "updatedAt": 1787644000,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1182,7 +1182,27 @@
           "cacheCreationCostPerMillion": 87.5
         }
       ],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "限时优惠价",
+          "startTime": 1787328000,
+          "endTime": 1795103999,
+          "inputCostPerMillion": 28.0,
+          "outputCostPerMillion": 140.0,
+          "cacheReadCostPerMillion": 2.8,
+          "cacheCreationCostPerMillion": 35.0,
+          "dailySlots": [],
+          "contextTiers": [
+            {
+              "threshold": 272000,
+              "inputCostPerMillion": 56.0,
+              "outputCostPerMillion": 210.0,
+              "cacheReadCostPerMillion": 5.6,
+              "cacheCreationCostPerMillion": 70.0
+            }
+          ]
+        }
+      ],
       "aliases": [
         "gpt-5.6-sol-high",
         "gpt-5.6-sol-medium",
@@ -1197,7 +1217,19 @@
       "cacheReadCostPerMillion": 7.0,
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "限时优惠价",
+          "startTime": 1787328000,
+          "endTime": 1795103999,
+          "inputCostPerMillion": 56.0,
+          "outputCostPerMillion": 280.0,
+          "cacheReadCostPerMillion": 5.6,
+          "cacheCreationCostPerMillion": 70.0,
+          "dailySlots": [],
+          "contextTiers": []
+        }
+      ],
       "aliases": [
         "gpt-5.6-sol-fast-high",
         "gpt-5.6-sol-fast-medium",
