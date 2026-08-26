@@ -1,6 +1,6 @@
 {
-  "version": 68,
-  "updatedAt": 1787644000,
+  "version": 69,
+  "updatedAt": 1787755128,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -884,6 +884,30 @@
       "dailySlots": [],
       "contextTiers": [],
       "timeRules": [],
+      "aliases": [],
+      "family": "glm"
+    },
+    {
+      "modelId": "glm-5.3-flash",
+      "inputCostPerMillion": 0.8,
+      "outputCostPerMillion": 2.8,
+      "cacheReadCostPerMillion": 0.23,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [
+        {
+          "label": "限时5折",
+          "startTime": 1787760000,
+          "endTime": 1788969599,
+          "inputCostPerMillion": 0.4,
+          "outputCostPerMillion": 1.4,
+          "cacheReadCostPerMillion": 0.115,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [],
+          "contextTiers": []
+        }
+      ],
       "aliases": [],
       "family": "glm"
     },
