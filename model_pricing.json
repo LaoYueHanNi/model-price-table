@@ -1,6 +1,6 @@
 {
-  "version": 69,
-  "updatedAt": 1787755128,
+  "version": 70,
+  "updatedAt": 1787899509,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1642,7 +1642,44 @@
       "aliases": [
         "hy3-free"
       ],
-      "family": "other"
+      "family": "tencent"
+    },
+    {
+      "modelId": "hy3-preview",
+      "inputCostPerMillion": 1.2,
+      "outputCostPerMillion": 4.0,
+      "cacheReadCostPerMillion": 0.4,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [
+        {
+          "threshold": 16000,
+          "inputCostPerMillion": 1.6,
+          "outputCostPerMillion": 6.4,
+          "cacheReadCostPerMillion": 0.6,
+          "cacheCreationCostPerMillion": 0.0
+        },
+        {
+          "threshold": 32000,
+          "inputCostPerMillion": 2.0,
+          "outputCostPerMillion": 8.0,
+          "cacheReadCostPerMillion": 0.8,
+          "cacheCreationCostPerMillion": 0.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": [],
+      "family": "tencent"
+    },
+    {
+      "modelId": "hy4",
+      "inputCostPerMillion": 6.0,
+      "outputCostPerMillion": 18.0,
+      "cacheReadCostPerMillion": 0.3,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "tencent"
     },
     {
       "modelId": "kimi-k2-0905",
@@ -2286,6 +2323,10 @@
     {
       "id": "meta",
       "label": "Meta"
+    },
+    {
+      "id": "tencent",
+      "label": "腾讯"
     },
     {
       "id": "other",
