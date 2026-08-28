@@ -1,6 +1,6 @@
 {
-  "version": 70,
-  "updatedAt": 1787936157,
+  "version": 71,
+  "updatedAt": 1787936746,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2233,7 +2233,7 @@
       "inputCostPerMillion": 0.8,
       "outputCostPerMillion": 2.7,
       "cacheReadCostPerMillion": 0.1,
-      "cacheCreationCostPerMillion": 1.25,
+      "cacheCreationCostPerMillion": 0.0,
       "dailySlots": [],
       "contextTiers": [],
       "timeRules": [],
