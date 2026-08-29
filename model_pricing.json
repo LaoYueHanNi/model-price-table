@@ -1,6 +1,6 @@
 {
-  "version": 71,
-  "updatedAt": 1787936746,
+  "version": 72,
+  "updatedAt": 1787996733,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -415,7 +415,7 @@
       "cacheCreationCostPerMillion": 0.0,
       "dailySlots": [
         {
-          "label": "高峰时段",
+          "label": "工作日高峰时段",
           "windows": [
             { "startMinute": 540, "endMinute": 720 },
             { "startMinute": 840, "endMinute": 1080 }
@@ -423,7 +423,8 @@
           "inputCostPerMillion": 3.0,
           "outputCostPerMillion": 9.0,
           "cacheReadCostPerMillion": 0.10,
-          "cacheCreationCostPerMillion": 0.0
+          "cacheCreationCostPerMillion": 0.0,
+          "daysOfWeek": [1, 2, 3, 4, 5]
         }
       ],
       "contextTiers": [],
@@ -437,6 +438,29 @@
           "cacheReadCostPerMillion": 0.02,
           "cacheCreationCostPerMillion": 0.0,
           "dailySlots": [],
+          "contextTiers": []
+        },
+        {
+          "label": "每日峰谷期",
+          "startTime": 1786896000,
+          "endTime": 1787414399,
+          "inputCostPerMillion": 1.5,
+          "outputCostPerMillion": 4.5,
+          "cacheReadCostPerMillion": 0.05,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [
+            {
+              "label": "每日高峰时段",
+              "windows": [
+                { "startMinute": 540, "endMinute": 720 },
+                { "startMinute": 840, "endMinute": 1080 }
+              ],
+              "inputCostPerMillion": 3.0,
+              "outputCostPerMillion": 9.0,
+              "cacheReadCostPerMillion": 0.10,
+              "cacheCreationCostPerMillion": 0.0
+            }
+          ],
           "contextTiers": []
         }
       ],
@@ -454,7 +478,7 @@
       "cacheCreationCostPerMillion": 0.0,
       "dailySlots": [
         {
-          "label": "高峰时段",
+          "label": "工作日高峰时段",
           "windows": [
             { "startMinute": 540, "endMinute": 720 },
             { "startMinute": 840, "endMinute": 1080 }
@@ -462,11 +486,36 @@
           "inputCostPerMillion": 3.0,
           "outputCostPerMillion": 9.0,
           "cacheReadCostPerMillion": 0.10,
-          "cacheCreationCostPerMillion": 0.0
+          "cacheCreationCostPerMillion": 0.0,
+          "daysOfWeek": [1, 2, 3, 4, 5]
         }
       ],
       "contextTiers": [],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "每日峰谷期",
+          "startTime": 1786896000,
+          "endTime": 1787414399,
+          "inputCostPerMillion": 1.5,
+          "outputCostPerMillion": 4.5,
+          "cacheReadCostPerMillion": 0.05,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [
+            {
+              "label": "每日高峰时段",
+              "windows": [
+                { "startMinute": 540, "endMinute": 720 },
+                { "startMinute": 840, "endMinute": 1080 }
+              ],
+              "inputCostPerMillion": 3.0,
+              "outputCostPerMillion": 9.0,
+              "cacheReadCostPerMillion": 0.10,
+              "cacheCreationCostPerMillion": 0.0
+            }
+          ],
+          "contextTiers": []
+        }
+      ],
       "aliases": [],
       "family": "deepseek"
     },
@@ -478,7 +527,7 @@
       "cacheCreationCostPerMillion": 0.0,
       "dailySlots": [
         {
-          "label": "高峰时段",
+          "label": "工作日高峰时段",
           "windows": [
             { "startMinute": 540, "endMinute": 720 },
             { "startMinute": 840, "endMinute": 1080 }
@@ -486,7 +535,8 @@
           "inputCostPerMillion": 9.0,
           "outputCostPerMillion": 27.0,
           "cacheReadCostPerMillion": 0.30,
-          "cacheCreationCostPerMillion": 0.0
+          "cacheCreationCostPerMillion": 0.0,
+          "daysOfWeek": [1, 2, 3, 4, 5]
         }
       ],
       "contextTiers": [],
@@ -511,6 +561,29 @@
           "cacheReadCostPerMillion": 0.025,
           "cacheCreationCostPerMillion": 0.0,
           "dailySlots": [],
+          "contextTiers": []
+        },
+        {
+          "label": "每日峰谷期",
+          "startTime": 1786896000,
+          "endTime": 1787414399,
+          "inputCostPerMillion": 4.5,
+          "outputCostPerMillion": 13.5,
+          "cacheReadCostPerMillion": 0.15,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [
+            {
+              "label": "每日高峰时段",
+              "windows": [
+                { "startMinute": 540, "endMinute": 720 },
+                { "startMinute": 840, "endMinute": 1080 }
+              ],
+              "inputCostPerMillion": 9.0,
+              "outputCostPerMillion": 27.0,
+              "cacheReadCostPerMillion": 0.30,
+              "cacheCreationCostPerMillion": 0.0
+            }
+          ],
           "contextTiers": []
         }
       ],

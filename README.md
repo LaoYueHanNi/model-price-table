@@ -108,6 +108,7 @@ Attached to: **model root** / **any contextTier** / **any timeRule root**.
     { "startMinute": 480, "endMinute": 720 },
     { "startMinute": 840, "endMinute": 1080 }
   ],
+  "daysOfWeek": [1, 2, 3, 4, 5],
   "inputCostPerMillion": 20.0,
   "outputCostPerMillion": 120.0,
   "cacheReadCostPerMillion": 2.0,
@@ -118,12 +119,14 @@ Attached to: **model root** / **any contextTier** / **any timeRule root**.
 | Field | Description |
 |------|------|
 | `windows[].startMinute` / `endMinute` | Minute of day `0..1440`, half-open interval `[start, end)` |
+| `daysOfWeek` | Optional; ISO weekdays `1`=Monday … `7`=Sunday this slot applies to; omit = every day |
 | Four-dimension unit price | Peak-time price |
 
 Constraints:
 
-- `windows` within the same pricing node **must not overlap**
+- `windows` of slots whose `daysOfWeek` intersect within the same pricing node **must not overlap**
 - A single window may not cross midnight (split it in two, e.g. `22:00-24:00` + `00:00-02:00`)
+- A slot without `daysOfWeek` applies to every day; the weekday uses the same clock as `windows`
 - Empty array = all-day off-peak for that node
 
 Minute conversion: `08:00 → 480`, `12:00 → 720`, `14:00 → 840`, `18:00 → 1080`.
@@ -139,7 +142,7 @@ A condensed example:
   "outputCostPerMillion": 84.0,
   "cacheReadCostPerMillion": 1.4,
   "cacheCreationCostPerMillion": 17.5,
-  "dailySlots": [{ "label": "模型根-峰时", "windows": [{ "startMinute": 480, "endMinute": 720 }], "inputCostPerMillion": 16.0, "outputCostPerMillion": 96.0, "cacheReadCostPerMillion": 1.6, "cacheCreationCostPerMillion": 20.0 }],
+  "dailySlots": [{ "label": "模型根-峰时", "windows": [{ "startMinute": 480, "endMinute": 720 }], "daysOfWeek": [1, 2, 3, 4, 5], "inputCostPerMillion": 16.0, "outputCostPerMillion": 96.0, "cacheReadCostPerMillion": 1.6, "cacheCreationCostPerMillion": 20.0 }],
   "contextTiers": [{
     "threshold": 128000,
     "inputCostPerMillion": 28.0,
@@ -176,4 +179,5 @@ A condensed example:
 1. Write all fields for new models (including an empty `dailySlots: []`) for easier diffing and review
 2. Existing models may omit `dailySlots`; it defaults to an empty array
 3. For long-term peak/off-peak pricing, use a long-range `timeRules` (e.g. `startTime: 0`) instead of relying only on the model root
-4. Bump `version` and update `updatedAt` after changes
+4. Peak/off-peak limited to certain weekdays (e.g. weekends all-day off-peak) is expressed with `daysOfWeek` on the slot, e.g. `[1, 2, 3, 4, 5]`; encode former every-day eras as a dedicated `timeRules` entry
+5. Bump `version` and update `updatedAt` after changes

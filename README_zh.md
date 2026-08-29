@@ -96,6 +96,7 @@ LLM 模型定价表 [`model_pricing.json`](./model_pricing.json)。
     { "startMinute": 480, "endMinute": 720 },
     { "startMinute": 840, "endMinute": 1080 }
   ],
+  "daysOfWeek": [1, 2, 3, 4, 5],
   "inputCostPerMillion": 20.0,
   "outputCostPerMillion": 120.0,
   "cacheReadCostPerMillion": 2.0,
@@ -106,12 +107,14 @@ LLM 模型定价表 [`model_pricing.json`](./model_pricing.json)。
 | 字段 | 说明 |
 |------|------|
 | `windows[].startMinute` / `endMinute` | 当天分钟 `0..1440`，半开区间 `[start, end)` |
+| `daysOfWeek` | 可选，本槽适用的 ISO 星期几：`1`=周一 … `7`=周日；缺省 = 每天 |
 | 四维单价 | 峰时价 |
 
 约束：
 
-- 同一价格节点内 windows **不得重叠**
+- 同一价格节点内，`daysOfWeek` 有交集的槽位其 windows **不得重叠**
 - 不支持单窗口跨午夜（拆成两段，如 `22:00-24:00` + `00:00-02:00`）
+- 未写 `daysOfWeek` 的槽位按每天生效；星期几与 `windows` 使用同一时钟
 - 空数组 = 该节点全天谷价
 
 分钟换算：`08:00 → 480`，`12:00 → 720`，`14:00 → 840`，`18:00 → 1080`。
@@ -127,7 +130,7 @@ LLM 模型定价表 [`model_pricing.json`](./model_pricing.json)。
   "outputCostPerMillion": 84.0,
   "cacheReadCostPerMillion": 1.4,
   "cacheCreationCostPerMillion": 17.5,
-  "dailySlots": [{ "label": "模型根-峰时", "windows": [{ "startMinute": 480, "endMinute": 720 }], "inputCostPerMillion": 16.0, "outputCostPerMillion": 96.0, "cacheReadCostPerMillion": 1.6, "cacheCreationCostPerMillion": 20.0 }],
+  "dailySlots": [{ "label": "模型根-峰时", "windows": [{ "startMinute": 480, "endMinute": 720 }], "daysOfWeek": [1, 2, 3, 4, 5], "inputCostPerMillion": 16.0, "outputCostPerMillion": 96.0, "cacheReadCostPerMillion": 1.6, "cacheCreationCostPerMillion": 20.0 }],
   "contextTiers": [{
     "threshold": 128000,
     "inputCostPerMillion": 28.0,
@@ -164,4 +167,5 @@ LLM 模型定价表 [`model_pricing.json`](./model_pricing.json)。
 1. 新模型写全字段（含空 `dailySlots: []`），便于 diff 与审阅
 2. 存量模型可不补 `dailySlots`，按缺省空数组处理
 3. 需要长期峰谷时，用长区间 `timeRules`（如 `startTime: 0`）承载，不必只靠模型根
-4. 修改后递增 `version` 与 `updatedAt`
+4. 仅部分星期生效的峰谷（如周末全天谷价）用槽位上的 `daysOfWeek` 表达，如 `[1, 2, 3, 4, 5]`；此前"每天峰谷"的历史期用专门的 `timeRules` 还原
+5. 修改后递增 `version` 与 `updatedAt`

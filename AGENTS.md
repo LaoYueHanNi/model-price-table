@@ -27,7 +27,7 @@ Constraints:
 - A node's own four prices are its **off-peak / other-time** price.
 - `dailySlots` is the node's peak-time override and **must not** nest another `contextTiers`.
 - Once a tier matches, only that tier's `dailySlots` apply (never borrow the root peak price).
-- `dailySlots.windows[]` use minutes of day `0..1440`, half-open interval `[start, end)`; windows within one pricing node must not overlap; a window may not cross midnight (split into two).
+- `dailySlots.windows[]` use minutes of day `0..1440`, half-open interval `[start, end)`; windows within one pricing node must not overlap; a window may not cross midnight (split into two). A slot may carry optional `daysOfWeek` (ISO `1`=Monday … `7`=Sunday; omitted = every day); only slots whose `daysOfWeek` intersect must not have overlapping windows.
 - `dailySlots` may attach to: model root, any `contextTier`, or any `timeRule` root.
 - Multiple `timeRules` in the same model must not have overlapping date ranges.
 

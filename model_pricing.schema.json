@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$comment": "Structural schema for model_pricing.json. Constraints that JSON Schema CANNOT express here and must be enforced by the consumer: (1) startMinute < endMinute in every window; (2) windows within one pricing node must not overlap and must not cross midnight; (3) a dailySlots node must not nest contextTiers; (4) date ranges of multiple timeRules in the same model must not overlap; (5) a matched tier uses only its own dailySlots (never the root peak price); (6) contextTier selection = largest threshold <= contextSize with contextSize = input + cacheRead.",
+  "$comment": "Structural schema for model_pricing.json. Constraints that JSON Schema CANNOT express here and must be enforced by the consumer: (1) startMinute < endMinute in every window; (2) windows within one pricing node must not overlap and must not cross midnight; (3) a dailySlots node must not nest contextTiers; (4) date ranges of multiple timeRules in the same model must not overlap; (5) a matched tier uses only its own dailySlots (never the root peak price); (6) contextTier selection = largest threshold <= contextSize with contextSize = input + cacheRead; (7) two dailySlots whose daysOfWeek intersect must not have overlapping windows, and a slot without daysOfWeek applies to every day.",
   "title": "model_pricing.json schema",
   "description": "LLM model pricing table. Currency RMB; unit price per million tokens. See README.md for the full specification.",
   "type": "object",
@@ -162,6 +162,14 @@
           "type": "array",
           "minItems": 1,
           "items": { "$ref": "#/definitions/window" }
+        },
+        "daysOfWeek": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 7,
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 1, "maximum": 7 },
+          "description": "Optional ISO weekdays 1=Monday..7=Sunday this slot applies to. Omit = applies every day. The weekday is determined by the same clock used for windows."
         },
         "inputCostPerMillion": { "type": "number", "minimum": 0 },
         "outputCostPerMillion": { "type": "number", "minimum": 0 },
