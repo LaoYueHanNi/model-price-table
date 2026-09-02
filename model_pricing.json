@@ -1,6 +1,6 @@
 {
-  "version": 72,
-  "updatedAt": 1787996733,
+  "version": 73,
+  "updatedAt": 1788315116,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -272,6 +272,44 @@
       "timeRules": [],
       "aliases": [
         "claude-fable-5"
+      ],
+      "family": "claude"
+    },
+    {
+      "modelId": "Claude-Fable-5.1",
+      "inputCostPerMillion": 70.0,
+      "outputCostPerMillion": 350.0,
+      "cacheReadCostPerMillion": 1.75,
+      "cacheCreationCostPerMillion": 87.5,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "claude-fable-5-1",
+        "claude-fable-5-1-thinking-high",
+        "claude-fable-5-1-thinking-low",
+        "claude-fable-5-1-thinking-medium",
+        "claude-fable-5-1-thinking-extra-high",
+        "claude-fable-5-1-thinking-max"
+      ],
+      "family": "claude"
+    },
+    {
+      "modelId": "Claude-Mythos-5.1",
+      "inputCostPerMillion": 70.0,
+      "outputCostPerMillion": 350.0,
+      "cacheReadCostPerMillion": 1.75,
+      "cacheCreationCostPerMillion": 87.5,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "claude-mythos-5-1",
+        "claude-mythos-5-1-thinking-high",
+        "claude-mythos-5-1-thinking-low",
+        "claude-mythos-5-1-thinking-medium",
+        "claude-mythos-5-1-thinking-extra-high",
+        "claude-mythos-5-1-thinking-max"
       ],
       "family": "claude"
     },
@@ -1475,6 +1513,23 @@
       "family": "gpt"
     },
     {
+      "modelId": "gpt-5.6-cyber",
+      "inputCostPerMillion": 87.5,
+      "outputCostPerMillion": 525.0,
+      "cacheReadCostPerMillion": 8.75,
+      "cacheCreationCostPerMillion": 109.375,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "gpt-daybreak-red-latest",
+        "gpt-5.6-cyber-high",
+        "gpt-5.6-cyber-medium",
+        "gpt-5.6-cyber-low"
+      ],
+      "family": "gpt"
+    },
+    {
       "modelId": "gpt-5.4-pro",
       "inputCostPerMillion": 210.0,
       "outputCostPerMillion": 1260.0,
@@ -1787,7 +1842,9 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": [],
+      "aliases": [
+        "hy4-preview"
+      ],
       "family": "tencent"
     },
     {
@@ -2307,6 +2364,18 @@
       "outputCostPerMillion": 2.7,
       "cacheReadCostPerMillion": 0.1,
       "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "qwen"
+    },
+    {
+      "modelId": "qwen3.8-27b",
+      "inputCostPerMillion": 3.0,
+      "outputCostPerMillion": 12.0,
+      "cacheReadCostPerMillion": 0.6,
+      "cacheCreationCostPerMillion": 3.75,
       "dailySlots": [],
       "contextTiers": [],
       "timeRules": [],
