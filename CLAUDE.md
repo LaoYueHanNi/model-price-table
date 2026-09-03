@@ -39,7 +39,9 @@ Constraints:
 5. When conventions change, keep the full example JSON in `README.md` / `README_zh.md` in sync.
 
 ## Update / release checklist
-1. Bump `version` (increment the integer) and refresh `updatedAt` to the current Unix time in seconds.
+1. Refresh `updatedAt` to the current Unix time in seconds on every data change. Bump `version` (increment the integer) **only when the change can affect pricing resolution** — consumers use `version` to decide whether to re-fetch the table:
+   - **Must bump**: adding/removing/renaming a `modelId`; adding/removing `aliases`; changing any of the four cost fields; adding/removing/changing `contextTiers`, `timeRules`, `dailySlots`; changing `usdExchangeRate`.
+   - **May skip bump** (refresh `updatedAt` only): changes that cannot affect which price a request resolves to, e.g. display-only fields such as `families[].label` or a model's `family` value/rename.
 2. Validate the JSON: parses cleanly, matches the schema, all ranges/types correct.
 3. If pricing semantics changed, update this guide and the README specs (both languages) plus the full example.
 4. Commit with a focused message, e.g.:
