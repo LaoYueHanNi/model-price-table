@@ -1,6 +1,6 @@
 {
-  "version": 74,
-  "updatedAt": 1788398253,
+  "version": 75,
+  "updatedAt": 1788398874,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -910,7 +910,11 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
-      "aliases": [],
+      "aliases": [
+        "gemini-3.8-flash-high",
+        "gemini-3.8-flash-low",
+        "gemini-3.8-flash-medium"
+      ],
       "family": "google"
     },
     {
