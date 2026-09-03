@@ -1,6 +1,6 @@
 {
   "version": 74,
-  "updatedAt": 1788398072,
+  "updatedAt": 1788398253,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -774,7 +774,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-2.5-flash",
@@ -785,7 +785,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-2.5-flash-lite",
@@ -796,7 +796,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-2.5-pro",
@@ -807,7 +807,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-3-flash-preview",
@@ -818,7 +818,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-3-pro-preview",
@@ -829,7 +829,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-3.1-flash-lite-preview",
@@ -840,7 +840,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-3.1-pro-preview",
@@ -851,7 +851,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-3.5-flash",
@@ -862,7 +862,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-3.6-flash",
@@ -873,7 +873,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-3.7-flash",
@@ -900,7 +900,7 @@
         "gemini-3.7-flash-low",
         "gemini-3.7-flash-medium"
       ],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "gemini-3.8-flash",
@@ -911,7 +911,7 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "family": "gemini"
+      "family": "google"
     },
     {
       "modelId": "glm-4.5-air",
@@ -2494,8 +2494,8 @@
       "label": "spaceX AI"
     },
     {
-      "id": "gemini",
-      "label": "Gemini"
+      "id": "google",
+      "label": "Google"
     },
     {
       "id": "deepseek",
