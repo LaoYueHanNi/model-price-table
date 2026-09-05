@@ -1,6 +1,6 @@
 {
-  "version": 76,
-  "updatedAt": 1788581853,
+  "version": 77,
+  "updatedAt": 1788589723,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2510,6 +2510,18 @@
       "timeRules": [],
       "aliases": [],
       "family": "step"
+    },
+    {
+      "modelId": "omen-alpha",
+      "inputCostPerMillion": 0.0,
+      "outputCostPerMillion": 0.0,
+      "cacheReadCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "other"
     }
   ],
   "families": [
