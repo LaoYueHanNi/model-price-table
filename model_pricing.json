@@ -1,6 +1,6 @@
 {
-  "version": 77,
-  "updatedAt": 1788589723,
+  "version": 78,
+  "updatedAt": 1788717424,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2084,6 +2084,19 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
+      "family": "meta"
+    },
+    {
+      "modelId": "muse-spark-1.3",
+      "inputCostPerMillion": 8.75,
+      "outputCostPerMillion": 29.75,
+      "cacheReadCostPerMillion": 1.05,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "muse-spark-1.3-0902"
+      ],
       "family": "meta"
     },
     {
