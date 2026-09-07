@@ -1,6 +1,6 @@
 {
-  "version": 78,
-  "updatedAt": 1788717424,
+  "version": 79,
+  "updatedAt": 1788762748,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1845,6 +1845,18 @@
       "outputCostPerMillion": 17.5,
       "cacheReadCostPerMillion": 1.4,
       "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "spacex-ai"
+    },
+    {
+      "modelId": "grok-bot-default",
+      "inputCostPerMillion": 28.0,
+      "outputCostPerMillion": 126.0,
+      "cacheReadCostPerMillion": 7.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
