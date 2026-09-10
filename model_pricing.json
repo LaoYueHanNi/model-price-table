@@ -1,6 +1,6 @@
 {
-  "version": 84,
-  "updatedAt": 1788919670,
+  "version": 85,
+  "updatedAt": 1789021867,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -738,7 +738,8 @@
         }
       ],
       "aliases": [
-        "deepseek-v4.1-flash-expires-on-0910"
+        "deepseek-v4.1-flash-expires-on-0910",
+        "deepseek-flash"
       ],
       "family": "deepseek"
     },
