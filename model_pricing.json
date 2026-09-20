@@ -1,6 +1,6 @@
 {
-  "version": 86,
-  "updatedAt": 1789374325,
+  "version": 87,
+  "updatedAt": 1789872424,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1294,6 +1294,18 @@
       "aliases": [
         "glm-flash-latest"
       ],
+      "family": "glm"
+    },
+    {
+      "modelId": "glm-5.3-flashx",
+      "inputCostPerMillion": 2.0,
+      "outputCostPerMillion": 7.0,
+      "cacheReadCostPerMillion": 0.57,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
       "family": "glm"
     },
     {
