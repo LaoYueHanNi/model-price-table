@@ -1,6 +1,6 @@
 {
-  "version": 87,
-  "updatedAt": 1789872424,
+  "version": 88,
+  "updatedAt": 1789884776,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2763,6 +2763,18 @@
       "outputCostPerMillion": 8.1,
       "cacheReadCostPerMillion": 0.27,
       "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "step"
+    },
+    {
+      "modelId": "step-5-preview",
+      "inputCostPerMillion": 7.0,
+      "outputCostPerMillion": 20.0,
+      "cacheReadCostPerMillion": 0.35,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
