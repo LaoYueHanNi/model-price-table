@@ -1,6 +1,6 @@
 {
-  "version": 91,
-  "updatedAt": 1789910719,
+  "version": 92,
+  "updatedAt": 1789911592,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2255,6 +2255,20 @@
       "family": "kimi"
     },
     {
+      "modelId": "kimi-for-coding-highspeed",
+      "inputCostPerMillion": 13.0,
+      "outputCostPerMillion": 54.0,
+      "cacheReadCostPerMillion": 2.6,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "kimi-k2.7-code-highspeed"
+      ],
+      "family": "kimi"
+    },
+    {
       "modelId": "magistral-medium",
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 35.0,
@@ -2385,6 +2399,18 @@
       "aliases": [
         "muse-spark-1.3-0902"
       ],
+      "family": "meta"
+    },
+    {
+      "modelId": "muse-spark-1.3-contributor",
+      "inputCostPerMillion": 0.7,
+      "outputCostPerMillion": 1.4,
+      "cacheReadCostPerMillion": 0.014,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
       "family": "meta"
     },
     {
@@ -3068,6 +3094,56 @@
       "timeRules": [],
       "aliases": [],
       "family": "gpt"
+    },
+    {
+      "modelId": "bonsai2-27b",
+      "inputCostPerMillion": 0.525,
+      "outputCostPerMillion": 3.5,
+      "cacheReadCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "prism-ml/ternary-bonsai-2-27b"
+      ],
+      "family": "other"
+    },
+    {
+      "modelId": "big-pickle",
+      "inputCostPerMillion": 0.0,
+      "outputCostPerMillion": 0.0,
+      "cacheReadCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "other"
+    },
+    {
+      "modelId": "openrouter/free",
+      "inputCostPerMillion": 0.0,
+      "outputCostPerMillion": 0.0,
+      "cacheReadCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "other"
+    },
+    {
+      "modelId": "spark-x2.5",
+      "inputCostPerMillion": 1.6,
+      "outputCostPerMillion": 6.0,
+      "cacheReadCostPerMillion": 0.24,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "other"
     }
   ],
   "families": [
