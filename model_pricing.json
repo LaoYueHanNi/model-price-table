@@ -1,6 +1,6 @@
 {
-  "version": 93,
-  "updatedAt": 1789959608,
+  "version": 94,
+  "updatedAt": 1789959762,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2899,6 +2899,18 @@
       "family": "pareto"
     },
     {
+      "modelId": "jev-1.13",
+      "inputCostPerMillion": 0.294,
+      "outputCostPerMillion": 0.0,
+      "cacheReadCostPerMillion": 0.0,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "typesafe"
+    },
+    {
       "modelId": "muse-glimmer-30b",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 7.7,
@@ -3228,6 +3240,10 @@
     {
       "id": "pareto",
       "label": "Pareto"
+    },
+    {
+      "id": "typesafe",
+      "label": "TypeSafe"
     },
     {
       "id": "meta",
