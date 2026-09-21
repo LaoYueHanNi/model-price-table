@@ -1,6 +1,6 @@
 {
-  "version": 94,
-  "updatedAt": 1789959762,
+  "version": 95,
+  "updatedAt": 1789994448,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -153,7 +153,8 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [
-        "claude-opus-4-6-20260206"
+        "claude-opus-4-6-20260206",
+        "claude-opus-4-6-thinking"
       ],
       "family": "claude"
     },
@@ -1134,7 +1135,8 @@
       "aliases": [
         "gemini-3.8-flash-high",
         "gemini-3.8-flash-low",
-        "gemini-3.8-flash-medium"
+        "gemini-3.8-flash-medium",
+        "gemini-3.8-flash-tiered"
       ],
       "family": "google"
     },
