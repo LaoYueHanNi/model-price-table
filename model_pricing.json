@@ -1,6 +1,6 @@
 {
-  "version": 92,
-  "updatedAt": 1789911592,
+  "version": 93,
+  "updatedAt": 1789959608,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2873,6 +2873,32 @@
       "family": "other"
     },
     {
+      "modelId": "pareto",
+      "inputCostPerMillion": 17.5,
+      "outputCostPerMillion": 52.5,
+      "cacheReadCostPerMillion": 1.75,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [
+        {
+          "label": "免费预览期",
+          "startTime": 0,
+          "endTime": 1790179199,
+          "inputCostPerMillion": 0.0,
+          "outputCostPerMillion": 0.0,
+          "cacheReadCostPerMillion": 0.0,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [],
+          "contextTiers": []
+        }
+      ],
+      "aliases": [
+        "union-alpha"
+      ],
+      "family": "pareto"
+    },
+    {
       "modelId": "muse-glimmer-30b",
       "inputCostPerMillion": 2.1,
       "outputCostPerMillion": 7.7,
@@ -3198,6 +3224,10 @@
     {
       "id": "step",
       "label": "Step"
+    },
+    {
+      "id": "pareto",
+      "label": "Pareto"
     },
     {
       "id": "meta",
