@@ -1,6 +1,6 @@
 {
-  "version": 97,
-  "updatedAt": 1790038713,
+  "version": 98,
+  "updatedAt": 1790040223,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2395,6 +2395,39 @@
       "aliases": [
         "mimo-v2.5-free"
       ],
+      "family": "mimo"
+    },
+    {
+      "modelId": "mimo-v2.6-pro",
+      "inputCostPerMillion": 3.0,
+      "outputCostPerMillion": 6.0,
+      "cacheReadCostPerMillion": 0.025,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "mimo"
+    },
+    {
+      "modelId": "mimo-v2.6-pro-ultraspeed",
+      "inputCostPerMillion": 30.0,
+      "outputCostPerMillion": 60.0,
+      "cacheReadCostPerMillion": 0.25,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "family": "mimo"
+    },
+    {
+      "modelId": "mimo-v2.6-flash",
+      "inputCostPerMillion": 1.0,
+      "outputCostPerMillion": 2.0,
+      "cacheReadCostPerMillion": 0.02,
+      "cacheCreationCostPerMillion": 0.0,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
       "family": "mimo"
     },
     {
