@@ -1,6 +1,6 @@
 {
-  "version": 96,
-  "updatedAt": 1790038313,
+  "version": 97,
+  "updatedAt": 1790038713,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2129,6 +2129,10 @@
         "grok-4.7-fast-medium",
         "grok-4.7-fast-low",
         "grok-4.7-fast-xhigh",
+        "grok-4.7-high-fast",
+        "grok-4.7-medium-fast",
+        "grok-4.7-low-fast",
+        "grok-4.7-xhigh-fast",
         "cursor-grok-4.7-fast",
         "cursor-grok-4.7-high-fast",
         "cursor-grok-4.7-medium-fast",
