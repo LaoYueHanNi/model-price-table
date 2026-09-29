@@ -1,6 +1,6 @@
 {
-  "version": 100,
-  "updatedAt": 1790422952,
+  "version": 101,
+  "updatedAt": 1790727621,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -295,6 +295,25 @@
         "claude-sonnet-5-thinking-medium",
         "claude-sonnet-5-thinking-extra-high",
         "claude-sonnet-5-thinking-max"
+      ],
+      "family": "claude"
+    },
+    {
+      "modelId": "Claude-Sonnet-5.5",
+      "inputCostPerMillion": 14.0,
+      "outputCostPerMillion": 70.0,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 17.5,
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [
+        "claude-sonnet-5-5",
+        "claude-sonnet-5-5-thinking-high",
+        "claude-sonnet-5-5-thinking-low",
+        "claude-sonnet-5-5-thinking-medium",
+        "claude-sonnet-5-5-thinking-extra-high",
+        "claude-sonnet-5-5-thinking-xhigh",
+        "claude-sonnet-5-5-thinking-max"
       ],
       "family": "claude"
     },
