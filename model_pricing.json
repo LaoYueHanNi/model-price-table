@@ -1,6 +1,6 @@
 {
-  "version": 103,
-  "updatedAt": 1791427908,
+  "version": 104,
+  "updatedAt": 1791430317,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2740,6 +2740,30 @@
       "cacheCreationCostPerMillion": 0.0,
       "contextTiers": [],
       "timeRules": [],
+      "aliases": [],
+      "family": "mistral"
+    },
+    {
+      "modelId": "mistral-large-4",
+      "inputCostPerMillion": 9.52,
+      "outputCostPerMillion": 29.26,
+      "cacheReadCostPerMillion": 0.98,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [
+        {
+          "label": "限时优惠价",
+          "startTime": 1791244800,
+          "endTime": 1792454399,
+          "inputCostPerMillion": 4.76,
+          "outputCostPerMillion": 14.63,
+          "cacheReadCostPerMillion": 0.49,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [],
+          "contextTiers": []
+        }
+      ],
       "aliases": [],
       "family": "mistral"
     },
