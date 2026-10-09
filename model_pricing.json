@@ -1,6 +1,6 @@
 {
-  "version": 106,
-  "updatedAt": 1791507297,
+  "version": 107,
+  "updatedAt": 1791512431,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -346,7 +346,13 @@
         "claude-sonnet-5-5-thinking-medium",
         "claude-sonnet-5-5-thinking-extra-high",
         "claude-sonnet-5-5-thinking-xhigh",
-        "claude-sonnet-5-5-thinking-max"
+        "claude-sonnet-5-5-thinking-max",
+        "claude-sonnet-5-5-high",
+        "claude-sonnet-5-5-low",
+        "claude-sonnet-5-5-medium",
+        "claude-sonnet-5-5-extra-high",
+        "claude-sonnet-5-5-xhigh",
+        "claude-sonnet-5-5-max"
       ],
       "family": "claude"
     },
