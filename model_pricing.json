@@ -1,6 +1,6 @@
 {
-  "version": 107,
-  "updatedAt": 1791512431,
+  "version": 108,
+  "updatedAt": 1791526225,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -123,7 +123,19 @@
       ],
       "timeRules": [],
       "aliases": [
-        "claude-haiku-5-5"
+        "claude-haiku-5-5",
+        "claude-haiku-5-5-thinking-high",
+        "claude-haiku-5-5-thinking-low",
+        "claude-haiku-5-5-thinking-medium",
+        "claude-haiku-5-5-thinking-extra-high",
+        "claude-haiku-5-5-thinking-xhigh",
+        "claude-haiku-5-5-thinking-max",
+        "claude-haiku-5-5-high",
+        "claude-haiku-5-5-low",
+        "claude-haiku-5-5-medium",
+        "claude-haiku-5-5-extra-high",
+        "claude-haiku-5-5-xhigh",
+        "claude-haiku-5-5-max"
       ],
       "family": "claude"
     },
