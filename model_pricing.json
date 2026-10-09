@@ -1,6 +1,6 @@
 {
-  "version": 104,
-  "updatedAt": 1791430317,
+  "version": 106,
+  "updatedAt": 1791507297,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -324,10 +324,21 @@
       "modelId": "Claude-Sonnet-5.5",
       "inputCostPerMillion": 14.0,
       "outputCostPerMillion": 70.0,
-      "cacheReadCostPerMillion": 1.4,
+      "cacheReadCostPerMillion": 0.7,
       "cacheCreationCostPerMillion": 17.5,
       "contextTiers": [],
-      "timeRules": [],
+      "timeRules": [
+        {
+          "label": "2026-10-09 缓存降价前",
+          "startTime": 0,
+          "endTime": 1791475199,
+          "inputCostPerMillion": 14.0,
+          "outputCostPerMillion": 70.0,
+          "cacheReadCostPerMillion": 1.4,
+          "cacheCreationCostPerMillion": 17.5,
+          "contextTiers": []
+        }
+      ],
       "aliases": [
         "claude-sonnet-5-5",
         "claude-sonnet-5-5-thinking-high",
@@ -1951,6 +1962,26 @@
     },
     {
       "modelId": "gpt-6-luna",
+      "inputCostPerMillion": 0.7,
+      "outputCostPerMillion": 3.5,
+      "cacheReadCostPerMillion": 0.07,
+      "cacheCreationCostPerMillion": 0.875,
+      "dailySlots": [],
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 1.4,
+          "outputCostPerMillion": 5.25,
+          "cacheReadCostPerMillion": 0.14,
+          "cacheCreationCostPerMillion": 1.75
+        }
+      ],
+      "timeRules": [],
+      "aliases": [],
+      "family": "gpt"
+    },
+    {
+      "modelId": "codex-auto-review",
       "inputCostPerMillion": 0.7,
       "outputCostPerMillion": 3.5,
       "cacheReadCostPerMillion": 0.07,
