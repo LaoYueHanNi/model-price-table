@@ -44,7 +44,9 @@ Required: `modelId` + the four-dimension unit price.
 
 Recommended to always include (empty array / empty string when absent):
 
-- `contextTiers`, `timeRules`, `dailySlots`, `aliases`, `family`
+- `contextTiers`, `timeRules`, `dailySlots`, `aliasPatterns`, `family`
+
+`aliases` is deprecated. The examples retain an empty array to illustrate compatibility; new models may omit it or use `[]`, but must not add alias values there.
 
 ```json
 {
@@ -57,11 +59,45 @@ Recommended to always include (empty array / empty string when absent):
   "contextTiers": [],
   "timeRules": [],
   "aliases": [],
+  "aliasPatterns": [],
   "family": "gpt"
 }
 ```
 
-**Defaults**: omitted `dailySlots` / `contextTiers` / `timeRules` are treated as `[]`.
+**Defaults**: omitted `dailySlots` / `contextTiers` / `timeRules` / `aliasPatterns` are treated as `[]`.
+
+## Model Identification: `aliases[]` and `aliasPatterns[]`
+
+**`aliases` is deprecated and frozen for backward compatibility.** Keep the existing field and every existing value; do not add, update, or delete its values. Consumers must continue supporting historical exact-alias matching at the priority below. New models may omit `aliases` or use `[]`.
+
+Maintain all new aliases exclusively in optional `aliasPatterns`, which contains regex strings for confirmed names sharing the model's entire pricing rules; any one pattern may match. For a single exact name, use an anchored regex with escaped literal punctuation. Both fields attach only to the model root.
+
+Resolve the request's model name across the entire table in this order:
+
+1. Exact `modelId` match.
+2. Exact `aliases` match, only if no `modelId` matched.
+3. `aliasPatterns` match, only if neither exact stage matched.
+
+Names are case-sensitive; do not lowercase, strip prefixes, or remove suffixes. At any stage, matches belonging to multiple models are an ambiguity error; never choose by array order. Multiple patterns matching the same model count as one match. No match means unknown model, with no inferred price. After identification, apply the existing three-layer pricing rules unchanged.
+
+Patterns use portable ECMAScript regex syntax without delimiters or flags. Start with `^`, end with `$`, and require the matched span to cover the entire string (including rejecting a trailing newline). Escape literal punctuation such as `.` (`\\.` in JSON). Use literal model/version identifiers, grouping, alternation, and `?` for confirmed optional effort components. Do not use wildcards, unbounded quantifiers, lookarounds, backreferences, or inline flags. Consumers must compile and validate patterns when loading the table; invalid patterns are a table-validation error, not a silent fallback.
+
+For example, this rule covers the 13 existing Opus 5.5 aliases:
+
+```json
+{
+  "modelId": "Claude-Opus-5.5",
+  "aliasPatterns": [
+    "^claude-opus-5-5(-(thinking-)?(low|medium|high|extra-high|xhigh|max))?$"
+  ]
+}
+```
+
+This identification-only fragment omits required pricing fields. It matches `claude-opus-5-5-thinking-high` and `claude-opus-5-5-high`, but rejects `claude-opus-5-5-fast`, unknown versions, and unknown effort levels. Add new names or levels only after confirming their pricing.
+
+**Model identity is mandatory:** `fast`, `pro`, `mini`, and similar model-variant components are part of the model's identity, not removable reasoning levels. Ordinary-model patterns must reject those variants. A Fast model has its own `modelId` and patterns that require `fast`, even when an API places effort before it. For example, `grok-4.7-fast-high` and `grok-4.7-high-fast` belong to `grok-4.7-fast`; neither may match `grok-4.7`. Never make `-fast` optional or infer equivalent pricing by stripping it. If a model identity contains `max`, such as `gpt-5.1-codex-max`, keep that component mandatory too.
+
+**Compatibility:** retain existing `modelId` and `aliases` when adding patterns. Consumers that ignore unknown fields can continue exact matching, but consumers using the old strict schema (`additionalProperties: false`) must update their schema before loading this field. Regex fallback requires consumer support; this data repository does not implement the consumer resolver. Adding, removing, or changing patterns requires a `version` bump and an `updatedAt` refresh.
 
 ## Three-Layer Pricing (Mutually Exclusive Hit, Single Price)
 
@@ -170,14 +206,16 @@ A condensed example:
     }]
   }],
   "aliases": [],
+  "aliasPatterns": ["^gpt-5\\.6-terra(-(low|medium|high))?$"],
   "family": "gpt"
 }
 ```
 
 ## Authoring Suggestions
 
-1. Write all fields for new models (including an empty `dailySlots: []`) for easier diffing and review
+1. Write all recommended fields for new models (including empty `dailySlots: []` and `aliasPatterns: []`) for easier diffing and review; deprecated `aliases` may be omitted or empty
 2. Existing models may omit `dailySlots`; it defaults to an empty array
 3. For long-term peak/off-peak pricing, use a long-range `timeRules` (e.g. `startTime: 0`) instead of relying only on the model root
 4. Peak/off-peak limited to certain weekdays (e.g. weekends all-day off-peak) is expressed with `daysOfWeek` on the slot, e.g. `[1, 2, 3, 4, 5]`; encode former every-day eras as a dedicated `timeRules` entry
 5. Bump `version` and update `updatedAt` after changes
+6. Preserve historical `aliases` unchanged; maintain all new alias names exclusively in `aliasPatterns`

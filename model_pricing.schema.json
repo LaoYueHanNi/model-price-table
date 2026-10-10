@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$comment": "Structural schema for model_pricing.json. Constraints that JSON Schema CANNOT express here and must be enforced by the consumer: (1) startMinute < endMinute in every window; (2) windows within one pricing node must not overlap and must not cross midnight; (3) a dailySlots node must not nest contextTiers; (4) date ranges of multiple timeRules in the same model must not overlap; (5) a matched tier uses only its own dailySlots (never the root peak price); (6) contextTier selection = largest threshold <= contextSize with contextSize = input + cacheRead; (7) two dailySlots whose daysOfWeek intersect must not have overlapping windows, and a slot without daysOfWeek applies to every day.",
+  "$comment": "Structural schema for model_pricing.json. Constraints that JSON Schema CANNOT express here and must be enforced by the consumer: (1) startMinute < endMinute in every window; (2) windows within one pricing node must not overlap and must not cross midnight; (3) a dailySlots node must not nest contextTiers; (4) date ranges of multiple timeRules in the same model must not overlap; (5) a matched tier uses only its own dailySlots (never the root peak price); (6) contextTier selection = largest threshold <= contextSize with contextSize = input + cacheRead; (7) two dailySlots whose daysOfWeek intersect must not have overlapping windows, and a slot without daysOfWeek applies to every day; (8) aliasPatterns must compile using the documented portable syntax, match the entire model name case-sensitively, and preserve mandatory model identity components such as fast; (9) model identification uses globally staged exact modelId, exact aliases, then regex fallback, with cross-model ambiguity reported as an error.",
   "title": "model_pricing.json schema",
   "description": "LLM model pricing table. Currency RMB; unit price per million tokens. See README.md for the full specification.",
   "type": "object",
@@ -80,8 +80,21 @@
         },
         "aliases": {
           "type": "array",
-          "description": "Alternative model/API names sharing the same pricing.",
+          "$comment": "Deprecated and frozen. Draft-07 has no standard deprecated keyword; deprecation is documented here without changing validation or historical matching semantics.",
+          "description": "DEPRECATED: historical exact model/API aliases retained only for backward compatibility. Preserve the existing field and values unchanged; do not add, update, or delete values. New models may omit this field or use an empty array. Maintain all new aliases exclusively in aliasPatterns. Consumers must continue exact matching of historical aliases before regex fallback.",
           "items": { "type": "string", "minLength": 1 }
+        },
+        "aliasPatterns": {
+          "type": "array",
+          "default": [],
+          "uniqueItems": true,
+          "description": "Optional case-sensitive, full-string regex aliases; all new alias names must be maintained here, including anchored escaped literal names. Resolve exact modelId, then historical exact aliases globally before patterns. Multiple matching models are an error. Model variants such as fast are mandatory identity components, never optional effort levels. See README.md for syntax and compatibility.",
+          "items": {
+            "type": "string",
+            "minLength": 3,
+            "format": "regex",
+            "pattern": "^\\^.*\\$$"
+          }
         },
         "family": { "type": "string", "minLength": 1 }
       }

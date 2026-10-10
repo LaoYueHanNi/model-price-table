@@ -1,6 +1,6 @@
 {
-  "version": 109,
-  "updatedAt": 1791597080,
+  "version": 110,
+  "updatedAt": 1791613232,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -137,6 +137,9 @@
         "claude-haiku-5-5-xhigh",
         "claude-haiku-5-5-max"
       ],
+      "aliasPatterns": [
+        "^claude-haiku-5-5(-(thinking-)?(low|medium|high|extra-high|xhigh|max))?$"
+      ],
       "family": "claude"
     },
     {
@@ -190,6 +193,9 @@
         "claude-opus-4-6-20260206",
         "claude-opus-4-6-thinking"
       ],
+      "aliasPatterns": [
+        "^claude-opus-4-6-thinking$"
+      ],
       "family": "claude"
     },
     {
@@ -221,6 +227,9 @@
         "claude-opus-4-8-thinking-extra-high",
         "claude-opus-4-8-thinking-max"
       ],
+      "aliasPatterns": [
+        "^claude-opus-4-8-thinking(-(low|medium|high|extra-high|max))$"
+      ],
       "family": "claude"
     },
     {
@@ -239,6 +248,9 @@
         "claude-opus-5-thinking-extra-high",
         "claude-opus-5-thinking-xhigh",
         "claude-opus-5-thinking-max"
+      ],
+      "aliasPatterns": [
+        "^claude-opus-5-thinking(-(low|medium|high|extra-high|xhigh|max))$"
       ],
       "family": "claude"
     },
@@ -264,6 +276,9 @@
         "claude-opus-5-5-extra-high",
         "claude-opus-5-5-xhigh",
         "claude-opus-5-5-max"
+      ],
+      "aliasPatterns": [
+        "^claude-opus-5-5(-(thinking-)?(low|medium|high|extra-high|xhigh|max))?$"
       ],
       "family": "claude"
     },
@@ -336,6 +351,9 @@
         "claude-sonnet-5-thinking-extra-high",
         "claude-sonnet-5-thinking-max"
       ],
+      "aliasPatterns": [
+        "^claude-sonnet-5-thinking(-(low|medium|high|extra-high|max))$"
+      ],
       "family": "claude"
     },
     {
@@ -372,6 +390,9 @@
         "claude-sonnet-5-5-xhigh",
         "claude-sonnet-5-5-max"
       ],
+      "aliasPatterns": [
+        "^claude-sonnet-5-5(-(thinking-)?(low|medium|high|extra-high|xhigh|max))?$"
+      ],
       "family": "claude"
     },
     {
@@ -404,6 +425,9 @@
         "claude-fable-5-1-thinking-extra-high",
         "claude-fable-5-1-thinking-max"
       ],
+      "aliasPatterns": [
+        "^claude-fable-5-1-thinking(-(low|medium|high|extra-high|max))$"
+      ],
       "family": "claude"
     },
     {
@@ -422,6 +446,9 @@
         "claude-mythos-5-1-thinking-medium",
         "claude-mythos-5-1-thinking-extra-high",
         "claude-mythos-5-1-thinking-max"
+      ],
+      "aliasPatterns": [
+        "^claude-mythos-5-1-thinking(-(low|medium|high|extra-high|max))$"
       ],
       "family": "claude"
     },
@@ -1230,6 +1257,9 @@
         "gemini-3.7-flash-low",
         "gemini-3.7-flash-medium"
       ],
+      "aliasPatterns": [
+        "^gemini-3\\.7-flash(-(low|medium|high))?$"
+      ],
       "family": "google"
     },
     {
@@ -1257,6 +1287,9 @@
         "gemini-3.8-flash-low",
         "gemini-3.8-flash-medium",
         "gemini-3.8-flash-tiered"
+      ],
+      "aliasPatterns": [
+        "^gemini-3\\.8-flash(-(low|medium|high))?$"
       ],
       "family": "google"
     },
@@ -1378,6 +1411,9 @@
         "glm-5.2-max",
         "glm-5.2-high"
       ],
+      "aliasPatterns": [
+        "^glm-5\\.2(-(high|max))?$"
+      ],
       "family": "glm"
     },
     {
@@ -1479,6 +1515,9 @@
         "gpt-5-medium",
         "gpt-5-minimal"
       ],
+      "aliasPatterns": [
+        "^gpt-5(-(minimal|low|medium|high))?$"
+      ],
       "family": "gpt"
     },
     {
@@ -1494,6 +1533,9 @@
         "gpt-5-codex-low",
         "gpt-5-codex-medium"
       ],
+      "aliasPatterns": [
+        "^gpt-5-codex(-(low|medium|high))?$"
+      ],
       "family": "gpt"
     },
     {
@@ -1507,6 +1549,9 @@
       "aliases": [
         "gpt-5-codex-mini-high",
         "gpt-5-codex-mini-medium"
+      ],
+      "aliasPatterns": [
+        "^gpt-5-codex-mini(-(medium|high))?$"
       ],
       "family": "gpt"
     },
@@ -1546,6 +1591,9 @@
         "gpt-5.1-medium",
         "gpt-5.1-minimal"
       ],
+      "aliasPatterns": [
+        "^gpt-5\\.1(-(minimal|low|medium|high))?$"
+      ],
       "family": "gpt"
     },
     {
@@ -1570,6 +1618,9 @@
       "aliases": [
         "gpt-5.1-codex-max-high",
         "gpt-5.1-codex-max-xhigh"
+      ],
+      "aliasPatterns": [
+        "^gpt-5\\.1-codex-max(-(high|xhigh))?$"
       ],
       "family": "gpt"
     },
@@ -1598,6 +1649,9 @@
         "gpt-5.2-medium",
         "gpt-5.2-xhigh"
       ],
+      "aliasPatterns": [
+        "^gpt-5\\.2(-(low|medium|high|xhigh))?$"
+      ],
       "family": "gpt"
     },
     {
@@ -1614,6 +1668,9 @@
         "gpt-5.2-codex-medium",
         "gpt-5.2-codex-xhigh"
       ],
+      "aliasPatterns": [
+        "^gpt-5\\.2-codex(-(low|medium|high|xhigh))?$"
+      ],
       "family": "gpt"
     },
     {
@@ -1629,6 +1686,9 @@
         "gpt-5.3-codex-low",
         "gpt-5.3-codex-medium",
         "gpt-5.3-codex-xhigh"
+      ],
+      "aliasPatterns": [
+        "^gpt-5\\.3-codex(-(low|medium|high|xhigh))?$"
       ],
       "family": "gpt"
     },
@@ -1754,6 +1814,9 @@
         "gpt-5.6-sol-low",
         "gpt-daybreak-blue-latest"
       ],
+      "aliasPatterns": [
+        "^gpt-5\\.6-sol(-(low|medium|high))?$"
+      ],
       "family": "gpt"
     },
     {
@@ -1781,6 +1844,9 @@
         "gpt-5.6-sol-fast-medium",
         "gpt-5.6-sol-fast-low"
       ],
+      "aliasPatterns": [
+        "^gpt-5\\.6-sol-fast(-(low|medium|high))?$"
+      ],
       "family": "gpt"
     },
     {
@@ -1806,6 +1872,9 @@
         "gpt-5.6-terra-high",
         "gpt-5.6-terra-medium",
         "gpt-5.6-terra-low"
+      ],
+      "aliasPatterns": [
+        "^gpt-5\\.6-terra(-(low|medium|high))?$"
       ],
       "family": "gpt"
     },
@@ -1833,6 +1902,9 @@
         "gpt-5.6-terra-fast-medium",
         "gpt-5.6-terra-fast-low"
       ],
+      "aliasPatterns": [
+        "^gpt-5\\.6-terra-fast(-(low|medium|high))?$"
+      ],
       "family": "gpt"
     },
     {
@@ -1858,6 +1930,9 @@
         "gpt-5.6-luna-high",
         "gpt-5.6-luna-medium",
         "gpt-5.6-luna-low"
+      ],
+      "aliasPatterns": [
+        "^gpt-5\\.6-luna(-(low|medium|high))?$"
       ],
       "family": "gpt"
     },
@@ -1885,6 +1960,9 @@
         "gpt-5.6-luna-fast-medium",
         "gpt-5.6-luna-fast-low"
       ],
+      "aliasPatterns": [
+        "^gpt-5\\.6-luna-fast(-(low|medium|high))?$"
+      ],
       "family": "gpt"
     },
     {
@@ -1901,6 +1979,9 @@
         "gpt-5.6-cyber-high",
         "gpt-5.6-cyber-medium",
         "gpt-5.6-cyber-low"
+      ],
+      "aliasPatterns": [
+        "^gpt-5\\.6-cyber(-(low|medium|high))?$"
       ],
       "family": "gpt"
     },
@@ -2214,6 +2295,10 @@
         "cursor-grok-4.5-low",
         "cursor-grok-4.5-xhigh"
       ],
+      "aliasPatterns": [
+        "^grok-4\\.5(-(low|medium|high|xhigh))$",
+        "^cursor-grok-4\\.5(-(low|medium|high|xhigh))?$"
+      ],
       "family": "spacex-ai"
     },
     {
@@ -2234,6 +2319,10 @@
         "cursor-grok-4.5-medium-fast",
         "cursor-grok-4.5-low-fast",
         "cursor-grok-4.5-xhigh-fast"
+      ],
+      "aliasPatterns": [
+        "^grok-4\\.5-fast(-(low|medium|high|xhigh))?$",
+        "^cursor-grok-4\\.5(-(low|medium|high|xhigh))?-fast$"
       ],
       "family": "spacex-ai"
     },
@@ -2256,6 +2345,10 @@
         "cursor-grok-4.6-low",
         "cursor-grok-4.6-xhigh"
       ],
+      "aliasPatterns": [
+        "^grok-4\\.6(-(low|medium|high|xhigh))?$",
+        "^cursor-grok-4\\.6(-(low|medium|high|xhigh))?$"
+      ],
       "family": "spacex-ai"
     },
     {
@@ -2276,6 +2369,10 @@
         "cursor-grok-4.6-medium-fast",
         "cursor-grok-4.6-low-fast",
         "cursor-grok-4.6-xhigh-fast"
+      ],
+      "aliasPatterns": [
+        "^grok-4\\.6-fast(-(low|medium|high|xhigh))?$",
+        "^cursor-grok-4\\.6(-(low|medium|high|xhigh))?-fast$"
       ],
       "family": "spacex-ai"
     },
@@ -2305,6 +2402,10 @@
         "cursor-grok-4.7-medium",
         "cursor-grok-4.7-low",
         "cursor-grok-4.7-xhigh"
+      ],
+      "aliasPatterns": [
+        "^grok-4\\.7(-(low|medium|high|xhigh))?$",
+        "^cursor-grok-4\\.7(-(low|medium|high|xhigh))?$"
       ],
       "family": "spacex-ai"
     },
@@ -2338,6 +2439,11 @@
         "cursor-grok-4.7-medium-fast",
         "cursor-grok-4.7-low-fast",
         "cursor-grok-4.7-xhigh-fast"
+      ],
+      "aliasPatterns": [
+        "^grok-4\\.7-fast(-(low|medium|high|xhigh))?$",
+        "^grok-4\\.7(-(low|medium|high|xhigh))?-fast$",
+        "^cursor-grok-4\\.7(-(low|medium|high|xhigh))?-fast$"
       ],
       "family": "spacex-ai"
     },
