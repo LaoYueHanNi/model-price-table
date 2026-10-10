@@ -1,6 +1,6 @@
 {
-  "version": 108,
-  "updatedAt": 1791526225,
+  "version": 109,
+  "updatedAt": 1791597080,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -257,7 +257,13 @@
         "claude-opus-5-5-thinking-medium",
         "claude-opus-5-5-thinking-extra-high",
         "claude-opus-5-5-thinking-xhigh",
-        "claude-opus-5-5-thinking-max"
+        "claude-opus-5-5-thinking-max",
+        "claude-opus-5-5-high",
+        "claude-opus-5-5-low",
+        "claude-opus-5-5-medium",
+        "claude-opus-5-5-extra-high",
+        "claude-opus-5-5-xhigh",
+        "claude-opus-5-5-max"
       ],
       "family": "claude"
     },
