@@ -1,6 +1,6 @@
 {
-  "version": 113,
-  "updatedAt": 1791683699,
+  "version": 115,
+  "updatedAt": 1791693117,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -16,6 +16,10 @@
         "auto",
         "default"
       ],
+      "aliasPatterns": [
+        "^auto$",
+        "^default$"
+      ],
       "family": "spacex-ai"
     },
     {
@@ -29,6 +33,9 @@
       "aliases": [
         "no-price-use-composer"
       ],
+      "aliasPatterns": [
+        "^no-price-use-composer$"
+      ],
       "family": "spacex-ai"
     },
     {
@@ -41,6 +48,9 @@
       "timeRules": [],
       "aliases": [
         "minimin-m2.7"
+      ],
+      "aliasPatterns": [
+        "^minimin-m2\\.7$"
       ],
       "family": "minimax"
     },
@@ -63,6 +73,9 @@
       "aliases": [
         "minimax-m3-free"
       ],
+      "aliasPatterns": [
+        "^minimax-m3-free$"
+      ],
       "family": "minimax"
     },
     {
@@ -75,6 +88,9 @@
       "timeRules": [],
       "aliases": [
         "claude-3-5-haiku-20241022"
+      ],
+      "aliasPatterns": [
+        "^claude-3-5-haiku-20241022$"
       ],
       "family": "claude"
     },
@@ -89,6 +105,9 @@
       "aliases": [
         "claude-3-5-sonnet-20241022"
       ],
+      "aliasPatterns": [
+        "^claude-3-5-sonnet-20241022$"
+      ],
       "family": "claude"
     },
     {
@@ -102,6 +121,10 @@
       "aliases": [
         "claude-haiku-4-5-20251001",
         "claude-haiku-4-5"
+      ],
+      "aliasPatterns": [
+        "^claude-haiku-4-5-20251001$",
+        "^claude-haiku-4-5$"
       ],
       "family": "claude"
     },
@@ -153,6 +176,9 @@
       "aliases": [
         "claude-opus-4-1-20250805"
       ],
+      "aliasPatterns": [
+        "^claude-opus-4-1-20250805$"
+      ],
       "family": "claude"
     },
     {
@@ -166,6 +192,9 @@
       "aliases": [
         "claude-opus-4-20250514"
       ],
+      "aliasPatterns": [
+        "^claude-opus-4-20250514$"
+      ],
       "family": "claude"
     },
     {
@@ -178,6 +207,9 @@
       "timeRules": [],
       "aliases": [
         "claude-opus-4-5-20251101"
+      ],
+      "aliasPatterns": [
+        "^claude-opus-4-5-20251101$"
       ],
       "family": "claude"
     },
@@ -194,7 +226,8 @@
         "claude-opus-4-6-thinking"
       ],
       "aliasPatterns": [
-        "^claude-opus-4-6-thinking$"
+        "^claude-opus-4-6-thinking$",
+        "^claude-opus-4-6-20260206$"
       ],
       "family": "claude"
     },
@@ -208,6 +241,9 @@
       "timeRules": [],
       "aliases": [
         "claude-opus-4-7"
+      ],
+      "aliasPatterns": [
+        "^claude-opus-4-7$"
       ],
       "family": "claude"
     },
@@ -228,7 +264,8 @@
         "claude-opus-4-8-thinking-max"
       ],
       "aliasPatterns": [
-        "^claude-opus-4-8-thinking(-(low|medium|high|extra-high|max))$"
+        "^claude-opus-4-8-thinking(-(low|medium|high|extra-high|max))$",
+        "^claude-opus-4-8$"
       ],
       "family": "claude"
     },
@@ -293,6 +330,9 @@
       "aliases": [
         "claude-opus-5-5-fast"
       ],
+      "aliasPatterns": [
+        "^claude-opus-5-5-fast$"
+      ],
       "family": "claude"
     },
     {
@@ -305,6 +345,9 @@
       "timeRules": [],
       "aliases": [
         "claude-sonnet-4-20250514"
+      ],
+      "aliasPatterns": [
+        "^claude-sonnet-4-20250514$"
       ],
       "family": "claude"
     },
@@ -319,6 +362,9 @@
       "aliases": [
         "claude-sonnet-4-5-20250929"
       ],
+      "aliasPatterns": [
+        "^claude-sonnet-4-5-20250929$"
+      ],
       "family": "claude"
     },
     {
@@ -332,6 +378,10 @@
       "aliases": [
         "claude-sonnet-4-6",
         "claude-sonnet-4-6-20260217"
+      ],
+      "aliasPatterns": [
+        "^claude-sonnet-4-6$",
+        "^claude-sonnet-4-6-20260217$"
       ],
       "family": "claude"
     },
@@ -426,7 +476,8 @@
         "claude-fable-5-1-thinking-max"
       ],
       "aliasPatterns": [
-        "^claude-fable-5-1-thinking(-(low|medium|high|extra-high|max))$"
+        "^claude-fable-5-1-thinking(-(low|medium|high|extra-high|max))$",
+        "^claude-fable-5-1$"
       ],
       "family": "claude"
     },
@@ -448,7 +499,8 @@
         "claude-mythos-5-1-thinking-max"
       ],
       "aliasPatterns": [
-        "^claude-mythos-5-1-thinking(-(low|medium|high|extra-high|max))$"
+        "^claude-mythos-5-1-thinking(-(low|medium|high|extra-high|max))$",
+        "^claude-mythos-5-1$"
       ],
       "family": "claude"
     },
@@ -700,6 +752,11 @@
         "deepseek-v4-flash-ga-260731",
         "deepseek-v4-flash-0731"
       ],
+      "aliasPatterns": [
+        "^deepseek-v4-flash(-0731)?$",
+        "^deepseek-v4-flash-free$",
+        "^deepseek-v4-flash-ga-260731$"
+      ],
       "family": "deepseek"
     },
     {
@@ -880,6 +937,10 @@
         "deepseek-v4.1-flash-expires-on-0910",
         "deepseek-flash"
       ],
+      "aliasPatterns": [
+        "^deepseek-flash$",
+        "^deepseek-v4\\.1-flash-expires-on-0910$"
+      ],
       "family": "deepseek"
     },
     {
@@ -970,6 +1031,9 @@
       ],
       "aliases": [
         "deepseek-v4-pro-0813"
+      ],
+      "aliasPatterns": [
+        "^deepseek-v4-pro-0813$"
       ],
       "family": "deepseek"
     },
@@ -1096,6 +1160,9 @@
       "timeRules": [],
       "aliases": [
         "doubao-seed-2-0-pro-260215"
+      ],
+      "aliasPatterns": [
+        "^doubao-seed-2-0-pro-260215$"
       ],
       "family": "doubao"
     },
@@ -1289,7 +1356,8 @@
         "gemini-3.8-flash-tiered"
       ],
       "aliasPatterns": [
-        "^gemini-3\\.8-flash(-(low|medium|high|n))?$"
+        "^gemini-3\\.8-flash(-(low|medium|high|n))?$",
+        "^gemini-3\\.8-flash-tiered$"
       ],
       "family": "google"
     },
@@ -1428,6 +1496,9 @@
       "aliases": [
         "glm-latest"
       ],
+      "aliasPatterns": [
+        "^glm-latest$"
+      ],
       "family": "glm"
     },
     {
@@ -1453,6 +1524,9 @@
       ],
       "aliases": [
         "glm-flash-latest"
+      ],
+      "aliasPatterns": [
+        "^glm-flash-latest$"
       ],
       "family": "glm"
     },
@@ -1814,7 +1888,8 @@
         "gpt-daybreak-blue-latest"
       ],
       "aliasPatterns": [
-        "^gpt-5\\.6-sol(-(low|medium|high))?$"
+        "^gpt-5\\.6-sol(-(low|medium|high))?$",
+        "^gpt-daybreak-blue-latest$"
       ],
       "family": "gpt"
     },
@@ -1980,7 +2055,8 @@
         "gpt-5.6-cyber-low"
       ],
       "aliasPatterns": [
-        "^gpt-5\\.6-cyber(-(low|medium|high))?$"
+        "^gpt-5\\.6-cyber(-(low|medium|high))?$",
+        "^gpt-daybreak-red-latest$"
       ],
       "family": "gpt"
     },
@@ -2274,6 +2350,9 @@
       "aliases": [
         "grok-4.5-build-free"
       ],
+      "aliasPatterns": [
+        "^grok-4\\.5-build-free$"
+      ],
       "family": "spacex-ai"
     },
     {
@@ -2480,6 +2559,9 @@
       "aliases": [
         "hy3-free"
       ],
+      "aliasPatterns": [
+        "^hy3-free$"
+      ],
       "family": "tencent"
     },
     {
@@ -2518,6 +2600,9 @@
       "timeRules": [],
       "aliases": [
         "hy4-preview"
+      ],
+      "aliasPatterns": [
+        "^hy4-preview$"
       ],
       "family": "tencent"
     },
@@ -2576,6 +2661,9 @@
       "aliases": [
         "k2d6-agent"
       ],
+      "aliasPatterns": [
+        "^k2d6-agent$"
+      ],
       "family": "kimi"
     },
     {
@@ -2590,6 +2678,11 @@
         "k3-256k",
         "k3-agent",
         "kimi-code/k3-256k"
+      ],
+      "aliasPatterns": [
+        "^k3-256k$",
+        "^k3-agent$",
+        "^kimi-code/k3-256k$"
       ],
       "family": "kimi"
     },
@@ -2607,6 +2700,11 @@
         "k2d8-preview",
         "k28-agent-preview"
       ],
+      "aliasPatterns": [
+        "^k2\\.8-preview$",
+        "^k2d8-preview$",
+        "^k28-agent-preview$"
+      ],
       "family": "kimi"
     },
     {
@@ -2621,6 +2719,9 @@
       "aliases": [
         "kimi-code/kimi-for-coding"
       ],
+      "aliasPatterns": [
+        "^kimi-code/kimi-for-coding$"
+      ],
       "family": "kimi"
     },
     {
@@ -2634,6 +2735,9 @@
       "timeRules": [],
       "aliases": [
         "kimi-k2.7-code-highspeed"
+      ],
+      "aliasPatterns": [
+        "^kimi-k2\\.7-code-highspeed$"
       ],
       "family": "kimi"
     },
@@ -2699,6 +2803,9 @@
       ],
       "aliases": [
         "mimo-v2.5-free"
+      ],
+      "aliasPatterns": [
+        "^mimo-v2\\.5-free$"
       ],
       "family": "mimo"
     },
@@ -2777,6 +2884,10 @@
         "nemotron-3-super-120b-a12b:free",
         "nemotron-3-super-free"
       ],
+      "aliasPatterns": [
+        "^nemotron-3-super-120b-a12b:free$",
+        "^nemotron-3-super-free$"
+      ],
       "family": "other"
     },
     {
@@ -2800,6 +2911,9 @@
       "timeRules": [],
       "aliases": [
         "muse-spark-1.3-0902"
+      ],
+      "aliasPatterns": [
+        "^muse-spark-1\\.3-0902$"
       ],
       "family": "meta"
     },
@@ -3028,6 +3142,10 @@
         "ox-alpha-free",
         "stealth/ox-alpha"
       ],
+      "aliasPatterns": [
+        "^ox-alpha-free$",
+        "^stealth/ox-alpha$"
+      ],
       "family": "other"
     },
     {
@@ -3145,6 +3263,9 @@
       "aliases": [
         "qwen3.6-plus-free"
       ],
+      "aliasPatterns": [
+        "^qwen3\\.6-plus-free$"
+      ],
       "family": "qwen"
     },
     {
@@ -3170,6 +3291,10 @@
         "qwen3.8-max-0902",
         "qwen3.8-2.4t-a95b"
       ],
+      "aliasPatterns": [
+        "^qwen3\\.8-max-0902$",
+        "^qwen3\\.8-2\\.4t-a95b$"
+      ],
       "family": "qwen"
     },
     {
@@ -3184,6 +3309,9 @@
       "aliases": [
         "qwen3.8-flash-next"
       ],
+      "aliasPatterns": [
+        "^qwen3\\.8-flash-next$"
+      ],
       "family": "qwen"
     },
     {
@@ -3197,6 +3325,9 @@
       "timeRules": [],
       "aliases": [
         "Qwen3.8-27B-Q4"
+      ],
+      "aliasPatterns": [
+        "^Qwen3\\.8-27B-Q4$"
       ],
       "family": "qwen"
     },
@@ -3322,6 +3453,9 @@
       "aliases": [
         "union-alpha"
       ],
+      "aliasPatterns": [
+        "^union-alpha$"
+      ],
       "family": "pareto"
     },
     {
@@ -3348,6 +3482,9 @@
       "aliases": [
         "meta/muse-glimmer-30b"
       ],
+      "aliasPatterns": [
+        "^meta/muse-glimmer-30b$"
+      ],
       "family": "meta"
     },
     {
@@ -3361,6 +3498,9 @@
       "timeRules": [],
       "aliases": [
         "meta/muse-spark-1.1"
+      ],
+      "aliasPatterns": [
+        "^meta/muse-spark-1\\.1$"
       ],
       "family": "meta"
     },
@@ -3391,6 +3531,9 @@
       "aliases": [
         "qwen/qwen3.7-flash"
       ],
+      "aliasPatterns": [
+        "^qwen/qwen3\\.7-flash$"
+      ],
       "family": "qwen"
     },
     {
@@ -3404,6 +3547,9 @@
       "timeRules": [],
       "aliases": [
         "nvidia/nemotron-3.5-lightning"
+      ],
+      "aliasPatterns": [
+        "^nvidia/nemotron-3\\.5-lightning$"
       ],
       "family": "other"
     },
@@ -3419,6 +3565,9 @@
       "aliases": [
         "inception/mercury-2.5-preview"
       ],
+      "aliasPatterns": [
+        "^inception/mercury-2\\.5-preview$"
+      ],
       "family": "other"
     },
     {
@@ -3432,6 +3581,9 @@
       "timeRules": [],
       "aliases": [
         "upstage/solar-pro4"
+      ],
+      "aliasPatterns": [
+        "^upstage/solar-pro4$"
       ],
       "family": "other"
     },
@@ -3447,6 +3599,9 @@
       "aliases": [
         "sakana/sakana-namazu"
       ],
+      "aliasPatterns": [
+        "^sakana/sakana-namazu$"
+      ],
       "family": "other"
     },
     {
@@ -3460,6 +3615,9 @@
       "timeRules": [],
       "aliases": [
         "poolside/laguna-s-2.1"
+      ],
+      "aliasPatterns": [
+        "^poolside/laguna-s-2\\.1$"
       ],
       "family": "other"
     },
@@ -3475,6 +3633,9 @@
       "aliases": [
         "poolside/laguna-xs-2.1"
       ],
+      "aliasPatterns": [
+        "^poolside/laguna-xs-2\\.1$"
+      ],
       "family": "other"
     },
     {
@@ -3488,6 +3649,9 @@
       "timeRules": [],
       "aliases": [
         "thinkingmachines/inkling"
+      ],
+      "aliasPatterns": [
+        "^thinkingmachines/inkling$"
       ],
       "family": "other"
     },
@@ -3503,6 +3667,9 @@
       "aliases": [
         "thinkingmachines/inkling-small"
       ],
+      "aliasPatterns": [
+        "^thinkingmachines/inkling-small$"
+      ],
       "family": "other"
     },
     {
@@ -3516,6 +3683,9 @@
       "timeRules": [],
       "aliases": [
         "inclusionai/ling-3.0-flash"
+      ],
+      "aliasPatterns": [
+        "^inclusionai/ling-3\\.0-flash$"
       ],
       "family": "other"
     },
@@ -3531,6 +3701,9 @@
       "aliases": [
         "inclusionai/ling-3.0-flash-fin"
       ],
+      "aliasPatterns": [
+        "^inclusionai/ling-3\\.0-flash-fin$"
+      ],
       "family": "other"
     },
     {
@@ -3544,6 +3717,9 @@
       "timeRules": [],
       "aliases": [
         "kwaipilot/kat-coder-pro-v2.5"
+      ],
+      "aliasPatterns": [
+        "^kwaipilot/kat-coder-pro-v2\\.5$"
       ],
       "family": "other"
     },
@@ -3570,6 +3746,9 @@
       "timeRules": [],
       "aliases": [
         "prism-ml/ternary-bonsai-2-27b"
+      ],
+      "aliasPatterns": [
+        "^prism-ml/ternary-bonsai-2-27b$"
       ],
       "family": "other"
     },

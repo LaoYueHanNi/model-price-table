@@ -9,6 +9,8 @@ const patterns = table.models.flatMap(model => (model.aliasPatterns ?? []).map(p
   regex: new RegExp(pattern, 'i'),
   pattern,
 })));
+// Keep legacy aliases as regression inputs only for the two-stage acceptance path.
+const modelsWithoutAliases = table.models.map(({ aliases, ...model }) => model);
 
 // Consumer contract: anchors alone may accept a trailing newline in some engines.
 function patternHits(name) {
@@ -99,6 +101,107 @@ test('regex aliases accept uppercase and mixed case, deduplicating patterns for 
   }]), 'owner');
 });
 
+test('confirmed historical aliases work without the deprecated aliases stage', () => {
+  // Mimic consumers using only modelId and aliasPatterns. Historical aliases
+  // must not mask missing pattern coverage in these regression checks.
+  const withoutAliases = table.models.map(model => ({ ...model, aliases: [] }));
+  for (const [modelId, names] of [
+    ['deepseek-v4-flash', ['deepseek-v4-flash', 'deepseek-v4-flash-0731']],
+    ['deepseek-v4.1-flash', ['deepseek-flash']],
+    ['ox-alpha', ['ox-alpha-free']],
+  ]) {
+    for (const name of names) {
+      for (const variant of caseVariants(name)) {
+        assert.deepEqual(patternHits(variant), [modelId], variant);
+        assert.equal(resolveModel(variant, withoutAliases), modelId, variant);
+        for (const suffix of ['-high', '-fast', '-mini', '-pro', '-unknown', 'x', '\n', '\r\n']) {
+          const unknown = variant + suffix;
+          assert.deepEqual(patternHits(unknown), [], JSON.stringify(unknown));
+          assert.equal(resolveModel(unknown, withoutAliases), null, JSON.stringify(unknown));
+        }
+        assert.deepEqual(patternHits(`provider/${variant}`), [], variant);
+        assert.equal(resolveModel(`provider/${variant}`, withoutAliases), null, variant);
+      }
+    }
+  }
+  for (const modelId of ['deepseek-v4.1-flash', 'ox-alpha']) {
+    for (const variant of caseVariants(modelId)) {
+      assert.equal(resolveModel(variant, withoutAliases), modelId, variant);
+    }
+  }
+  for (const name of ['deepseek-v4-flash-0732', 'deepseek-v4.1-flash-0731']) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], variant);
+      assert.equal(resolveModel(variant, withoutAliases), null, variant);
+    }
+  }
+});
+
+test('every historical alias and model ID resolves uniquely without aliases or prefix normalization', () => {
+  for (const model of table.models) {
+    for (const name of [model.modelId, ...(model.aliases ?? [])]) {
+      for (const variant of caseVariants(name)) {
+        assert.equal(resolveModel(variant, modelsWithoutAliases), model.modelId, variant);
+        const hits = patternHits(variant);
+        if (name.toLowerCase() !== model.modelId.toLowerCase()) {
+          assert.deepEqual(hits, [model.modelId], variant);
+        } else {
+          // Exact-ID precedence must not hide a pattern capturing another model.
+          for (const hit of hits) assert.equal(hit, model.modelId, variant);
+        }
+      }
+    }
+  }
+});
+
+test('all historical names reject unknown suffixes, prefixes and trailing newlines', () => {
+  for (const model of table.models) {
+    for (const name of [model.modelId, ...(model.aliases ?? [])]) {
+      for (const variant of caseVariants(name)) {
+        for (const unknown of [
+          `${variant}-unconfirmed-suffix`, `${variant}-20991231`,
+          `unknown-provider/${variant}`, `${variant}\n`, `${variant}\r\n`,
+        ]) {
+          assert.deepEqual(patternHits(unknown), [], JSON.stringify(unknown));
+          assert.equal(resolveModel(unknown, modelsWithoutAliases), null, JSON.stringify(unknown));
+        }
+      }
+    }
+  }
+});
+
+test('historical literal aliases preserve punctuation and mandatory model variants', () => {
+  for (const [name, modelId] of [
+    ['claude-fable-5-1', 'Claude-Fable-5.1'],
+    ['claude-opus-4-8', 'Claude-Opus-4.8'],
+    ['claude-opus-5-5-fast', 'Claude-Opus-5.5-Fast'],
+    ['deepseek-v4-pro-0813', 'deepseek-v4-pro'],
+    ['nemotron-3-super-120b-a12b:free', 'nemotron-3-super'],
+    ['stealth/ox-alpha', 'ox-alpha'],
+    ['kwaipilot/kat-coder-pro-v2.5', 'kat-coder-pro-v2.5'],
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [modelId], variant);
+      for (const suffix of ['-fast', '-mini', '-pro']) {
+        assert.deepEqual(patternHits(variant + suffix), [], variant + suffix);
+        assert.equal(resolveModel(variant + suffix, modelsWithoutAliases), null, variant + suffix);
+      }
+    }
+  }
+  for (const name of [
+    'claude-fable-5-1-fast', 'claude-opus-4-8-fast',
+    'deepseek-v4-0813', 'deepseek-v4-mini-0813',
+    'nemotron-3-super-120b-a12b-free', 'nemotron-3-super-120b-a12b/free',
+    'stealth-ox-alpha', 'kwaipilot/kat-coder-v2.5',
+    'minimin-m2x7', 'deepseek-v4x1-flash-expires-on-0910',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, variant);
+    }
+  }
+});
+
 test('patterns are unique, anchored, and use bounded portable syntax', () => {
   assert.ok(patterns.length > 0);
   for (const model of table.models) {
@@ -107,9 +210,10 @@ test('patterns are unique, anchored, and use bounded portable syntax', () => {
   }
   for (const { pattern } of patterns) {
     assert.ok(pattern.startsWith('^') && pattern.endsWith('$'), pattern);
-    // Literal dots must be escaped; no wildcard, unbounded quantifier or stored flags.
+    // Literal dots must be escaped; / and : are literal characters without delimiters.
+    // No wildcard, unbounded quantifier or stored flags.
     const unescaped = pattern.replace(/\\[.\-]/g, '');
-    assert.match(unescaped, /^\^[a-z0-9\-()|?]+\$$/i, pattern);
+    assert.match(unescaped, /^\^[a-z0-9\-/:()|?]+\$$/i, pattern);
     assert.ok(!pattern.includes('(?'), pattern);
   }
 });
@@ -149,7 +253,10 @@ test('Claude thinking and plain effort forms exclude Fast and unknown variants',
       assert.deepEqual(patternHits(`${base}-fast-${effort}`), []);
     }
     for (const suffix of ['fast', 'pro', 'mini', 'thinking', 'ultra', 'thinking-ultra']) {
-      assert.deepEqual(patternHits(`${base}-${suffix}`), []);
+      // The historically confirmed Opus Fast base now has its own literal rule;
+      // it must identify the Fast model, never the ordinary Opus model.
+      assert.deepEqual(patternHits(`${base}-${suffix}`),
+        family === 'opus' && suffix === 'fast' ? ['Claude-Opus-5.5-Fast'] : []);
     }
   }
 });
