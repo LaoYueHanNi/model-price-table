@@ -19,10 +19,10 @@ This repository maintains **`model_pricing.json`**, a machine-readable pricing t
 6. All JSON must parse and strictly match the documented shape (exact field names, casing, and types).
 
 ## Model identification (before pricing)
-- Resolve across the entire table: exact `modelId`, then exact `aliases`, then optional `aliasPatterns` regex fallback. Names are case-sensitive; do not strip prefixes or suffixes.
+- Resolve across the entire table: exact `modelId`, then exact `aliases`, then optional `aliasPatterns` regex fallback. All three stages ignore ASCII letter case (A-Z/a-z); preserve stored IDs/aliases and do not strip prefixes or suffixes. Compare exact names with ASCII case folding; compile regex patterns with the ECMAScript i flag (no other flags).
 - `aliases` is deprecated and frozen for backward compatibility: preserve existing fields and all values unchanged; do not add, update, or delete values. New models may omit it or use `[]`. Maintain all new alias names exclusively in `aliasPatterns`, using anchored escaped literal patterns for single exact names. Consumers must continue historical exact-alias matching.
 - `aliasPatterns` is an optional array of unique, non-empty regex strings on the model root; omitted means `[]`. Any pattern can match; multiple patterns for one model count as one match.
-- Require `^` and `$`, no delimiters or flags, and a match spanning the entire input (reject trailing newlines). Use portable ECMAScript literals, escaped punctuation, grouping, alternation, and optional `?` components; prohibit wildcards, unbounded quantifiers, lookarounds, backreferences, and inline flags. Invalid patterns are validation errors.
+- Require `^` and `$`, no delimiters or flags in stored strings (the consumer supplies i), and a match spanning the entire input (reject trailing newlines). Use portable ECMAScript literals, escaped punctuation, grouping, alternation, and optional `?` components; prohibit wildcards, unbounded quantifiers, lookarounds, backreferences, and inline flags. Invalid patterns are validation errors.
 - Multiple models matching at the same stage are an ambiguity error; never resolve by array order. Unknown names have no inferred price. After identification, apply the existing three-layer pricing rules.
 - `fast`, `pro`, `mini`, and other identity components are mandatory parts of distinct model IDs, not reasoning levels. Ordinary-model patterns must reject these variants; Fast-model patterns must require `fast`, including names with effort before `fast`. Preserve identity components such as `max` in `gpt-5.1-codex-max`.
 - Only group names confirmed to share the entire pricing rules. Retain existing IDs and aliases. Old strict-schema consumers must update their schema; regex fallback requires consumer support.
@@ -49,9 +49,9 @@ Constraints:
 
 ## Update / release checklist
 1. Refresh `updatedAt` to the current Unix time in seconds on every data change. Bump `version` (increment the integer) **only when the change can affect pricing resolution** — consumers use `version` to decide whether to re-fetch the table:
-   - **Must bump**: adding/removing/renaming a `modelId`; adding/removing `aliases`; adding/removing/changing `aliasPatterns`; changing any of the four cost fields; adding/removing/changing `contextTiers`, `timeRules`, `dailySlots`; changing `usdExchangeRate`.
+   - **Must bump**: adding/removing/renaming a `modelId`; adding/removing `aliases`; adding/removing/changing `aliasPatterns`; changing any of the four cost fields; adding/removing/changing `contextTiers`, `timeRules`, `dailySlots`; changing `usdExchangeRate`; changing model-identification semantics such as case sensitivity.
    - **May skip bump** (refresh `updatedAt` only): changes that cannot affect which price a request resolves to, e.g. display-only fields such as `families[].label` or a model's `family` value/rename.
-2. Validate the JSON: parses cleanly, matches the schema, all ranges/types correct. Compile patterns, check all known IDs/aliases for cross-model matches, and run `node --test tests/alias_patterns.test.cjs` for model-identity isolation.
+2. Validate the JSON: parses cleanly, matches the schema, all ranges/types correct. Compile patterns, check all known IDs/aliases for case-insensitive collisions and cross-model matches, and run `node --test tests/alias_patterns.test.cjs` for model-identity isolation.
 3. If pricing semantics changed, update this guide and the README specs (both languages) plus the full example.
 4. Commit with a focused message, e.g.:
    - `pricing: add Model-X`

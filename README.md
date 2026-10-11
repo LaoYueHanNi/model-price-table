@@ -78,9 +78,9 @@ Resolve the request's model name across the entire table in this order:
 2. Exact `aliases` match, only if no `modelId` matched.
 3. `aliasPatterns` match, only if neither exact stage matched.
 
-Names are case-sensitive; do not lowercase, strip prefixes, or remove suffixes. At any stage, matches belonging to multiple models are an ambiguity error; never choose by array order. Multiple patterns matching the same model count as one match. No match means unknown model, with no inferred price. After identification, apply the existing three-layer pricing rules unchanged.
+All three identification stages ignore ASCII letter case (`A-Z`/`a-z`). Compare exact names with ASCII case folding and preserve the stored `modelId` and historical `aliases` values. Do not strip prefixes or remove suffixes. At any stage, matches belonging to multiple models are an ambiguity error; never choose by array order. Multiple patterns matching the same model count as one match. No match means unknown model, with no inferred price. After identification, apply the existing three-layer pricing rules unchanged.
 
-Patterns use portable ECMAScript regex syntax without delimiters or flags. Start with `^`, end with `$`, and require the matched span to cover the entire string (including rejecting a trailing newline). Escape literal punctuation such as `.` (`\\.` in JSON). Use literal model/version identifiers, grouping, alternation, and `?` for confirmed optional effort components. Do not use wildcards, unbounded quantifiers, lookarounds, backreferences, or inline flags. Consumers must compile and validate patterns when loading the table; invalid patterns are a table-validation error, not a silent fallback.
+Patterns use portable ECMAScript regex syntax. Stored strings contain no delimiters or flags; consumers compile them with the case-insensitive `i` flag only, e.g. `new RegExp(pattern, 'i')` (no `g`, `m`, `s`, or `u`). Start with `^`, end with `$`, and require the matched span to cover the entire string (including rejecting a trailing newline). Escape literal punctuation such as `.` (`\\.` in JSON). Use literal model/version identifiers, grouping, alternation, and `?` for confirmed optional effort components. Do not use wildcards, unbounded quantifiers, lookarounds, backreferences, or inline flags. Consumers must compile and validate patterns when loading the table; invalid patterns are a table-validation error, not a silent fallback.
 
 For example, this rule covers the 13 existing Opus 5.5 aliases:
 
@@ -93,11 +93,11 @@ For example, this rule covers the 13 existing Opus 5.5 aliases:
 }
 ```
 
-This identification-only fragment omits required pricing fields. It matches `claude-opus-5-5-thinking-high` and `claude-opus-5-5-high`, but rejects `claude-opus-5-5-fast`, unknown versions, and unknown effort levels. Add new names or levels only after confirming their pricing.
+This identification-only fragment omits required pricing fields. It matches `claude-opus-5-5-thinking-high`, `claude-opus-5-5-high`, and uppercase or mixed-case forms such as `CLAUDE-OPUS-5-5-HIGH` and `Claude-Opus-5-5-Thinking-High`, but rejects `claude-opus-5-5-fast`, unknown versions, and unknown effort levels. Add new names or levels only after confirming their pricing.
 
 **Model identity is mandatory:** `fast`, `pro`, `mini`, and similar model-variant components are part of the model's identity, not removable reasoning levels. Ordinary-model patterns must reject those variants. A Fast model has its own `modelId` and patterns that require `fast`, even when an API places effort before it. For example, `grok-4.7-fast-high` and `grok-4.7-high-fast` belong to `grok-4.7-fast`; neither may match `grok-4.7`. Never make `-fast` optional or infer equivalent pricing by stripping it. If a model identity contains `max`, such as `gpt-5.1-codex-max`, keep that component mandatory too.
 
-**Compatibility:** retain existing `modelId` and `aliases` when adding patterns. Consumers that ignore unknown fields can continue exact matching, but consumers using the old strict schema (`additionalProperties: false`) must update their schema before loading this field. Regex fallback requires consumer support; this data repository does not implement the consumer resolver. Adding, removing, or changing patterns requires a `version` bump and an `updatedAt` refresh.
+**Compatibility:** retain existing `modelId` and `aliases` when adding patterns. Consumers that ignore unknown fields can continue exact matching, but consumers using the old strict schema (`additionalProperties: false`) must update their schema before loading this field. Regex fallback requires consumer support; this data repository does not implement the consumer resolver. Case-insensitive identification also requires consumer support: consumers must update both exact-name comparison and regex compilation; refreshing the table alone cannot change an older resolver. Adding, removing, or changing patterns, or changing identification semantics, requires a `version` bump and an `updatedAt` refresh.
 
 ## Three-Layer Pricing (Mutually Exclusive Hit, Single Price)
 
@@ -210,6 +210,8 @@ A condensed example:
   "family": "gpt"
 }
 ```
+
+The example identifies `gpt-5.6-terra` and `GPT-5.6-TERRA-HIGH` as the same model; the consumer supplies the `i` flag, so no flag field is added to JSON.
 
 ## Authoring Suggestions
 
