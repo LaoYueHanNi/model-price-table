@@ -62,3 +62,5 @@ Constraints:
 - This is a **data repository**: be precise and minimal, change only what is asked.
 - Before adding or updating a model, find the existing entry and diff against the new values.
 - When data is ambiguous or missing, ask instead of guessing.
+
+非平凡变更须在同一个提交里新增或更新 docs/decisions/ 下的决策记录，规范见 docs/decisions/README.md
