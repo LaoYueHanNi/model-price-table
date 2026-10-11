@@ -87,6 +87,7 @@ test('regex aliases accept uppercase and mixed case, deduplicating patterns for 
     ['gpt-5.6-sol-high', 'gpt-5.6-sol'],
     ['grok-4.7-high-fast', 'grok-4.7-fast'],
     ['gpt-5.1-codex-max-high', 'gpt-5.1-codex-max'],
+    ['gemini-3.8-flash-n', 'gemini-3.8-flash'],
   ]) {
     for (const variant of caseVariants(name)) {
       assert.deepEqual(patternHits(variant), [modelId], variant);
@@ -194,6 +195,7 @@ test('unknown prefixes, suffixes, versions and punctuation do not match in any c
     'provider/grok-4.7-high', 'prefix-claude-opus-5-5-high',
     'claude-opus-5-5-high-pro', 'claude-opus-5-5-high-mini',
     'gpt-5.1-codex-high', 'claude-opus-5-5-high\n', 'claude-opus-5-5-high\r\n',
+    'gemini-3.8-flash-n-high', 'gemini-3.8-flash-n-fast', 'gemini-3.8-flash-nx',
   ]) {
     for (const variant of caseVariants(name)) {
       assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));

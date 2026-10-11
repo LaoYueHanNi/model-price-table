@@ -1,6 +1,6 @@
 {
-  "version": 112,
-  "updatedAt": 1791682858,
+  "version": 113,
+  "updatedAt": 1791683699,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1289,7 +1289,7 @@
         "gemini-3.8-flash-tiered"
       ],
       "aliasPatterns": [
-        "^gemini-3\\.8-flash(-(low|medium|high))?$"
+        "^gemini-3\\.8-flash(-(low|medium|high|n))?$"
       ],
       "family": "google"
     },
