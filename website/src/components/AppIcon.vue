@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{ name: 'table' | 'search' | 'arrow' | 'download' | 'external' | 'chevron' | 'close' | 'clock' | 'info' }>();
+defineProps<{ name: 'table' | 'search' | 'arrow' | 'download' | 'external' | 'chevron' | 'close' | 'clock' | 'info' | 'calculator' }>();
 const paths = {
   table: 'M4 4h16v16H4z M4 10h16 M10 4v16 M4 15h16',
   search: 'M21 21l-5-5 M18 10.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0',
@@ -10,6 +10,7 @@ const paths = {
   close: 'M6 6l12 12 M6 18L18 6',
   clock: 'M12 8v4l3 2 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',
   info: 'M12 11v6 M12 7h.01 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',
+  calculator: 'M5 3h14v18H5z M8 6h8v3H8z M8 13h1 M15 13h1 M8 17h1 M15 17h1',
 };
 </script>
 

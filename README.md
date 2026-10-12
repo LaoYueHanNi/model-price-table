@@ -10,7 +10,7 @@ Currency: **RMB**; unit price: **per million tokens**.
 
 Browse online: [Model Pricing](https://laoyuehanni.github.io/model-price-table/?lang=en).
 
-The bilingual static browser lives in [`website/`](./website/README.md). It displays all four prices, context tiers, peak schedules and historical periods. Daily schedules use **Asia/Shanghai (UTC+08:00)** in the website. The root JSON remains the only pricing source; build output and dependencies are excluded from Git.
+The bilingual static browser lives in [`website/`](./website/README.md). It displays all four prices, context tiers, peak schedules and historical periods, and estimates costs from four token counts at current base rates (ignoring context tiers), with editable translation/coding examples. Daily schedules use **Asia/Shanghai (UTC+08:00)** in the website. The root JSON remains the only pricing source; build output and dependencies are excluded from Git.
 
 Run `npm ci` and `npm run dev` inside `website/`. See its README for validation, builds and GitHub Pages deployment.
 

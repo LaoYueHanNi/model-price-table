@@ -1,8 +1,8 @@
 # 定价浏览网站 / Pricing website
 
-中英文静态浏览网站，使用 Vue 3、TypeScript 和 Vite。唯一数据源是上一级的 `model_pricing.json`；网站没有数据库、管理后台或费用计算器。
+中英文静态浏览与金额试算网站，使用 Vue 3、TypeScript 和 Vite。唯一定价数据源是上一级的 `model_pricing.json`。
 
-A bilingual static pricing browser built with Vue 3, TypeScript and Vite. The parent directory’s `model_pricing.json` is its sole pricing source. No database, admin panel or cost calculator is required.
+A bilingual static pricing browser and cost estimator built with Vue 3, TypeScript and Vite. The parent directory’s `model_pricing.json` is its sole pricing source.
 
 ## 本地运行 / Local development
 
@@ -28,13 +28,50 @@ npm run build
 npm run preview
 ```
 
-`check` 包含 Vue/TypeScript 类型检查和定价数据校验。构建前校验严格 Schema、上下文阈值、日期和每日区间、星期交集、名称冲突及便携正则。网站测试覆盖中国时区、区间边界、三层规则隔离、模型身份、汇率换算及双语覆盖。
+`check` 包含 Vue/TypeScript 类型检查和定价数据校验。构建前校验严格 Schema、上下文阈值、日期和每日区间、星期交集、名称冲突及便携正则。网站测试覆盖中国时区、区间边界、三层规则隔离、模型身份、汇率换算、四项金额试算、输入校验及双语覆盖。
 
-`check` runs Vue/TypeScript checks and pricing-data validation. Validation covers the strict schema, thresholds, date/daily ranges, weekday intersections, name collisions and portable patterns. Tests cover China time, boundaries, three-layer isolation, model identities, conversion and translation coverage.
+`check` runs Vue/TypeScript checks and pricing-data validation. Validation covers the strict schema, thresholds, date/daily ranges, weekday intersections, name collisions and portable patterns. Tests cover China time, boundaries, three-layer isolation, model identities, conversion, four-part cost estimates, token validation and translation coverage.
 
 产物是 `website/dist/`，其中 JSON 与根目录原文件字节一致。`dist/`、`node_modules/`、本地环境文件和缓存均由根 `.gitignore` 忽略。提交源码、`package.json` 和 `package-lock.json`；不要提交构建产物。
 
 The output is `website/dist/`, including a byte-identical copy of the root JSON. Build output, dependencies, local environment files and caches are ignored. Commit source files and the package/lock files only.
+
+## 金额试算 / Cost estimates
+
+点击搜索栏旁的“金额试算”，打开右下角的小型悬浮面板，填写输入、输出、缓存读取和缓存创建 **实际 token 数量**，可用于累计用量比较。输入数字自动按千位添加逗号，例如 `10,431,043`；可粘贴带逗号或不带逗号的整数，编辑时保留光标位置。输入仅指未缓存部分，不要重复包含已单列的缓存读取或创建。四项及其合计必须为非负安全整数；空白、负数、小数或过大数值显示提示，预估金额显示 `—`。
+
+Select **Estimate cost** beside the search bar to open a compact floating panel at the bottom right. Enter the **actual token counts** for uncached input, output, cache read and cache creation, including cumulative usage for comparisons. Inputs automatically add thousands separators, e.g. `10,431,043`, accept pasted integers with or without commas, and preserve the cursor while editing. Do not repeat cache reads or writes in uncached input. Counts and their sum must be nonnegative safe integers. Empty, negative, fractional or excessive counts produce an error and `—` estimates.
+
+悬浮面板不占排行榜的纵向空间；“完成·收起”、标题栏收起按钮或 Escape 会保留用量、金额列和排序，右下角“编辑用量”可重新打开。“关闭试算”保留用量但移除金额列，金额排序恢复为数据顺序。用量及计价说明可展开查看。排序菜单可选金额从低到高或从高到低，桌面金额列标题也可点击切换方向。
+
+The floating panel does not push the rankings down. **Done · Minimize**, the heading’s minimize button or Escape retain usage, estimates and sorting; **Edit usage** at the bottom right reopens it. **Close estimate** retains entered counts but removes the amount column and resets cost sorting to data order. Usage and pricing notes expand on demand. The sort menu offers costs from low to high or high to low; clicking the desktop amount column heading also toggles direction.
+
+面板只有“翻译”和“Coding”两个场景入口；点击 Coding 弹出三个缓存案例，选中即填入四项用量。四个案例均可手动修改：
+
+The panel has two scenario buttons: Translation and Coding. Coding opens a dialog with three cache cases; choosing one fills all four counts. All four cases remain editable:
+
+| 案例 / Case | 输入 / Input | 输出 / Output | 缓存读取 / Cache read | 缓存创建 / Cache creation |
+| --- | ---: | ---: | ---: | ---: |
+| 翻译（无缓存） / Translation (no cache) | 100,000,000 | 100,000,000 | 0 | 0 |
+| Coding 极高缓存 98.5% / Very high cache 98.5% | 1,543,648 | 401,147 | 98,055,205 | 0 |
+| Coding 高缓存 95% / High cache 95% | 5,136,612 | 628,415 | 94,234,973 | 0 |
+| Coding 低缓存 90% / Low cache 90% | 10,431,043 | 503,899 | 89,065,058 | 0 |
+
+翻译为 1 亿输入 + 1 亿输出，合计 2 亿。三个 Coding 案例按用户提供截图的分项比例折算为合计 **100,000,000** tokens；缓存创建均为 0。原始输入 / 输出 / 缓存读取分别为图一 `2.3M / 597.7K / 146.1M`、图二 `18.8M / 2.3M / 344.9M`、图三 `11.7M / 565.2K / 99.9M`。以四项之和为归一化分母（不用已舍入的总计）；向下取整后，将剩余 token 分配给小数余数最大的项，确保总量准确、每项误差小于 1 token。“95%”“90%”仅为近似案例名称，数值不被强行改成这两个精确百分比。
+
+极高缓存标题显示命中率：缓存读取 /（输入 + 缓存读取 + 缓存创建），四舍五入至一位小数为 98.5%。弹窗的用量简写为 `M`（百万，截取至两位小数）或 `K`（千，截取至一位小数），例如 `5.13M`、`94.23M`、`401.1K`；悬停可查看原始整数，选中和计算仍使用完整精度。
+
+Translation uses 100M input + 100M output, totaling 200M. Each Coding case scales the supplied screenshot’s four counts to exactly **100,000,000** tokens, with zero cache creation. Source input / output / cache read counts are `2.3M / 597.7K / 146.1M`, `18.8M / 2.3M / 344.9M` and `11.7M / 565.2K / 99.9M`. The denominator is the sum of the four displayed counts, not the rounded headline total. After flooring, remaining tokens go to the largest fractional remainders, keeping the total exact and each error below one token. “95%” and “90%” are approximate case names; counts are not forced to those exact percentages.
+
+The very-high-cache title shows its hit rate: cache read / (input + cache read + cache creation), rounded to one decimal as 98.5%. Dialog counts use `M` (millions, truncated to two decimals) or `K` (thousands, truncated to one decimal), such as `5.13M`, `94.23M` and `401.1K`. Hovering shows the original integer; selection and calculations retain full precision.
+
+试算按用户要求 **忽略上下文阶梯价格**，使用当前 `timeRules` 容器（未命中则为模型根）的四项基础定价及该容器自己的 `dailySlots`。不会把累计用量当成单次请求上下文，也不会使用任何 tier（包括阈值为 0 的 tier）的价格或峰时规则；网站完整规则浏览与数据规范仍保留原有三层语义。
+
+Estimates **ignore context tiers** as requested. They use the four base rates of the active `timeRules` container (or model root outside those periods) and only that container’s own `dailySlots`. Cumulative usage never determines a request context. No tier rates or schedules are used, including tiers with threshold zero. Full rule browsing and the data specification retain their original three-layer semantics.
+
+金额公式为 `Σ(tokens × 单价 / 1,000,000)`，各项在求和前不舍入。当前时刻和中国时区决定日期与峰时价格，面板显示实际使用时间。价格表增加每个模型的预估金额并支持排序；展开模型展示基础单价、费用明细、时期和峰时规则。人民币/美元沿用全站汇率切换；四项原始单价列仍展示最低上下文档位，与试算费用明细可能不同。
+
+The formula is `Σ(tokens × rate / 1,000,000)`, without rounding subtotals before summing. The displayed current time and China timezone determine date periods and peak rates. The model list gains estimated costs and cost sorting. Expanding a model shows base rates, subtotals, price period and peak schedule. Currency follows the site-wide exchange rate. Overview rate columns still show the lowest context band and may differ from estimate rates.
 
 ## 展示语义 / Display semantics
 
