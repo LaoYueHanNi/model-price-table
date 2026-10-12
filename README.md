@@ -6,6 +6,14 @@ LLM model pricing table [`model_pricing.json`](./model_pricing.json).
 
 Currency: **RMB**; unit price: **per million tokens**.
 
+## Pricing Website
+
+Browse online: [Model Pricing](https://laoyuehanni.github.io/model-price-table/?lang=en).
+
+The bilingual static browser lives in [`website/`](./website/README.md). It displays all four prices, context tiers, peak schedules and historical periods. Daily schedules use **Asia/Shanghai (UTC+08:00)** in the website. The root JSON remains the only pricing source; build output and dependencies are excluded from Git.
+
+Run `npm ci` and `npm run dev` inside `website/`. See its README for validation, builds and GitHub Pages deployment.
+
 ## Top-Level Structure
 
 ```json

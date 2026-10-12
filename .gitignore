@@ -1,0 +1,7 @@
+website/node_modules/
+website/dist/
+website/.vite/
+website/*.tsbuildinfo
+website/.env.local
+website/.env.*.local
+website/test-results/

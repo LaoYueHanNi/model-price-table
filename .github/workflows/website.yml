@@ -1,0 +1,65 @@
+name: Pricing website
+
+on:
+  pull_request:
+    paths:
+      - 'website/**'
+      - 'model_pricing.json'
+      - 'model_pricing.schema.json'
+      - 'tests/alias_patterns.test.cjs'
+      - 'docs/decisions/**'
+      - '.github/workflows/website.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'website/**'
+      - 'model_pricing.json'
+      - 'model_pricing.schema.json'
+      - 'tests/alias_patterns.test.cjs'
+      - 'docs/decisions/**'
+      - '.github/workflows/website.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - run: npm ci
+        working-directory: website
+      - run: node --test tests/alias_patterns.test.cjs
+      - run: node docs/decisions/check.mjs
+      - run: npm test
+        working-directory: website
+      - run: npm run build
+        working-directory: website
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: website/dist
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

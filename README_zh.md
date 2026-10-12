@@ -6,6 +6,14 @@ LLM 模型定价表 [`model_pricing.json`](./model_pricing.json)。
 
 货币单位：**RMB**；单价单位：**每百万 token**。
 
+## 定价浏览网站
+
+在线浏览：[模型定价表](https://laoyuehanni.github.io/model-price-table/?lang=zh)。
+
+中英文静态网站位于 [`website/`](./website/README.md)，展示四维价格、上下文阶梯、峰时时段及全部价格时期。网站每日时段统一使用 **Asia/Shanghai（UTC+08:00）**。根目录 JSON 仍是唯一定价来源，构建产物与依赖不提交到 Git。
+
+在 `website/` 中执行 `npm ci`、`npm run dev` 即可本地运行。校验、构建和 GitHub Pages 发布说明见网站 README。
+
 ## 顶层结构
 
 ```json

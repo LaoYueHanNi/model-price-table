@@ -1,0 +1,12 @@
+:root {
+  --canvas: #f7f8fa;
+  --ink: #202d35;
+  --muted: #606e78;
+  --line: #e6eaed;
+  --line-strong: #dfe5e8;
+  --green: #145c50;
+  --green-light: #e9f2ed;
+  --orange: #a85a2d;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+}
