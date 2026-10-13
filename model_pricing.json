@@ -1,6 +1,6 @@
 {
-  "version": 116,
-  "updatedAt": 1791763748,
+  "version": 117,
+  "updatedAt": 1791886089,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2889,6 +2889,21 @@
         "^nemotron-3-super-free$"
       ],
       "family": "other"
+    },
+    {
+      "modelId": "muse-wonder",
+      "inputCostPerMillion": 28.0,
+      "outputCostPerMillion": 140.0,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^muse-wonder-1\\.0$"
+      ],
+      "family": "meta"
     },
     {
       "modelId": "muse-spark-1.2",

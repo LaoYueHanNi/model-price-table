@@ -90,6 +90,7 @@ test('regex aliases accept uppercase and mixed case, deduplicating patterns for 
     ['grok-4.7-high-fast', 'grok-4.7-fast'],
     ['gpt-5.1-codex-max-high', 'gpt-5.1-codex-max'],
     ['gemini-3.8-flash-n', 'gemini-3.8-flash'],
+    ['muse-wonder-1.0', 'muse-wonder'],
   ]) {
     for (const variant of caseVariants(name)) {
       assert.deepEqual(patternHits(variant), [modelId], variant);
@@ -194,6 +195,7 @@ test('historical literal aliases preserve punctuation and mandatory model varian
     'nemotron-3-super-120b-a12b-free', 'nemotron-3-super-120b-a12b/free',
     'stealth-ox-alpha', 'kwaipilot/kat-coder-v2.5',
     'minimin-m2x7', 'deepseek-v4x1-flash-expires-on-0910',
+    'muse-wonder-full', 'muse-wonder-full-1.0', 'muse-wonder-1.0-fast',
   ]) {
     for (const variant of caseVariants(name)) {
       assert.deepEqual(patternHits(variant), [], variant);
