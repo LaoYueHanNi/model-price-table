@@ -243,6 +243,28 @@ test('all existing thinking and effort aliases have regex coverage', () => {
   }
 });
 
+test('Gemini 4 Argon thinking levels share its price and reject other identities', () => {
+  for (const effort of ['low', 'medium', 'high']) {
+    for (const variant of caseVariants(`gemini-4-argon-${effort}`)) {
+      assert.deepEqual(patternHits(variant), ['gemini-4-argon'], variant);
+      assert.equal(resolveModel(variant), 'gemini-4-argon', variant);
+    }
+  }
+  for (const name of [
+    'gemini-4-argon-fast', 'gemini-4-argon-pro', 'gemini-4-argon-mini',
+    'gemini-4-argon-high-fast', 'gemini-4-argon-fast-high',
+    'gemini-4-argon-xhigh', 'gemini-4-argon-max', 'gemini-4-argon-extra-high',
+    'gemini-4-argon-minimal', 'gemini-4-argon-ultra', 'gemini-4-argon-n',
+    'gemini-4-argon-thinking', 'gemini-4-argon-thinking-high',
+    'gemini-4-argon-cyber-permissive', 'gemini-4-argon-high\n',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('Claude thinking and plain effort forms exclude Fast and unknown variants', () => {
   for (const family of ['haiku', 'sonnet', 'opus']) {
     const modelId = `Claude-${family[0].toUpperCase() + family.slice(1)}-5.5`;

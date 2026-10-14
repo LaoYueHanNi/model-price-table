@@ -1,6 +1,6 @@
 {
-  "version": 117,
-  "updatedAt": 1791886089,
+  "version": 118,
+  "updatedAt": 1791939685,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1358,6 +1358,33 @@
       "aliasPatterns": [
         "^gemini-3\\.8-flash(-(low|medium|high|n))?$",
         "^gemini-3\\.8-flash-tiered$"
+      ],
+      "family": "google"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "inputCostPerMillion": 28.0,
+      "outputCostPerMillion": 140.0,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [
+        {
+          "label": "限时优惠价",
+          "startTime": 0,
+          "endTime": 1796083199,
+          "inputCostPerMillion": 14.0,
+          "outputCostPerMillion": 70.0,
+          "cacheReadCostPerMillion": 0.7,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [],
+          "contextTiers": []
+        }
+      ],
+      "aliases": [],
+      "aliasPatterns": [
+        "^gemini-4-argon(-(low|medium|high))?$"
       ],
       "family": "google"
     },
