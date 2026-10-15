@@ -1,6 +1,6 @@
 {
-  "version": 118,
-  "updatedAt": 1791939685,
+  "version": 119,
+  "updatedAt": 1792059541,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -76,6 +76,19 @@
       "aliasPatterns": [
         "^minimax-m3-free$"
       ],
+      "family": "minimax"
+    },
+    {
+      "modelId": "MiniMax-M3.1-Flash-Preview",
+      "inputCostPerMillion": 2.1,
+      "outputCostPerMillion": 8.4,
+      "cacheReadCostPerMillion": 0.42,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [],
       "family": "minimax"
     },
     {
