@@ -319,6 +319,29 @@ test('Fast aliases never match ordinary models, even without exact-match precede
   }
 });
 
+test('MiniMax M3.1 Flash resolves its official ID and the retired Preview name', () => {
+  for (const variant of caseVariants('MiniMax-M3.1-Flash')) {
+    assert.equal(resolveModel(variant), 'MiniMax-M3.1-Flash', variant);
+    assert.deepEqual(patternHits(variant), [], variant);
+  }
+  for (const name of ['MiniMax-M3.1-Flash-Preview', 'minimax-m3.1-flash-preview']) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), ['MiniMax-M3.1-Flash'], variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), 'MiniMax-M3.1-Flash', variant);
+    }
+  }
+  for (const name of [
+    'MiniMax-M3.1-Flash-fast', 'MiniMax-M3.1-Flash-high', 'MiniMax-M3.1-Flash-max',
+    'MiniMax-M3.1-Flash-Preview-high', 'minimax-m3.1-flash-preview-fast',
+    'provider/minimax-m3.1-flash-preview', 'MiniMax-M3.1-Flash-Preview\n',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('unknown prefixes, suffixes, versions and punctuation do not match in any case', () => {
   for (const name of [
     'claude-opus-5-50-high', 'claude-opus-6-high', 'claude-opus-5-5-high-fast',

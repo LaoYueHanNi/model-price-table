@@ -64,3 +64,5 @@ Constraints:
 - When data is ambiguous or missing, ask instead of guessing.
 
 非平凡变更须在同一个提交里新增或更新 docs/decisions/ 下的决策记录，规范见 docs/decisions/README.md
+
+豁免：简单新增或更新模型定价属于机械性数据编辑，**不写决策记录**。典型场景——新增一个模型的条目、按官方口径调整四项单价、补齐该模型的 `aliasPatterns`、刷新 `version`/`updatedAt`，以及配套的测试用例。判断依据是"是否改变本仓库的规则、契约或工具链"，而不是"改动行数多寡"；只有动到这些时才需要决策记录。
