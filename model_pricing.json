@@ -1,6 +1,6 @@
 {
-  "version": 120,
-  "updatedAt": 1792410666,
+  "version": 121,
+  "updatedAt": 1792779341,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1539,7 +1539,8 @@
         "glm-latest"
       ],
       "aliasPatterns": [
-        "^glm-latest$"
+        "^glm-latest$",
+        "^GLM-5\\.3-Trial$"
       ],
       "family": "glm"
     },
@@ -1568,7 +1569,8 @@
         "glm-flash-latest"
       ],
       "aliasPatterns": [
-        "^glm-flash-latest$"
+        "^glm-flash-latest$",
+        "^GLM-5\\.3-Flash-Trial$"
       ],
       "family": "glm"
     },
