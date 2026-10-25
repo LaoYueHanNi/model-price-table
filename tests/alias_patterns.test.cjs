@@ -342,6 +342,27 @@ test('MiniMax M3.1 Flash resolves its official ID and the retired Preview name',
   }
 });
 
+test('Kimi K3.1 Pro and its Highspeed variant keep separate identities', () => {
+  for (const modelId of ['kimi-k3.1-pro', 'kimi-k3.1-pro-highspeed']) {
+    for (const variant of caseVariants(modelId)) {
+      assert.equal(resolveModel(variant), modelId, variant);
+      assert.deepEqual(patternHits(variant), [], variant);
+    }
+  }
+  for (const variant of caseVariants('kimi-k3')) {
+    assert.equal(resolveModel(variant), 'kimi-k3', variant);
+  }
+  for (const name of [
+    'kimi-k3.1', 'kimi-k3-1-pro', 'kimi-k3.1-pro-fast', 'kimi-k3.1-pro-mini',
+    'kimi-k3.1-pro-highspeed-fast', 'provider/kimi-k3.1-pro', 'kimi-k3.1-pro\n',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('unknown prefixes, suffixes, versions and punctuation do not match in any case', () => {
   for (const name of [
     'claude-opus-5-50-high', 'claude-opus-6-high', 'claude-opus-5-5-high-fast',
