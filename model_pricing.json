@@ -1,6 +1,6 @@
 {
-  "version": 122,
-  "updatedAt": 1792905704,
+  "version": 123,
+  "updatedAt": 1793062949,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2182,6 +2182,53 @@
       ],
       "timeRules": [],
       "aliases": [],
+      "family": "gpt"
+    },
+    {
+      "modelId": "gpt-6.1-terra",
+      "inputCostPerMillion": 7.0,
+      "outputCostPerMillion": 35.0,
+      "cacheReadCostPerMillion": 0.35,
+      "cacheCreationCostPerMillion": 8.75,
+      "dailySlots": [],
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 14.0,
+          "outputCostPerMillion": 52.5,
+          "cacheReadCostPerMillion": 0.7,
+          "cacheCreationCostPerMillion": 17.5
+        }
+      ],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^gpt-6\\.1-terra(-(none|low|medium|high|xhigh|max))?$"
+      ],
+      "family": "gpt"
+    },
+    {
+      "modelId": "gpt-6.1-terra-fast",
+      "inputCostPerMillion": 14.0,
+      "outputCostPerMillion": 70.0,
+      "cacheReadCostPerMillion": 0.7,
+      "cacheCreationCostPerMillion": 17.5,
+      "dailySlots": [],
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 28.0,
+          "outputCostPerMillion": 105.0,
+          "cacheReadCostPerMillion": 1.4,
+          "cacheCreationCostPerMillion": 35.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^gpt-6\\.1-terra-fast(-(none|low|medium|high|xhigh|max))?$",
+        "^gpt-6\\.1-terra(-(none|low|medium|high|xhigh|max))?-fast$"
+      ],
       "family": "gpt"
     },
     {

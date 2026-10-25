@@ -363,6 +363,39 @@ test('Kimi K3.1 Pro and its Highspeed variant keep separate identities', () => {
   }
 });
 
+test('GPT-6.1 Terra and its Fast variant keep separate identities', () => {
+  for (const modelId of ['gpt-6.1-terra', 'gpt-6.1-terra-fast']) {
+    for (const variant of caseVariants(modelId)) {
+      assert.equal(resolveModel(variant), modelId, variant);
+    }
+  }
+  for (const effort of ['none', 'low', 'medium', 'high', 'xhigh', 'max']) {
+    for (const variant of caseVariants(`gpt-6.1-terra-${effort}`)) {
+      assert.deepEqual(patternHits(variant), ['gpt-6.1-terra'], variant);
+      assert.equal(resolveModel(variant), 'gpt-6.1-terra', variant);
+    }
+    for (const variant of caseVariants(`gpt-6.1-terra-fast-${effort}`)) {
+      assert.deepEqual(patternHits(variant), ['gpt-6.1-terra-fast'], variant);
+      assert.equal(resolveModel(variant), 'gpt-6.1-terra-fast', variant);
+    }
+    for (const variant of caseVariants(`gpt-6.1-terra-${effort}-fast`)) {
+      assert.deepEqual(patternHits(variant), ['gpt-6.1-terra-fast'], variant);
+      assert.equal(resolveModel(variant), 'gpt-6.1-terra-fast', variant);
+    }
+  }
+  for (const name of [
+    'gpt-6.1-terra-mini', 'gpt-6.1-terra-pro', 'gpt-6.1-terra-ultra',
+    'gpt-6.1-terra-thinking', 'gpt-6.1-terra-thinking-high',
+    'gpt-6.1-terra-mini-fast', 'gpt-6.1-terra-fast-ultra',
+    'provider/gpt-6.1-terra', 'gpt-6.1-terra\n', 'gpt-6.1-terra-fast\r\n',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('unknown prefixes, suffixes, versions and punctuation do not match in any case', () => {
   for (const name of [
     'claude-opus-5-50-high', 'claude-opus-6-high', 'claude-opus-5-5-high-fast',
