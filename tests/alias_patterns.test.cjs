@@ -265,6 +265,32 @@ test('Gemini 4 Argon thinking levels share its price and reject other identities
   }
 });
 
+test('Gemini 4 Carbon resolves only by its own model ID and stays isolated from Argon', () => {
+  // Google has not published a Carbon model ID or thinking-level variants yet,
+  // so it must resolve by exact model ID only.
+  for (const variant of caseVariants('gemini-4-carbon')) {
+    assert.equal(resolveModel(variant), 'gemini-4-carbon', variant);
+    assert.deepEqual(patternHits(variant), [], variant);
+  }
+  // The two Gemini 4 models share pricing but keep distinct identities.
+  for (const variant of caseVariants('gemini-4-argon')) {
+    assert.equal(resolveModel(variant), 'gemini-4-argon', variant);
+    assert.deepEqual(patternHits(variant), ['gemini-4-argon'], variant);
+  }
+  for (const name of [
+    'gemini-4-carbon-fast', 'gemini-4-carbon-pro', 'gemini-4-carbon-mini',
+    'gemini-4-carbon-high', 'gemini-4-carbon-low', 'gemini-4-carbon-medium',
+    'gemini-4-carbon-max', 'gemini-4-carbon-thinking', 'gemini-4-carbon-n',
+    'gemini-4-carbon-cyber-permissive', 'gemini-4-carbon\n',
+    'provider/gemini-4-carbon', 'gemini-4-carbon-2026-10-28',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('Claude thinking and plain effort forms exclude Fast and unknown variants', () => {
   for (const family of ['haiku', 'sonnet', 'opus']) {
     const modelId = `Claude-${family[0].toUpperCase() + family.slice(1)}-5.5`;
