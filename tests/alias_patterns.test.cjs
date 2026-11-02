@@ -212,10 +212,10 @@ test('patterns are unique, anchored, and use bounded portable syntax', () => {
   }
   for (const { pattern } of patterns) {
     assert.ok(pattern.startsWith('^') && pattern.endsWith('$'), pattern);
-    // Literal dots must be escaped; / and : are literal characters without delimiters.
+    // Literal dots, hyphens and @ must be escaped; / and : are literal characters without delimiters.
     // No wildcard, unbounded quantifier or stored flags.
-    const unescaped = pattern.replace(/\\[.\-]/g, '');
-    assert.match(unescaped, /^\^[a-z0-9\-/:()|?@]+\$$/i, pattern);
+    const unescaped = pattern.replace(/\\[.\-@]/g, '');
+    assert.match(unescaped, /^\^[a-z0-9\-/:()|?]+\$$/i, pattern);
     assert.ok(!pattern.includes('(?'), pattern);
   }
 });

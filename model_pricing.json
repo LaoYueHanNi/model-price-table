@@ -1,6 +1,6 @@
 {
-  "version": 126,
-  "updatedAt": 1793588734,
+  "version": 127,
+  "updatedAt": 1793591115,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2601,7 +2601,7 @@
       "aliasPatterns": [
         "^grok-4\\.7(-(low|medium|high|xhigh))?$",
         "^cursor-grok-4\\.7(-(low|medium|high|xhigh))?$",
-        "^grok-4\\.7@256k$"
+        "^grok-4\\.7\\@256k$"
       ],
       "family": "spacex-ai"
     },

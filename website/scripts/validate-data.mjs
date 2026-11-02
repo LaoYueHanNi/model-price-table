@@ -60,8 +60,8 @@ export function validatePricing(table) {
       aliasOwners.set(fold(alias), model.modelId);
     }
     for (const pattern of model.aliasPatterns ?? []) {
-      const literals = pattern.replace(/\\[.\-]/g, '');
-      if (!/^\^[a-z0-9\-/:()|?@]+\$$/i.test(literals) || pattern.includes('(?')) fail(`Nonportable alias pattern: ${pattern}`);
+      const literals = pattern.replace(/\\[.\-@]/g, '');
+      if (!/^\^[a-z0-9\-/:()|?]+\$$/i.test(literals) || pattern.includes('(?')) fail(`Nonportable alias pattern: ${pattern}`);
       patterns.push({ owner: model.modelId, regex: new RegExp(pattern, 'i') });
     }
   }
