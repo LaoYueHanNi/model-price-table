@@ -387,6 +387,29 @@ test('MiniMax M3.1 Flash resolves its official ID and the retired Preview name',
   }
 });
 
+test('LongCat-2.5 resolves its official ID and the retired Preview name', () => {
+  for (const variant of caseVariants('LongCat-2.5')) {
+    assert.equal(resolveModel(variant), 'LongCat-2.5', variant);
+    assert.deepEqual(patternHits(variant), [], variant);
+  }
+  for (const name of ['LongCat-2.5-Preview', 'longcat-2.5-preview']) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), ['LongCat-2.5'], variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), 'LongCat-2.5', variant);
+    }
+  }
+  for (const name of [
+    'LongCat-2.5-fast', 'LongCat-2.5-high', 'LongCat-2.5-max',
+    'LongCat-2.5-Preview-high', 'longcat-2.5-preview-fast',
+    'provider/longcat-2.5-preview', 'LongCat-2.5-Preview\n',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('Kimi K3.1 Pro and its Highspeed variant keep separate identities', () => {
   for (const modelId of ['kimi-k3.1-pro', 'kimi-k3.1-pro-highspeed']) {
     for (const variant of caseVariants(modelId)) {
