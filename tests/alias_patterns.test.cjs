@@ -215,7 +215,7 @@ test('patterns are unique, anchored, and use bounded portable syntax', () => {
     // Literal dots must be escaped; / and : are literal characters without delimiters.
     // No wildcard, unbounded quantifier or stored flags.
     const unescaped = pattern.replace(/\\[.\-]/g, '');
-    assert.match(unescaped, /^\^[a-z0-9\-/:()|?]+\$$/i, pattern);
+    assert.match(unescaped, /^\^[a-z0-9\-/:()|?@]+\$$/i, pattern);
     assert.ok(!pattern.includes('(?'), pattern);
   }
 });
@@ -319,6 +319,25 @@ test('Grok Fast remains mandatory in both effort positions', () => {
     ]) assert.deepEqual(patternHits(name), ['grok-4.7-fast'], name);
     for (const name of [`grok-4.7-${effort}`, `cursor-grok-4.7-${effort}`]) {
       assert.deepEqual(patternHits(name), ['grok-4.7'], name);
+    }
+  }
+});
+
+test('Grok 4.7 context suffix and DeepSeek V4.1 Flash dated alias resolve', () => {
+  for (const [name, modelId] of [
+    ['grok-4.7@256k', 'grok-4.7'],
+    ['deepseek-v41-flash-1017', 'deepseek-v4.1-flash'],
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [modelId], variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), modelId, variant);
+    }
+    for (const unknown of [
+      `${name}-fast`, `${name}-high`, `${name}@128k`,
+      `provider/${name}`, `${name}\n`,
+    ]) {
+      assert.deepEqual(patternHits(unknown), [], JSON.stringify(unknown));
+      assert.equal(resolveModel(unknown, modelsWithoutAliases), null, JSON.stringify(unknown));
     }
   }
 });
