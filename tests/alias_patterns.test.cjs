@@ -429,6 +429,25 @@ test('Hy4 preview resolves its Preview name and the -f suffix on the same pricin
   }
 });
 
+test('Hy4 free alias resolves with or without the hyphen', () => {
+  for (const name of ['hy4-free', 'hy4free']) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), ['hy4'], variant);
+      assert.equal(resolveModel(variant), 'hy4', variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), 'hy4', variant);
+    }
+  }
+  for (const name of [
+    'hy4-free-f', 'hy4-free-fast', 'hy4-free-preview', 'hy4free-preview',
+    'provider/hy4-free', 'hy4-free\n', 'hy4free\n',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('Kimi K3.1 Pro and its Highspeed variant keep separate identities', () => {
   for (const modelId of ['kimi-k3.1-pro', 'kimi-k3.1-pro-highspeed']) {
     for (const variant of caseVariants(modelId)) {
