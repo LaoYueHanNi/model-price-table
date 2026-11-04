@@ -1,6 +1,6 @@
 {
-  "version": 128,
-  "updatedAt": 1793612272,
+  "version": 129,
+  "updatedAt": 1793783732,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2723,7 +2723,7 @@
         "hy4-preview"
       ],
       "aliasPatterns": [
-        "^hy4-preview$"
+        "^hy4-preview(-f)?$"
       ],
       "family": "tencent"
     },

@@ -410,6 +410,25 @@ test('LongCat-2.5 resolves its official ID and the retired Preview name', () => 
   }
 });
 
+test('Hy4 preview resolves its Preview name and the -f suffix on the same pricing', () => {
+  for (const name of ['hy4-preview', 'hy4-preview-f']) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), ['hy4'], variant);
+      assert.equal(resolveModel(variant), 'hy4', variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), 'hy4', variant);
+    }
+  }
+  for (const name of [
+    'hy4-preview-fast', 'hy4-preview-mini', 'hy4-preview-pro',
+    'hy4-preview-f-f', 'provider/hy4-preview-f', 'hy4-preview-f\n',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('Kimi K3.1 Pro and its Highspeed variant keep separate identities', () => {
   for (const modelId of ['kimi-k3.1-pro', 'kimi-k3.1-pro-highspeed']) {
     for (const variant of caseVariants(modelId)) {
