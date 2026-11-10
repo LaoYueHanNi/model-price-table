@@ -1,6 +1,6 @@
 {
-  "version": 130,
-  "updatedAt": 1793784668,
+  "version": 131,
+  "updatedAt": 1794272402,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -493,6 +493,21 @@
       "aliasPatterns": [
         "^claude-fable-5-1-thinking(-(low|medium|high|extra-high|max))$",
         "^claude-fable-5-1$"
+      ],
+      "family": "claude"
+    },
+    {
+      "modelId": "Claude-Fable-5.2",
+      "inputCostPerMillion": 56.0,
+      "outputCostPerMillion": 280.0,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 70.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^claude-fable-5-2$"
       ],
       "family": "claude"
     },
