@@ -327,6 +327,7 @@ test('Grok 4.7 context suffix and DeepSeek V4.1 Flash dated alias resolve', () =
   for (const [name, modelId] of [
     ['grok-4.7@256k', 'grok-4.7'],
     ['deepseek-v41-flash-1017', 'deepseek-v4.1-flash'],
+    ['deepseek-v4.1-flash-1017', 'deepseek-v4.1-flash'],
   ]) {
     for (const variant of caseVariants(name)) {
       assert.deepEqual(patternHits(variant), [modelId], variant);

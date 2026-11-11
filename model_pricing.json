@@ -1,6 +1,6 @@
 {
-  "version": 131,
-  "updatedAt": 1794272402,
+  "version": 132,
+  "updatedAt": 1794381761,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -970,7 +970,8 @@
       "aliasPatterns": [
         "^deepseek-flash$",
         "^deepseek-v4\\.1-flash-expires-on-0910$",
-        "^deepseek-v41-flash-1017$"
+        "^deepseek-v41-flash-1017$",
+        "^deepseek-v4\\.1-flash-1017$"
       ],
       "family": "deepseek"
     },
@@ -3740,6 +3741,19 @@
       "aliasPatterns": [
         "^qwen/qwen3\\.7-flash$"
       ],
+      "family": "qwen"
+    },
+    {
+      "modelId": "qwen4-max-preview",
+      "inputCostPerMillion": 12.0,
+      "outputCostPerMillion": 36.0,
+      "cacheReadCostPerMillion": 1.5,
+      "cacheCreationCostPerMillion": 17.5,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [],
       "family": "qwen"
     },
     {
