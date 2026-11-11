@@ -343,6 +343,21 @@ test('Grok 4.7 context suffix and DeepSeek V4.1 Flash dated alias resolve', () =
   }
 });
 
+test('Qwen4 Max Preview resolves the dotted 4.0 alias to the same entry', () => {
+  for (const variant of caseVariants('qwen4.0-max-preview')) {
+    assert.deepEqual(patternHits(variant), ['qwen4-max-preview'], variant);
+    assert.equal(resolveModel(variant, modelsWithoutAliases), 'qwen4-max-preview', variant);
+  }
+  for (const unknown of [
+    'qwen4.0-max-preview-fast', 'qwen4.0-max-preview-high', 'qwen4.0-max-preview@128k',
+    'provider/qwen4.0-max-preview', 'qwen4.0-max-preview\n',
+    'qwen4.0-max', 'qwen4.00-max-preview', 'qwen4.0-max-preview-1017',
+  ]) {
+    assert.deepEqual(patternHits(unknown), [], JSON.stringify(unknown));
+    assert.equal(resolveModel(unknown, modelsWithoutAliases), null, JSON.stringify(unknown));
+  }
+});
+
 test('GPT Fast, codex and mini/max identity components are preserved', () => {
   for (const variant of ['sol', 'terra', 'luna']) {
     assert.deepEqual(patternHits(`gpt-5.6-${variant}-high`), [`gpt-5.6-${variant}`]);

@@ -1,6 +1,6 @@
 {
-  "version": 132,
-  "updatedAt": 1794381761,
+  "version": 133,
+  "updatedAt": 1794382213,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -3753,7 +3753,9 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "aliasPatterns": [],
+      "aliasPatterns": [
+        "^qwen4\\.0-max-preview$"
+      ],
       "family": "qwen"
     },
     {
