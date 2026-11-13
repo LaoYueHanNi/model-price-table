@@ -1,6 +1,6 @@
 {
   "version": 135,
-  "updatedAt": 1794534846,
+  "updatedAt": 1794534942,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1277,7 +1277,7 @@
       "aliasPatterns": [
         "^ernie-5\\.5-flash(-preview)?$"
       ],
-      "family": "other"
+      "family": "baidu"
     },
     {
       "modelId": "gemini-2.0-flash",
@@ -4167,6 +4167,10 @@
     {
       "id": "other",
       "label": "其他"
+    },
+    {
+      "id": "baidu",
+      "label": "百度"
     }
   ]
 }
