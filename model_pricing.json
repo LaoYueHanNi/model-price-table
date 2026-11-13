@@ -1,5 +1,5 @@
 {
-  "version": 134,
+  "version": 135,
   "updatedAt": 1794534846,
   "currency": "RMB",
   "usdExchangeRate": 7,
@@ -1223,6 +1223,61 @@
       "timeRules": [],
       "aliases": [],
       "family": "doubao"
+    },
+    {
+      "modelId": "ernie-5.5-flash",
+      "inputCostPerMillion": 1.0,
+      "outputCostPerMillion": 4.0,
+      "cacheReadCostPerMillion": 0.1,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [
+        {
+          "label": "高峰时段",
+          "windows": [
+            {
+              "start": 480,
+              "end": 1320
+            }
+          ],
+          "inputCostPerMillion": 2.0,
+          "outputCostPerMillion": 8.0,
+          "cacheReadCostPerMillion": 0.2,
+          "cacheCreationCostPerMillion": 0.0
+        }
+      ],
+      "contextTiers": [],
+      "timeRules": [
+        {
+          "label": "限时五折活动价",
+          "startTime": 0,
+          "endTime": 1796083199,
+          "inputCostPerMillion": 0.5,
+          "outputCostPerMillion": 2.0,
+          "cacheReadCostPerMillion": 0.05,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [
+            {
+              "label": "高峰时段",
+              "windows": [
+                {
+                  "start": 480,
+                  "end": 1320
+                }
+              ],
+              "inputCostPerMillion": 1.0,
+              "outputCostPerMillion": 4.0,
+              "cacheReadCostPerMillion": 0.1,
+              "cacheCreationCostPerMillion": 0.0
+            }
+          ],
+          "contextTiers": []
+        }
+      ],
+      "aliases": [],
+      "aliasPatterns": [
+        "^ernie-5\\.5-flash(-preview)?$"
+      ],
+      "family": "other"
     },
     {
       "modelId": "gemini-2.0-flash",
