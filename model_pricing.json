@@ -1,6 +1,6 @@
 {
-  "version": 133,
-  "updatedAt": 1794382213,
+  "version": 134,
+  "updatedAt": 1794534846,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1444,6 +1444,19 @@
           "contextTiers": []
         }
       ],
+      "aliases": [],
+      "aliasPatterns": [],
+      "family": "google"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "inputCostPerMillion": 10.5,
+      "outputCostPerMillion": 52.5,
+      "cacheReadCostPerMillion": 0.525,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
       "aliases": [],
       "aliasPatterns": [],
       "family": "google"
