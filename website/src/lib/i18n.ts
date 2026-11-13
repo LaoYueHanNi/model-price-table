@@ -127,6 +127,7 @@ const labels: Record<string, string> = {
   '免费预览期': 'Free preview period', '限时5折': 'Limited-time 50% discount',
   '限时优惠价': 'Limited-time pricing', '原价': 'Original pricing',
   '工作日高峰时段': 'Weekday peak hours', '每日高峰时段': 'Daily peak hours',
+  '高峰时段': 'Peak hours', '限时五折活动价': 'Limited-time 50% off promo',
 };
 export function ruleLabel(label: string, language: Language) {
   if (language === 'zh') return label;

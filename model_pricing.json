@@ -1,6 +1,6 @@
 {
-  "version": 135,
-  "updatedAt": 1794534942,
+  "version": 136,
+  "updatedAt": 1794536651,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1235,8 +1235,8 @@
           "label": "高峰时段",
           "windows": [
             {
-              "start": 480,
-              "end": 1320
+              "startMinute": 480,
+              "endMinute": 1320
             }
           ],
           "inputCostPerMillion": 2.0,
@@ -1260,8 +1260,8 @@
               "label": "高峰时段",
               "windows": [
                 {
-                  "start": 480,
-                  "end": 1320
+                  "startMinute": 480,
+                  "endMinute": 1320
                 }
               ],
               "inputCostPerMillion": 1.0,
