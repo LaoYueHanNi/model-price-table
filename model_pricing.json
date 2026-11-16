@@ -1,6 +1,6 @@
 {
-  "version": 137,
-  "updatedAt": 1794801369,
+  "version": 138,
+  "updatedAt": 1794819821,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2810,6 +2810,31 @@
         "^hy4-preview(-f)?$",
         "^hy4-?free$"
       ],
+      "family": "tencent"
+    },
+    {
+      "modelId": "hy4-flash",
+      "inputCostPerMillion": 0.5,
+      "outputCostPerMillion": 2.0,
+      "cacheReadCostPerMillion": 0.02,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [
+        {
+          "label": "限时5折",
+          "startTime": 1794758400,
+          "endTime": 1796011200,
+          "inputCostPerMillion": 0.25,
+          "outputCostPerMillion": 1.0,
+          "cacheReadCostPerMillion": 0.01,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [],
+          "contextTiers": []
+        }
+      ],
+      "aliases": [],
+      "aliasPatterns": [],
       "family": "tencent"
     },
     {
