@@ -1,6 +1,6 @@
 {
-  "version": 136,
-  "updatedAt": 1794536651,
+  "version": 137,
+  "updatedAt": 1794801369,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -3812,17 +3812,18 @@
       "family": "qwen"
     },
     {
-      "modelId": "qwen4-max-preview",
-      "inputCostPerMillion": 12.0,
-      "outputCostPerMillion": 36.0,
-      "cacheReadCostPerMillion": 1.5,
-      "cacheCreationCostPerMillion": 17.5,
+      "modelId": "qwen4-max",
+      "inputCostPerMillion": 10.0,
+      "outputCostPerMillion": 30.0,
+      "cacheReadCostPerMillion": 0.5,
+      "cacheCreationCostPerMillion": 12.5,
       "dailySlots": [],
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
       "aliasPatterns": [
-        "^qwen4\\.0-max-preview$"
+        "^qwen4\\.0-max-preview$",
+        "^qwen4-max-preview$"
       ],
       "family": "qwen"
     },
