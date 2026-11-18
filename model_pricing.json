@@ -1,6 +1,6 @@
 {
-  "version": 138,
-  "updatedAt": 1794819821,
+  "version": 139,
+  "updatedAt": 1794965305,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -2341,6 +2341,100 @@
       "aliasPatterns": [
         "^gpt-6\\.1-terra-fast(-(none|low|medium|high|xhigh|max))?$",
         "^gpt-6\\.1-terra(-(none|low|medium|high|xhigh|max))?-fast$"
+      ],
+      "family": "gpt"
+    },
+    {
+      "modelId": "gpt-6.2-astra",
+      "inputCostPerMillion": 56.0,
+      "outputCostPerMillion": 280.0,
+      "cacheReadCostPerMillion": 2.8,
+      "cacheCreationCostPerMillion": 70.0,
+      "dailySlots": [],
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 112.0,
+          "outputCostPerMillion": 420.0,
+          "cacheReadCostPerMillion": 5.6,
+          "cacheCreationCostPerMillion": 140.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^gpt-6\\.2-astra(-(low|medium|high|xhigh|max))?$"
+      ],
+      "family": "gpt"
+    },
+    {
+      "modelId": "gpt-6.2-astra-fast",
+      "inputCostPerMillion": 112.0,
+      "outputCostPerMillion": 560.0,
+      "cacheReadCostPerMillion": 5.6,
+      "cacheCreationCostPerMillion": 140.0,
+      "dailySlots": [],
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 224.0,
+          "outputCostPerMillion": 840.0,
+          "cacheReadCostPerMillion": 11.2,
+          "cacheCreationCostPerMillion": 280.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^gpt-6\\.2-astra-fast(-(low|medium|high|xhigh|max))?$",
+        "^gpt-6\\.2-astra(-(low|medium|high|xhigh|max))?-fast$"
+      ],
+      "family": "gpt"
+    },
+    {
+      "modelId": "gpt-6.2-sol",
+      "inputCostPerMillion": 14.0,
+      "outputCostPerMillion": 70.0,
+      "cacheReadCostPerMillion": 0.7,
+      "cacheCreationCostPerMillion": 17.5,
+      "dailySlots": [],
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 28.0,
+          "outputCostPerMillion": 105.0,
+          "cacheReadCostPerMillion": 1.4,
+          "cacheCreationCostPerMillion": 35.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^gpt-6\\.2-sol(-(low|medium|high|xhigh|max))?$"
+      ],
+      "family": "gpt"
+    },
+    {
+      "modelId": "gpt-6.2-sol-fast",
+      "inputCostPerMillion": 28.0,
+      "outputCostPerMillion": 140.0,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 35.0,
+      "dailySlots": [],
+      "contextTiers": [
+        {
+          "threshold": 272000,
+          "inputCostPerMillion": 56.0,
+          "outputCostPerMillion": 210.0,
+          "cacheReadCostPerMillion": 2.8,
+          "cacheCreationCostPerMillion": 70.0
+        }
+      ],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^gpt-6\\.2-sol-fast(-(low|medium|high|xhigh|max))?$",
+        "^gpt-6\\.2-sol(-(low|medium|high|xhigh|max))?-fast$"
       ],
       "family": "gpt"
     },

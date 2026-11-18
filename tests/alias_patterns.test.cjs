@@ -521,6 +521,53 @@ test('GPT-6.1 Terra and its Fast variant keep separate identities', () => {
   }
 });
 
+test('GPT-6.2 Astra and Sol keep Fast variants distinct and reject none/minimal efforts', () => {
+  for (const modelId of ['gpt-6.2-astra', 'gpt-6.2-astra-fast', 'gpt-6.2-sol', 'gpt-6.2-sol-fast']) {
+    for (const variant of caseVariants(modelId)) {
+      assert.equal(resolveModel(variant), modelId, variant);
+    }
+  }
+  for (const name of ['gpt-6.2-astra', 'gpt-6.2-sol']) {
+    for (const effort of ['low', 'medium', 'high', 'xhigh', 'max']) {
+      for (const variant of caseVariants(`${name}-${effort}`)) {
+        assert.deepEqual(patternHits(variant), [name], variant);
+        assert.equal(resolveModel(variant), name, variant);
+      }
+      for (const variant of caseVariants(`${name}-fast-${effort}`)) {
+        assert.deepEqual(patternHits(variant), [`${name}-fast`], variant);
+        assert.equal(resolveModel(variant), `${name}-fast`, variant);
+      }
+      for (const variant of caseVariants(`${name}-${effort}-fast`)) {
+        assert.deepEqual(patternHits(variant), [`${name}-fast`], variant);
+        assert.equal(resolveModel(variant), `${name}-fast`, variant);
+      }
+    }
+    for (const unsupported of [
+      'none', 'minimal', 'mini', 'pro', 'ultra', 'thinking', 'thinking-high',
+    ]) {
+      for (const unknown of [
+        `${name}-${unsupported}`,
+        `${name}-${unsupported}-fast`,
+        `${name}-fast-${unsupported}`,
+      ]) {
+        for (const variant of caseVariants(unknown)) {
+          assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+          assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+        }
+      }
+    }
+    for (const unknown of [
+      `provider/${name}`, `${name}\n`, `${name}-fast\r\n`,
+      'gpt-6.2-terra', 'gpt-6.2-luna', 'gpt-6.2-astra-max-fast-ultra',
+    ]) {
+      for (const variant of caseVariants(unknown)) {
+        assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+        assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+      }
+    }
+  }
+});
+
 test('unknown prefixes, suffixes, versions and punctuation do not match in any case', () => {
   for (const name of [
     'claude-opus-5-50-high', 'claude-opus-6-high', 'claude-opus-5-5-high-fast',
