@@ -1,6 +1,6 @@
 {
-  "version": 139,
-  "updatedAt": 1794965305,
+  "version": 141,
+  "updatedAt": 1794983400,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -4213,6 +4213,76 @@
       "timeRules": [],
       "aliases": [],
       "family": "other"
+    },
+    {
+      "modelId": "mai-code-1.1-flash",
+      "inputCostPerMillion": 1.4,
+      "outputCostPerMillion": 8.4,
+      "cacheReadCostPerMillion": 0.14,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^mai-code-1\\.1-flash(-(low|medium|high))?$"
+      ],
+      "family": "microsoft"
+    },
+    {
+      "modelId": "mai-code-2",
+      "inputCostPerMillion": 7.0,
+      "outputCostPerMillion": 35.0,
+      "cacheReadCostPerMillion": 0.35,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [
+        {
+          "label": "限时五折活动价",
+          "startTime": 1794844800,
+          "endTime": 1810483199,
+          "inputCostPerMillion": 3.5,
+          "outputCostPerMillion": 17.5,
+          "cacheReadCostPerMillion": 0.175,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [],
+          "contextTiers": []
+        }
+      ],
+      "aliases": [],
+      "aliasPatterns": [
+        "^mai-code-2(-(low|medium|high|xhigh|max))?$"
+      ],
+      "family": "microsoft"
+    },
+    {
+      "modelId": "mai-code-2-flash",
+      "inputCostPerMillion": 0.7,
+      "outputCostPerMillion": 3.5,
+      "cacheReadCostPerMillion": 0.07,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [
+        {
+          "label": "限时五折活动价",
+          "startTime": 1794844800,
+          "endTime": 1810483199,
+          "inputCostPerMillion": 0.35,
+          "outputCostPerMillion": 1.75,
+          "cacheReadCostPerMillion": 0.035,
+          "cacheCreationCostPerMillion": 0.0,
+          "dailySlots": [],
+          "contextTiers": []
+        }
+      ],
+      "aliases": [],
+      "aliasPatterns": [
+        "^mai-code-2-flash(-(low|medium|high|xhigh|max))?$",
+        "^mai-code-2(-(low|medium|high|xhigh|max))?-flash$"
+      ],
+      "family": "microsoft"
     }
   ],
   "families": [
@@ -4223,6 +4293,10 @@
     {
       "id": "gpt",
       "label": "GPT"
+    },
+    {
+      "id": "microsoft",
+      "label": "Microsoft AI"
     },
     {
       "id": "glm",

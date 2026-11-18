@@ -568,6 +568,52 @@ test('GPT-6.2 Astra and Sol keep Fast variants distinct and reject none/minimal 
   }
 });
 
+test('MAI Code 2 and Code 2 Flash keep separate identities', () => {
+  for (const modelId of ['mai-code-2', 'mai-code-2-flash']) {
+    for (const variant of caseVariants(modelId)) {
+      assert.equal(resolveModel(variant), modelId, variant);
+      assert.deepEqual(patternHits(variant), [modelId], variant);
+    }
+  }
+  for (const variant of caseVariants('mai-code-1.1-flash')) {
+    assert.equal(resolveModel(variant), 'mai-code-1.1-flash', variant);
+    assert.deepEqual(patternHits(variant), ['mai-code-1.1-flash'], variant);
+  }
+  for (const effort of ['low', 'medium', 'high']) {
+    for (const variant of caseVariants(`mai-code-1.1-flash-${effort}`)) {
+      assert.deepEqual(patternHits(variant), ['mai-code-1.1-flash'], variant);
+      assert.equal(resolveModel(variant), 'mai-code-1.1-flash', variant);
+    }
+  }
+  for (const effort of ['low', 'medium', 'high', 'xhigh', 'max']) {
+    for (const variant of caseVariants(`mai-code-2-${effort}`)) {
+      assert.deepEqual(patternHits(variant), ['mai-code-2'], variant);
+      assert.equal(resolveModel(variant), 'mai-code-2', variant);
+    }
+    for (const variant of caseVariants(`mai-code-2-flash-${effort}`)) {
+      assert.deepEqual(patternHits(variant), ['mai-code-2-flash'], variant);
+      assert.equal(resolveModel(variant), 'mai-code-2-flash', variant);
+    }
+    for (const variant of caseVariants(`mai-code-2-${effort}-flash`)) {
+      assert.deepEqual(patternHits(variant), ['mai-code-2-flash'], variant);
+      assert.equal(resolveModel(variant), 'mai-code-2-flash', variant);
+    }
+  }
+  for (const name of [
+    'mai-code-1.1-flash-xhigh', 'mai-code-1.1-flash-max', 'mai-code-1.1-flash-mini',
+    'mai-code-1.1-flash-fast', 'mai-code-1.1', 'mai-code-1.1-flash-unknown',
+    'mai-code-2-fast', 'mai-code-2-mini', 'mai-code-2-pro', 'mai-code-2-ultra',
+    'mai-code-2-thinking', 'mai-code-2-none', 'mai-code-2-minimal', 'mai-code-2-flash-fast',
+    'mai-code-2-fast-flash', 'mai-code-1.1-flash-pro', 'mai-code-3',
+    'provider/mai-code-2', 'mai-code-2\n', 'mai-code-2-flash\r\n',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('unknown prefixes, suffixes, versions and punctuation do not match in any case', () => {
   for (const name of [
     'claude-opus-5-50-high', 'claude-opus-6-high', 'claude-opus-5-5-high-fast',
