@@ -1,6 +1,6 @@
 {
-  "version": 141,
-  "updatedAt": 1794983400,
+  "version": 142,
+  "updatedAt": 1795049267,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1514,6 +1514,21 @@
       "timeRules": [],
       "aliases": [],
       "aliasPatterns": [],
+      "family": "google"
+    },
+    {
+      "modelId": "gemini-4-neon",
+      "inputCostPerMillion": 21.0,
+      "outputCostPerMillion": 105.0,
+      "cacheReadCostPerMillion": 1.05,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^gemini-4-neon(-(low|medium|high|xhigh))?$"
+      ],
       "family": "google"
     },
     {
