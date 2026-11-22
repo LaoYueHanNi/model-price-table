@@ -1,6 +1,6 @@
 {
-  "version": 142,
-  "updatedAt": 1795049267,
+  "version": 143,
+  "updatedAt": 1795329743,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1379,6 +1379,21 @@
       "family": "google"
     },
     {
+      "modelId": "gemini-3.5-flash-lite",
+      "inputCostPerMillion": 2.1,
+      "outputCostPerMillion": 17.5,
+      "cacheReadCostPerMillion": 0.21,
+      "cacheCreationCostPerMillion": 0.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^gemini-3\\.5-flash-lite(-(minimal|low|medium|high))?$"
+      ],
+      "family": "google"
+    },
+    {
       "modelId": "gemini-3.6-flash",
       "inputCostPerMillion": 10.5,
       "outputCostPerMillion": 52.5,
@@ -1447,7 +1462,7 @@
       ],
       "aliasPatterns": [
         "^gemini-3\\.8-flash(-(low|medium|high|n))?$",
-        "^gemini-3\\.8-flash-tiered$"
+        "^gemini-3\\.8-flash-tiered(-(low|medium|high))?$"
       ],
       "family": "google"
     },
@@ -1513,7 +1528,9 @@
       "contextTiers": [],
       "timeRules": [],
       "aliases": [],
-      "aliasPatterns": [],
+      "aliasPatterns": [
+        "^gemini-4-hydrogen(-tiered)?(-(low|medium|high|xhigh))?$"
+      ],
       "family": "google"
     },
     {

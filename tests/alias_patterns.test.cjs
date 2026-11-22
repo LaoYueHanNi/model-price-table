@@ -291,6 +291,88 @@ test('Gemini 4 Carbon resolves only by its own model ID and stays isolated from 
   }
 });
 
+test('Gemini 4 Hydrogen tiered names keep the model ID and thinking levels', () => {
+  for (const effort of ['low', 'medium', 'high', 'xhigh']) {
+    for (const name of [
+      `gemini-4-hydrogen-${effort}`,
+      `gemini-4-hydrogen-tiered-${effort}`,
+    ]) {
+      for (const variant of caseVariants(name)) {
+        assert.deepEqual(patternHits(variant), ['gemini-4-hydrogen'], variant);
+        assert.equal(resolveModel(variant, modelsWithoutAliases), 'gemini-4-hydrogen', variant);
+      }
+    }
+  }
+  for (const variant of caseVariants('gemini-4-hydrogen-tiered')) {
+    assert.deepEqual(patternHits(variant), ['gemini-4-hydrogen'], variant);
+    assert.equal(resolveModel(variant, modelsWithoutAliases), 'gemini-4-hydrogen', variant);
+  }
+  for (const name of [
+    'gemini-4-hydrogen-minimal', 'gemini-4-hydrogen-tiered-minimal',
+    'gemini-4-hydrogen-fast', 'gemini-4-hydrogen-tiered-fast',
+    'gemini-4-hydrogen-mini', 'gemini-4-hydrogen-pro',
+    'gemini-4-hydrogen-high-tiered', 'gemini-4-hydrogen-tiered-thinking',
+    'gemini-4-hydrogen-thinking', 'gemini-4-hydrogen-tiered-high\n',
+    'provider/gemini-4-hydrogen-tiered-high',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
+test('Gemini 3.8 Flash tiered names accept the documented thinking levels', () => {
+  for (const effort of ['low', 'medium', 'high']) {
+    for (const variant of caseVariants(`gemini-3.8-flash-tiered-${effort}`)) {
+      assert.deepEqual(patternHits(variant), ['gemini-3.8-flash'], variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), 'gemini-3.8-flash', variant);
+    }
+  }
+  for (const variant of caseVariants('gemini-3.8-flash-tiered')) {
+    assert.deepEqual(patternHits(variant), ['gemini-3.8-flash'], variant);
+    assert.equal(resolveModel(variant, modelsWithoutAliases), 'gemini-3.8-flash', variant);
+  }
+  for (const name of [
+    'gemini-3.8-flash-tiered-minimal', 'gemini-3.8-flash-tiered-xhigh',
+    'gemini-3.8-flash-tiered-n', 'gemini-3.8-flash-tiered-fast',
+    'gemini-3.8-flash-tiered-thinking', 'gemini-3.8-flash-tiered-high\n',
+    'gemini-3.8-flash-n-high', 'provider/gemini-3.8-flash-tiered-high',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
+test('Gemini 3.5 Flash Lite is a separate model with its own thinking levels', () => {
+  for (const effort of ['minimal', 'low', 'medium', 'high']) {
+    for (const variant of caseVariants(`gemini-3.5-flash-lite-${effort}`)) {
+      assert.deepEqual(patternHits(variant), ['gemini-3.5-flash-lite'], variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), 'gemini-3.5-flash-lite', variant);
+    }
+  }
+  for (const variant of caseVariants('gemini-3.5-flash-lite')) {
+    assert.deepEqual(patternHits(variant), ['gemini-3.5-flash-lite'], variant);
+    assert.equal(resolveModel(variant), 'gemini-3.5-flash-lite', variant);
+  }
+  for (const variant of caseVariants('gemini-3.5-flash')) {
+    assert.equal(resolveModel(variant), 'gemini-3.5-flash', variant);
+  }
+  for (const name of [
+    'gemini-3.5-flash-lite-fast', 'gemini-3.5-flash-lite-mini',
+    'gemini-3.5-flash-lite-pro', 'gemini-3.5-flash-lite-xhigh',
+    'gemini-3.5-flash-lite-tiered', 'gemini-3.5-flash-lites',
+    'gemini-3.5-flash-lite-high\n', 'provider/gemini-3.5-flash-lite-high',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('Claude thinking and plain effort forms exclude Fast and unknown variants', () => {
   for (const family of ['haiku', 'sonnet', 'opus']) {
     const modelId = `Claude-${family[0].toUpperCase() + family.slice(1)}-5.5`;
