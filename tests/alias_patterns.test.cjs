@@ -243,12 +243,21 @@ test('all existing thinking and effort aliases have regex coverage', () => {
   }
 });
 
-test('Gemini 4 Argon thinking levels share its price and reject other identities', () => {
+test('Gemini 4 Argon trial route is a routing type before thinking levels, not an effort', () => {
   for (const effort of ['low', 'medium', 'high']) {
-    for (const variant of caseVariants(`gemini-4-argon-${effort}`)) {
-      assert.deepEqual(patternHits(variant), ['gemini-4-argon'], variant);
-      assert.equal(resolveModel(variant), 'gemini-4-argon', variant);
+    for (const name of [
+      `gemini-4-argon-${effort}`,
+      `gemini-4-argon-trial-${effort}`,
+    ]) {
+      for (const variant of caseVariants(name)) {
+        assert.deepEqual(patternHits(variant), ['gemini-4-argon'], variant);
+        assert.equal(resolveModel(variant), 'gemini-4-argon', variant);
+      }
     }
+  }
+  for (const variant of caseVariants('gemini-4-argon-trial')) {
+    assert.deepEqual(patternHits(variant), ['gemini-4-argon'], variant);
+    assert.equal(resolveModel(variant), 'gemini-4-argon', variant);
   }
   for (const name of [
     'gemini-4-argon-fast', 'gemini-4-argon-pro', 'gemini-4-argon-mini',
@@ -257,6 +266,11 @@ test('Gemini 4 Argon thinking levels share its price and reject other identities
     'gemini-4-argon-minimal', 'gemini-4-argon-ultra', 'gemini-4-argon-n',
     'gemini-4-argon-thinking', 'gemini-4-argon-thinking-high',
     'gemini-4-argon-cyber-permissive', 'gemini-4-argon-high\n',
+    'gemini-4-argon-high-trial', 'gemini-4-argon-medium-trial', 'gemini-4-argon-low-trial',
+    'gemini-4-argon-trial-trial', 'gemini-4-argon-trials',
+    'gemini-4-argon-trial-fast', 'gemini-4-argon-trial-pro', 'gemini-4-argon-trial-xhigh',
+    'gemini-4-argon-trial-high-fast', 'gemini-4-argon-trial-high\n',
+    'provider/gemini-4-argon-trial-high', 'gemini-4-argon-trial-high-2026-11-23',
   ]) {
     for (const variant of caseVariants(name)) {
       assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));

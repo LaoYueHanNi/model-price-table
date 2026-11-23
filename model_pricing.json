@@ -1,6 +1,6 @@
 {
-  "version": 143,
-  "updatedAt": 1795329743,
+  "version": 144,
+  "updatedAt": 1795402077,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -1489,7 +1489,7 @@
       ],
       "aliases": [],
       "aliasPatterns": [
-        "^gemini-4-argon(-(low|medium|high))?$"
+        "^gemini-4-argon(-trial)?(-(low|medium|high))?$"
       ],
       "family": "google"
     },
