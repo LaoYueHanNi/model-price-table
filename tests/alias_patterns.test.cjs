@@ -664,6 +664,48 @@ test('GPT-6.2 Astra and Sol keep Fast variants distinct and reject none/minimal 
   }
 });
 
+test('Claude Fable 5.2 and Mythos 5.2 keep Fast variants distinct', () => {
+  for (const [base, standardId, fastId] of [
+    ['claude-fable-5-2', 'Claude-Fable-5.2', 'Claude-Fable-5.2-Fast'],
+    ['claude-mythos-5-2', 'Claude-Mythos-5.2', 'Claude-Mythos-5.2-Fast'],
+  ]) {
+    for (const variant of caseVariants(base)) {
+      assert.deepEqual(patternHits(variant), [standardId], variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), standardId, variant);
+    }
+    for (const variant of caseVariants(`${base}-fast`)) {
+      assert.deepEqual(patternHits(variant), [fastId], variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), fastId, variant);
+    }
+    for (const unknown of [
+      `${base}-mini`, `${base}-pro`, `${base}-ultra`, `${base}-thinking`,
+      `${base}-fast-fast`, `provider/${base}`, `${base}\n`, `${base}-fast\r\n`,
+    ]) {
+      for (const variant of caseVariants(unknown)) {
+        assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+        assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+      }
+    }
+  }
+});
+
+test('GPT-6 Cyber resolves alone and cannot borrow GPT-6 or GPT-5.6 identities', () => {
+  for (const variant of caseVariants('gpt-6-cyber')) {
+    assert.deepEqual(patternHits(variant), ['gpt-6-cyber'], variant);
+    assert.equal(resolveModel(variant, modelsWithoutAliases), 'gpt-6-cyber', variant);
+  }
+  for (const name of [
+    'gpt-6-cyber-fast', 'gpt-6-cyber-mini', 'gpt-6-cyber-pro', 'gpt-6-cyber-ultra',
+    'gpt-6-cyber-thinking', 'gpt-6-cybers', 'provider/gpt-6-cyber',
+    'gpt-6-cyber\n', 'gpt-6-cyber\r\n',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
+
 test('MAI Code 2 and Code 2 Flash keep separate identities', () => {
   for (const modelId of ['mai-code-2', 'mai-code-2-flash']) {
     for (const variant of caseVariants(modelId)) {

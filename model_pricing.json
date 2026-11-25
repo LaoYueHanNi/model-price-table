@@ -1,6 +1,6 @@
 {
-  "version": 144,
-  "updatedAt": 1795402077,
+  "version": 145,
+  "updatedAt": 1795614032,
   "currency": "RMB",
   "usdExchangeRate": 7,
   "models": [
@@ -512,6 +512,21 @@
       "family": "claude"
     },
     {
+      "modelId": "Claude-Fable-5.2-Fast",
+      "inputCostPerMillion": 112.0,
+      "outputCostPerMillion": 560.0,
+      "cacheReadCostPerMillion": 2.8,
+      "cacheCreationCostPerMillion": 140.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^claude-fable-5-2-fast$"
+      ],
+      "family": "claude"
+    },
+    {
       "modelId": "Claude-Mythos-5.1",
       "inputCostPerMillion": 70.0,
       "outputCostPerMillion": 350.0,
@@ -531,6 +546,36 @@
       "aliasPatterns": [
         "^claude-mythos-5-1-thinking(-(low|medium|high|extra-high|max))$",
         "^claude-mythos-5-1$"
+      ],
+      "family": "claude"
+    },
+    {
+      "modelId": "Claude-Mythos-5.2",
+      "inputCostPerMillion": 56.0,
+      "outputCostPerMillion": 280.0,
+      "cacheReadCostPerMillion": 1.4,
+      "cacheCreationCostPerMillion": 70.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^claude-mythos-5-2$"
+      ],
+      "family": "claude"
+    },
+    {
+      "modelId": "Claude-Mythos-5.2-Fast",
+      "inputCostPerMillion": 112.0,
+      "outputCostPerMillion": 560.0,
+      "cacheReadCostPerMillion": 2.8,
+      "cacheCreationCostPerMillion": 140.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^claude-mythos-5-2-fast$"
       ],
       "family": "claude"
     },
@@ -2246,6 +2291,21 @@
       "aliasPatterns": [
         "^gpt-5\\.6-cyber(-(low|medium|high))?$",
         "^gpt-daybreak-red-latest$"
+      ],
+      "family": "gpt"
+    },
+    {
+      "modelId": "gpt-6-cyber",
+      "inputCostPerMillion": 140.0,
+      "outputCostPerMillion": 700.0,
+      "cacheReadCostPerMillion": 14.0,
+      "cacheCreationCostPerMillion": 175.0,
+      "dailySlots": [],
+      "contextTiers": [],
+      "timeRules": [],
+      "aliases": [],
+      "aliasPatterns": [
+        "^gpt-6-cyber$"
       ],
       "family": "gpt"
     },
