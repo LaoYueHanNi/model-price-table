@@ -360,6 +360,27 @@ test('Gemini 3.8 Flash tiered names accept the documented thinking levels', () =
   }
 });
 
+test('GPT OSS 120B accepts reasoning effort suffixes and the gemini-3.8-flash-control alias resolves', () => {
+  for (const name of ['gpt-oss-120b', 'gpt-oss-120b-low', 'gpt-oss-120b-medium', 'gpt-oss-120b-high']) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), ['gpt-oss-120b'], variant);
+      assert.equal(resolveModel(variant, modelsWithoutAliases), 'gpt-oss-120b', variant);
+    }
+  }
+  for (const variant of caseVariants('gemini-3.8-flash-control')) {
+    assert.deepEqual(patternHits(variant), ['gemini-3.8-flash'], variant);
+    assert.equal(resolveModel(variant, modelsWithoutAliases), 'gemini-3.8-flash', variant);
+  }
+  for (const name of [
+    'gpt-oss-120b-xhigh', 'gpt-oss-120b-fast', 'gpt-oss-120b-pro', 'gpt-oss-20b',
+    'gpt-oss-120b-medium\n', 'openai/gpt-oss-120b', 'gemini-3.8-flash-control-high',
+  ]) {
+    for (const variant of caseVariants(name)) {
+      assert.deepEqual(patternHits(variant), [], JSON.stringify(variant));
+      assert.equal(resolveModel(variant, modelsWithoutAliases), null, JSON.stringify(variant));
+    }
+  }
+});
 test('Gemini 3.5 Flash Lite is a separate model with its own thinking levels', () => {
   for (const effort of ['minimal', 'low', 'medium', 'high']) {
     for (const variant of caseVariants(`gemini-3.5-flash-lite-${effort}`)) {
